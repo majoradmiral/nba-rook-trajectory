@@ -1,0 +1,34 @@
+name: Check Summer League CDN
+
+on:
+  schedule:
+    - cron: '0 14 * * *'
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests pandas
+      - name: Try CDN endpoint via scraper
+        run: |
+          python -c "
+from src.summer_league_scraper import fetch_from_cdn
+import json, os
+df = fetch_from_cdn(2026)
+if not df.empty:
+    os.makedirs('data/raw', exist_ok=True)
+    df.to_json('data/raw/sl_players.json', orient='records')
+    print(f'LIVE — saved {len(df)} players')
+else:
+    print('Not live')
+    exit(1)
+"
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "auto: Summer League CDN data snapshot"
+          file_pattern: data/raw/sl_players.json
