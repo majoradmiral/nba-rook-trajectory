@@ -234,6 +234,31 @@ def fetch_from_cdn(year: int = CURRENT_YEAR) -> pd.DataFrame:
     return pd.DataFrame()
 
 
+def fetch_from_espn(year: int = CURRENT_YEAR) -> pd.DataFrame:
+    """Pull game-level SL results via the ESPN public scoreboard API."""
+    try:
+        from src.espn_client import fetch_summer_league_games
+        from datetime import date as _date, timedelta
+
+        season_end = _date(year, 7, 19)
+        season_start = _date(year, 7, 3)
+        today = _date.today()
+        date_from = max(season_start, today - timedelta(days=7))
+        date_to = min(season_end, today)
+
+        games = fetch_summer_league_games(date_from, date_to)
+        if games.empty:
+            return pd.DataFrame()
+
+        games["sl_year"] = year
+        games["source"] = "espn_scoreboard"
+        logger.info(f"ESPN scoreboard: {len(games)} SL games fetched")
+        return games
+    except Exception as e:
+        logger.warning(f"ESPN scoreboard fetch failed: {e}")
+        return pd.DataFrame()
+
+
 def scrape_summer_league(year: int = CURRENT_YEAR) -> pd.DataFrame:
     """Main entry: scrape Summer League stats from best available source."""
     logger.info(f"Scraping Summer League {year}")
@@ -248,7 +273,12 @@ def scrape_summer_league(year: int = CURRENT_YEAR) -> pd.DataFrame:
     if not df.empty:
         return df
 
-    # 3. Try Playwright/ZenRows fallback if available
+    # 3. Try ESPN scoreboard (game-level results)
+    df = fetch_from_espn(year)
+    if not df.empty:
+        return df
+
+    # 4. Try Playwright/ZenRows fallback if available
     try:
         from src.scrape.summer_league_playwright import scrape_table
         df = scrape_table(year)
@@ -258,7 +288,7 @@ def scrape_summer_league(year: int = CURRENT_YEAR) -> pd.DataFrame:
     except Exception as e:
         logger.warning(f"Playwright fallback failed: {e}")
 
-    # 4. Try manual CSV import
+    # 5. Try manual CSV import
     df = load_csv()
     if not df.empty:
         return df

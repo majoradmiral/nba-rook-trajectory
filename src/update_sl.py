@@ -69,10 +69,11 @@ def append_today_box_scores(today: Optional[date] = None) -> pd.DataFrame:
         logger.info("No new SL data scraped today")
         return pd.DataFrame()
 
+    dedup_col = "PLAYER_ID" if "PLAYER_ID" in df.columns else "game_id"
     parquet_path = RAW_DIR / f"summer_league_{today.year}.parquet"
     if parquet_path.exists():
         existing = pd.read_parquet(parquet_path)
-        combined = pd.concat([existing, df], ignore_index=True).drop_duplicates("PLAYER_ID")
+        combined = pd.concat([existing, df], ignore_index=True).drop_duplicates(dedup_col)
     else:
         combined = df
 
@@ -105,7 +106,7 @@ def rebuild_inference() -> str:
         build_inference_2025_rookies,
     )
 
-    rookie = pd.read_parquet(str(RAW_DIR / "rookie_stats.parquet"))
+    rookie = pull_rookie_stats()
     sl_path = RAW_DIR / "summer_league.parquet"
     sl_available = sl_path.exists() and sl_path.stat().st_size > 0
     infer = build_inference_2025_rookies(rookie, sl_available)
