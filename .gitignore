@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Data
+data/raw/summer_league.csv
+data/processed/inference_2025_rookies.parquet
+
+# Models & artifacts
+/models/
+/mlruns/
+/runs/
+*.pkl
+*.joblib
+
+# OS
+Thumbs.db
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Logs
+*.log
+logs/

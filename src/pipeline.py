@@ -110,7 +110,7 @@ def build_inference_2025_rookies(
         "OREB", "DREB", "rookie_rpg",
         "rookie_apg", "rookie_spg", "rookie_bpg", "rookie_tpg",
         "rookie_ppg", "rookie_per",
-        "season", "rookie_season", "dataset",
+        "season", "rookie_season", "dataset", "sl_available",
     ]
     existing = [c for c in keep if c in df.columns]
     df = df[existing].reset_index(drop=True)
