@@ -86,7 +86,6 @@ def build_inference_2025_rookies(
     if rookie.empty:
         return pd.DataFrame()
 
-    # Normalise season column (may be "season" or "rookie_season" depending on caller)
     if "rookie_season" not in rookie.columns and "season" in rookie.columns:
         rookie = rookie.copy()
         rookie["rookie_season"] = rookie["season"].astype(int)
@@ -96,7 +95,6 @@ def build_inference_2025_rookies(
         logger.warning("No 2025 rookie rows found in rookie stats")
         return pd.DataFrame()
 
-    # Ensure all required columns exist
     df["season"] = df["rookie_season"]
     df["dataset"] = "inference_2025"
     df["sl_available"] = sl_available
@@ -116,4 +114,45 @@ def build_inference_2025_rookies(
     df = df[existing].reset_index(drop=True)
 
     logger.info(f"Built inference frame: {len(df)} rookies (SL={'available' if sl_available else 'pending'})")
+    return df
+
+
+def build_inference_2026_draft(
+    draft: pd.DataFrame | None = None,
+) -> pd.DataFrame:
+    """Build inference frame for the 2026 draft class.
+
+    If *draft* is None, loads ``data/raw/draft_2026.parquet``.
+    """
+    if draft is None:
+        try:
+            from src.features.draft_2026 import load_draft_2026
+            draft = load_draft_2026()
+        except Exception as exc:
+            logger.warning(f"Could not load draft_2026: {exc}")
+            return pd.DataFrame()
+
+    if draft.empty:
+        return pd.DataFrame()
+
+    df = draft.copy()
+    df["dataset"] = "inference_2026"
+    df["sl_available"] = False
+
+    keep = [
+        "player_id", "overall_pick", "player", "team", "college", "position",
+        "rookie_gp", "rookie_mpg",
+        "rookie_fg_pct", "rookie_3p_pct", "rookie_ft_pct",
+        "rookie_rpg", "rookie_apg",
+        "rookie_spg", "rookie_bpg", "rookie_tpg",
+        "rookie_ppg", "rookie_per",
+        "rookie_season", "dataset", "sl_available",
+        "draft_round", "draft_pick", "is_first_round", "is_lottery",
+    ]
+    existing = [c for c in keep if c in df.columns]
+    df = df[existing].reset_index(drop=True)
+
+    out = PROCESSED_DIR / "inference_2026_draft.parquet"
+    df.to_parquet(out, index=False)
+    logger.info(f"Built inference_2026_draft: {len(df)} rows -> {out}")
     return df

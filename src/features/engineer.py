@@ -208,6 +208,60 @@ def build_training_data(season: int | None = None) -> pd.DataFrame:
     return base
 
 
+def build_training_data_with_draft_class(
+    draft_df: pd.DataFrame | None = None,
+    season: int = 2026,
+) -> pd.DataFrame:
+    """Build a training frame that includes the draft class as inference rows.
+
+    This appends the 2026 draft class (without sophomore targets) to the
+    historical training data so the model can produce predictions for the
+    current rookie class.
+
+    Parameters
+    ----------
+    draft_df : DataFrame, optional
+        Pre-loaded draft class.  If None, loads from draft_2026.parquet.
+    season : int
+        Rookie season label for the draft class rows.
+
+    Returns
+    -------
+    pd.DataFrame with historical training rows + draft-class inference rows.
+    """
+    historical = build_training_data(season=None)
+    if historical.empty and not draft_df is None:
+        historical = pd.DataFrame()
+
+    if draft_df is None:
+        try:
+            from src.features.draft_2026 import load_draft_2026
+            draft_df = load_draft_2026()
+        except Exception as exc:
+            logger.warning(f"Could not load draft_2026: {exc}")
+            draft_df = pd.DataFrame()
+
+    if draft_df.empty:
+        logger.warning("No draft class data available")
+        return historical
+
+    draft = draft_df.copy()
+    draft["rookie_season"] = season
+    draft["dataset"] = "inference_2026"
+    draft["tier"] = pd.Categorical(draft["tier"].astype(str) if "tier" in draft.columns else ["neutral"] * len(draft))
+    for col in ["delta_mpg", "delta_ppg", "delta_per", "delta_min_total",
+                "soph_mpg", "soph_ppg", "soph_rpg", "soph_apg",
+                "soph_efficiency", "soph_plus_minus", "soph_gp"]:
+        if col not in draft.columns:
+            draft[col] = np.nan
+
+    combined = pd.concat([historical, draft], ignore_index=True)
+    out = PROCESSED_DIR / "training_data_with_draft_2026.parquet"
+    combined.to_parquet(out, index=False)
+    logger.info(f"Saved training_data_with_draft_2026.parquet — {len(combined)} rows")
+    return combined
+
+
 def get_feature_columns() -> list[str]:
     """Return the ordered list of feature columns used by the model."""
     return [

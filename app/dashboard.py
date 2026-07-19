@@ -13,6 +13,10 @@ import plotly.express as px
 import streamlit as st
 
 from src.config import PROCESSED_DIR, RAW_DIR, ROOT
+from src.features.draft_2026 import load_draft_2026
+from src.analysis.over_under import classify_over_under, get_overlooked_players, get_overvalued_players
+from src.analysis.play_style import compute_play_style, get_style_summary
+from src.analysis.team_comparison import team_comparison
 
 logger = logging.getLogger(__name__)
 
@@ -23,6 +27,14 @@ st.set_page_config(page_title="NBA Rookie Trajectory", layout="wide")
 @st.cache_data
 def load_inference() -> pd.DataFrame:
     path = PROCESSED_DIR / "inference_2025_rookies.parquet"
+    if path.exists():
+        return pd.read_parquet(path)
+    return pd.DataFrame()
+
+
+@st.cache_data
+def load_inference_2026() -> pd.DataFrame:
+    path = PROCESSED_DIR / "inference_2026_draft.parquet"
     if path.exists():
         return pd.read_parquet(path)
     return pd.DataFrame()
@@ -123,10 +135,11 @@ def page_metrics():
         reg_df = pd.DataFrame(reg).T
         st.dataframe(reg_df, use_container_width=True)
 
-    if clf:
+    clf_metrics = metrics.get("classification", {})
+    if clf_metrics:
         st.subheader("Classification (tier)")
-        acc = clf.get("accuracy")
-        f1 = clf.get("f1_weighted")
+        acc = clf_metrics.get("accuracy")
+        f1 = clf_metrics.get("f1_weighted")
         c1, c2 = st.columns(2)
         c1.metric("Accuracy", f"{acc:.4f}" if acc is not None else "N/A")
         c2.metric("F1 (weighted)", f"{f1:.4f}" if f1 is not None else "N/A")
@@ -148,9 +161,138 @@ def page_explorer():
     st.plotly_chart(fig, use_container_width=True)
 
 
+def page_draft_2026():
+    st.header("2026 Draft Class — Best Overall")
+    try:
+        draft_df = load_draft_2026()
+    except Exception as exc:
+        st.error(f"Could not load draft_2026.parquet: {exc}")
+        return
+
+    if draft_df.empty:
+        st.warning("No 2026 draft data found.")
+        return
+
+    st.subheader("Full First Round")
+    display_cols = [
+        "overall_pick", "player", "team", "college", "position",
+        "rookie_ppg", "rookie_rpg", "rookie_apg",
+        "rookie_fg_pct", "rookie_3p_pct", "rookie_ft_pct",
+    ]
+    st.dataframe(draft_df[display_cols], use_container_width=True)
+
+    st.subheader("Top Scoring Prospects")
+    top_pts = draft_df.nlargest(10, "rookie_ppg")[
+        ["overall_pick", "player", "team", "rookie_ppg", "rookie_rpg", "rookie_apg"]
+    ]
+    fig_pts = px.bar(top_pts, x="player", y="rookie_ppg", color="team", title="PPG (pre-draft)")
+    st.plotly_chart(fig_pts, use_container_width=True)
+
+
+def page_over_under():
+    st.header("Over / Under Performers — 2026 Draft Class")
+    try:
+        draft_df = load_draft_2026()
+    except Exception as exc:
+        st.error(f"Could not load draft_2026.parquet: {exc}")
+        return
+
+    if draft_df.empty:
+        st.warning("No 2026 draft data found.")
+        return
+
+    labeled = classify_over_under(draft_df)
+
+    st.subheader("Value Map (pick vs performance score)")
+    fig = px.scatter(
+        labeled, x="overall_pick", y="performance_score",
+        color="value_label", hover_data=["player", "team", "rookie_ppg"],
+        color_discrete_map={"undervalued": "#2ecc71", "overvalued": "#e74c3c", "neutral": "#95a5a6"},
+    )
+    fig.add_hline(y=0, line_dash="dash")
+    st.plotly_chart(fig, use_container_width=True)
+
+    col1, col2 = st.columns(2)
+    with col1:
+        st.subheader("Undervalued Gems")
+        overlooked = get_overlooked_players(labeled)
+        if not overlooked.empty:
+            st.dataframe(overlooked[["overall_pick", "player", "team", "rookie_ppg", "performance_score"]], use_container_width=True)
+        else:
+            st.info("No undervalued players found.")
+
+    with col2:
+        st.subheader("Overvalued Busts")
+        overvalued = get_overvalued_players(labeled)
+        if not overvalued.empty:
+            st.dataframe(overvalued[["overall_pick", "player", "team", "rookie_ppg", "performance_score"]], use_container_width=True)
+        else:
+            st.info("No overvalued players found.")
+
+
+def page_play_style():
+    st.header("Play Style Analysis — 2026 Draft Class")
+    try:
+        draft_df = load_draft_2026()
+    except Exception as exc:
+        st.error(f"Could not load draft_2026.parquet: {exc}")
+        return
+
+    if draft_df.empty:
+        st.warning("No 2026 draft data found.")
+        return
+
+    styled = compute_play_style(draft_df)
+
+    st.subheader("Style Radar")
+    style_cols = [
+        "overall_pick", "player", "team", "position",
+        "usage_rate", "three_point_tendency", "rim_rate_proxy",
+        "assist_ratio", "defensive_activity", "efficiency_index",
+    ]
+    st.dataframe(styled[style_cols].sort_values("efficiency_index", ascending=False), use_container_width=True)
+
+    st.subheader("Usage vs Efficiency")
+    fig = px.scatter(
+        styled, x="usage_rate", y="efficiency_index",
+        size="rookie_ppg", color="position",
+        hover_data=["player", "team", "rookie_ppg"],
+    )
+    st.plotly_chart(fig, use_container_width=True)
+
+
+def page_teams():
+    st.header("Team Comparison — 2026 Draft Capital")
+    try:
+        draft_df = load_draft_2026()
+    except Exception as exc:
+        st.error(f"Could not load draft_2026.parquet: {exc}")
+        return
+
+    if draft_df.empty:
+        st.warning("No 2026 draft data found.")
+        return
+
+    teams = team_comparison(draft_df)
+    st.dataframe(teams, use_container_width=True)
+
+    st.subheader("Draft Capital by Team")
+    fig = px.bar(teams, x="team", y="draft_capital", color="num_picks", title="Draft Capital (sum of 1/pick)")
+    st.plotly_chart(fig, use_container_width=True)
+
+
 # ── Main ─────────────────────────────────────────────────────────────────────
 
-page = st.sidebar.radio("Navigate", ["Overview", "Predictions 2025", "Metrics", "Explorer"])
+page = st.sidebar.radio("Navigate", [
+    "Overview",
+    "Predictions 2025",
+    "Metrics",
+    "Explorer",
+    "Draft 2026",
+    "Over/Under Performers",
+    "Play Style",
+    "Team Comparison",
+])
 if page == "Overview":
     page_overview()
 elif page == "Predictions 2025":
@@ -159,3 +301,12 @@ elif page == "Metrics":
     page_metrics()
 elif page == "Explorer":
     page_explorer()
+elif page == "Draft 2026":
+    page_draft_2026()
+elif page == "Over/Under Performers":
+    page_over_under()
+elif page == "Play Style":
+    page_play_style()
+elif page == "Team Comparison":
+    page_teams()
+
