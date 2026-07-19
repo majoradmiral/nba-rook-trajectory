@@ -8,12 +8,18 @@ Sources:
 from __future__ import annotations
 
 import logging
+import sys
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
-from ..config import RAW_DIR
+_candidate = Path(__file__).resolve()
+while not (_candidate / "src").is_dir() and _candidate != _candidate.parent:
+    _candidate = _candidate.parent
+sys.path.insert(0, str(_candidate))
+
+from src.config import RAW_DIR
 
 logger = logging.getLogger(__name__)
 

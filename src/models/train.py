@@ -11,8 +11,14 @@ from __future__ import annotations
 
 import json
 import logging
+import sys
 from pathlib import Path
 from typing import Any
+
+_candidate = Path(__file__).resolve()
+while not (_candidate / "src").is_dir() and _candidate != _candidate.parent:
+    _candidate = _candidate.parent
+sys.path.insert(0, str(_candidate))
 
 import joblib
 import numpy as np

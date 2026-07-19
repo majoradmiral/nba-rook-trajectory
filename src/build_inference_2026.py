@@ -7,9 +7,16 @@ Usage:
 from __future__ import annotations
 
 import logging
+import sys
+from pathlib import Path
 
-from ..config import PROCESSED_DIR
-from ..pipeline import build_inference_2026_draft
+_candidate = Path(__file__).resolve()
+while not (_candidate / "src").is_dir() and _candidate != _candidate.parent:
+    _candidate = _candidate.parent
+sys.path.insert(0, str(_candidate))
+
+from src.config import PROCESSED_DIR
+from src.pipeline import build_inference_2026_draft
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
 

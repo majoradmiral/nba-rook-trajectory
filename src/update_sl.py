@@ -15,9 +15,15 @@ from __future__ import annotations
 
 import logging
 import os
+import sys
 from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Optional
+
+_candidate = Path(__file__).resolve()
+while not (_candidate / "src").is_dir() and _candidate != _candidate.parent:
+    _candidate = _candidate.parent
+sys.path.insert(0, str(_candidate))
 
 import pandas as pd
 
