@@ -146,6 +146,12 @@ def _load_sophomore_stats() -> pd.DataFrame:
         df["soph_min_total"] = df["soph_mpg"] * df["soph_gp"]
     else:
         df["soph_min_total"] = np.nan
+    if "soph_efficiency" not in df.columns:
+        df["soph_efficiency"] = (
+            df.get("soph_ppg", 0) + df.get("soph_rpg", 0) +
+            df.get("soph_apg", 0) + df.get("soph_spg", 0) +
+            df.get("soph_bpg", 0) - df.get("soph_tpg", 0)
+        )
     logger.info(f"Loaded sophomore stats: {len(df)} rows")
     return df
 
