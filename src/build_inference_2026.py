@@ -8,8 +8,8 @@ from __future__ import annotations
 
 import logging
 
-from src.config import PROCESSED_DIR
-from src.pipeline import build_inference_2026_draft
+from ..config import PROCESSED_DIR
+from ..pipeline import build_inference_2026_draft
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
 

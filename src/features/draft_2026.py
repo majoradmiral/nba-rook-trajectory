@@ -13,7 +13,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from src.config import RAW_DIR
+from ..config import RAW_DIR
 
 logger = logging.getLogger(__name__)
 
