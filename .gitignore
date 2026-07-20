@@ -36,3 +36,6 @@ Thumbs.db
 # Logs
 *.log
 logs/
+
+# Personal dev playbook
+BUILD_GUIDE.md
