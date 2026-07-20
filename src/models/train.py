@@ -56,8 +56,7 @@ _NUMERIC_FEATURES = [
     "rookie_gp", "rookie_mpg", "rookie_fg_pct", "rookie_3p_pct",
     "rookie_ft_pct", "rookie_rpg", "rookie_apg", "rookie_spg",
     "rookie_bpg", "rookie_tpg", "rookie_ppg", "rookie_per",
-    "rookie_age", "rookie_team_win_pct",
-    "draft_round", "draft_pick", "is_first_round", "is_lottery",
+    "is_first_round",
 ]
 _CATEGORIC_FEATURES: list[str] = []
 

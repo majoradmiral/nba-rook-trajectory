@@ -44,12 +44,7 @@ def sample_df():
         "rookie_fg_pct": rng.uniform(0.35, 0.55, n),
         "rookie_3p_pct": rng.uniform(0.25, 0.45, n),
         "rookie_ft_pct": rng.uniform(0.6, 0.9, n),
-        "rookie_age": rng.uniform(19, 23, n),
-        "rookie_team_win_pct": rng.uniform(0.2, 0.75, n),
-        "draft_round": rng.integers(1, 3, n),
-        "draft_pick": rng.uniform(1, 60, n),
         "is_first_round": rng.integers(0, 2, n),
-        "is_lottery": rng.integers(0, 2, n),
         "soph_mpg": rng.uniform(5, 40, n),
         "soph_ppg": rng.uniform(2, 30, n),
         "soph_rpg": rng.uniform(1, 14, n),
@@ -390,7 +385,7 @@ class TestSchemaHelpers:
         assert len(cols) == len(set(cols))
 
     def test_feature_columns_required_keys(self):
-        required = {"rookie_ppg", "rookie_mpg", "rookie_per", "draft_pick", "is_lottery"}
+        required = {"rookie_ppg", "rookie_mpg", "rookie_per", "rookie_gp", "is_first_round"}
         assert required.issubset(set(get_feature_columns()))
 
     def test_target_columns_has_regression_and_classification(self):

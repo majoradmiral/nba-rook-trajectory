@@ -20,6 +20,7 @@ data/processed/inference_2025_rookies.parquet
 /models/
 /mlruns/
 /runs/
+/results/
 *.pkl
 *.joblib
 
@@ -35,3 +36,6 @@ Thumbs.db
 # Logs
 *.log
 logs/
+
+# Personal dev playbook
+BUILD_GUIDE.md
