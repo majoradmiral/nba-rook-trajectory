@@ -39,7 +39,15 @@ git diff <last-week-hash>..HEAD --stat
 ```bash
 pip install -r requirements.txt
 python -m src.update_sl
+python -m src.preseason_db
 ```
+
+`src.preseason_db` refreshes `data/processed/nba_preseason.db` from ESPN's completed
+NBA preseason games. It identifies first-year players from the season's team
+rosters (`experience.years == 0`) and stores only their player box scores in
+`preseason_rookie_game_stats`; `preseason_rookie_totals` contains season totals,
+per-game rates, and shooting percentages. Game metadata is stored separately in
+`preseason_games`. The CLI prints a points leaderboard after the refresh.
 
 ## Project Structure
 
@@ -48,6 +56,7 @@ src/
 ├── config.py                 # Paths, SL schedule constants
 ├── pipeline.py               # Rookie stats + inference builder
 ├── espn_client.py            # ESPN scoreboard API
+├── preseason_db.py           # Preseason rookie box-score SQLite tables
 ├── summer_league_scraper.py  # Multi-source SL scraper
 └── update_sl.py              # Automated daily updater
 data/
