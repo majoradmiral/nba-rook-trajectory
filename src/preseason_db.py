@@ -313,6 +313,11 @@ def main() -> None:
         .to_string(index=False)
     )
 
+    from src.readme_leaderboard import update_readme
+
+    if update_readme():
+        print("\nREADME leaderboard updated.")
+
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")

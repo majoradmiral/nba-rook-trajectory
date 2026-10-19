@@ -2,37 +2,27 @@
 
 Predicts second-year efficiency/minutes jump from rookie-year + Summer League stats. Regression + classification tiers.
 
-## Timeline Review
+## Top Performers
 
-Weekly sprint history is tracked via git commits. To review progress:
+Preseason rookies ranked by plus/minus per game (team impact), then points.
+Auto-refreshed on every `python -m src.preseason_db` run — no manual editing.
 
-```bash
-# Full commit log
-git log --oneline --all
+<!-- TOP_PERFORMERS:START -->
+_Updated 2026-10-19 · ranked by +/- per game · min 3 games_
 
-# This week's changes
-git log --oneline --since="1 week ago"
-
-# Detailed diff for a specific week
-git log --since="1 week ago" --pretty=format:"%h %ad %s" --date=short
-
-# See what files changed this week
-git diff <last-week-hash>..HEAD --stat
-```
-
-### Current Status
-
-| Date | Milestone | Commit |
-|------|-----------|--------|
-| Jul 5 | Initial commit — project scaffold | `325fe4b` |
-| Jul 8 | SL scraper: NBA API + CDN + box scores | `31e4452` |
-| Jul 12 | Config, pipeline, ESPN client, updater fix | `2542dfd` |
-
-### How to Update Weekly
-
-1. Run `python -m src.update_sl` to refresh Summer League data
-2. Commit with a descriptive message: `git commit -m "week(N): <summary>"`
-3. Update the table above with the new milestone
+| # | Player | Team | PPG | APG | RPG | +/- |
+|---|--------|------|-----|-----|-----|-----|
+| 1 | Yaxel Lendeborg | GS | 15.6 | 4.0 | 7.4 | +8.6 |
+| 2 | Sergio de Larrea | DAL | 9.5 | 5.0 | 3.5 | +6.2 |
+| 3 | Aday Mara | OKC | 13.4 | 2.8 | 7.6 | +6.0 |
+| 4 | Cameron Boozer | MEM | 14.0 | 3.0 | 5.5 | +5.5 |
+| 5 | Kingston Flemings | ATL | 10.2 | 4.2 | 2.0 | +4.8 |
+| 6 | Dillon Mitchell | BOS | 5.8 | 2.5 | 5.2 | +4.8 |
+| 7 | Baba Miller | LAC | 11.3 | 0.7 | 5.0 | +3.7 |
+| 8 | Felix Okpara | WSH | 4.8 | 0.8 | 3.5 | +3.5 |
+| 9 | Alpha Diallo | DEN | 4.2 | 1.2 | 3.0 | +3.0 |
+| 10 | Braden Smith | IND | 3.0 | 5.5 | 2.8 | +2.2 |
+<!-- TOP_PERFORMERS:END -->
 
 ## Quick Start
 
@@ -47,7 +37,9 @@ NBA preseason games. It identifies first-year players from the season's team
 rosters (`experience.years == 0`) and stores only their player box scores in
 `preseason_rookie_game_stats`; `preseason_rookie_totals` contains season totals,
 per-game rates, and shooting percentages. Game metadata is stored separately in
-`preseason_games`. The CLI prints a points leaderboard after the refresh.
+`preseason_games`. After the refresh the CLI prints a points leaderboard and
+rewrites the **Top Performers** table above (`python -m src.readme_leaderboard`
+does the README step on its own).
 
 ## Project Structure
 
@@ -57,6 +49,7 @@ src/
 ├── pipeline.py               # Rookie stats + inference builder
 ├── espn_client.py            # ESPN scoreboard API
 ├── preseason_db.py           # Preseason rookie box-score SQLite tables
+├── readme_leaderboard.py     # Auto-injects Top Performers table into README
 ├── summer_league_scraper.py  # Multi-source SL scraper
 └── update_sl.py              # Automated daily updater
 data/
