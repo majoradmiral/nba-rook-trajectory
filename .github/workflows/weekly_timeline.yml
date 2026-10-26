@@ -1,0 +1,27 @@
+name: Weekly Shot Timeline
+
+on:
+  schedule:
+    # Mondays at 11:30 UTC — after the weekend slate has settled.
+    - cron: '30 11 * * 1'
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pandas requests
+      - name: Sync season data (games, box scores, shot charts)
+        run: python -m src.season_tracker
+      - name: Build the weekly timeline
+        run: python -m src.timeline
+      - name: Build the all-rookie shot map
+        run: python -m src.shot_map
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "auto: refresh weekly shot timeline"
+          file_pattern: README.md site/data/timeline.json site/data/timeline.js site/data/shots.json site/data/shots.js

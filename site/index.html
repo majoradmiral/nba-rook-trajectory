@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rookie Shot Timeline — NBA 2026-27</title>
+  <meta name="description" content="A weekly timeline of the best-performing rookies with their shot charts on a court fixture." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-glow" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <div>
+        <h1 id="season-title">Rookie Shot Timeline</h1>
+        <p class="brand-sub">
+          Weekly spotlight on the best-performing rookies &mdash;
+          <span id="ranking-note">ranked by performance score</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="topbar-right">
+      <div class="status" id="status-pill">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span id="status-text">loading&hellip;</span>
+      </div>
+      <nav class="site-nav" aria-label="Site sections">
+        <a class="chip-btn is-active" href="index.html">Weekly timeline</a>
+        <a class="chip-btn" href="shots.html">All shots</a>
+      </nav>
+      <div class="filters" role="group" aria-label="Filter weeks by season phase">
+        <button type="button" class="chip-btn is-active" data-phase="competitive">Regular + Playoffs</button>
+        <button type="button" class="chip-btn" data-phase="all">All phases</button>
+      </div>
+      <button type="button" class="icon-btn" id="refresh-btn" title="Refresh now" aria-label="Refresh now">&#8635;</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="timeline" aria-label="Weekly timeline">
+      <div class="timeline-head">
+        <div class="timeline-nav">
+          <button type="button" class="icon-btn" id="prev-week" aria-label="Previous week">&#8249;</button>
+          <button type="button" class="icon-btn play" id="play-btn" aria-label="Play timeline" title="Play timeline">&#9654;</button>
+          <button type="button" class="icon-btn" id="next-week" aria-label="Next week">&#8250;</button>
+        </div>
+        <div class="timeline-title">
+          <h2 id="week-label">&mdash;</h2>
+          <p id="week-meta">&mdash;</p>
+        </div>
+        <div class="timeline-legend">
+          <span><i class="dot made"></i>made</span>
+          <span><i class="dot missed"></i>missed</span>
+        </div>
+      </div>
+      <div class="week-rail" id="week-rail" role="tablist" aria-label="Weeks"></div>
+    </section>
+
+    <section class="featured" id="featured-grid" aria-label="Featured players"></section>
+
+    <section class="lower-grid">
+      <div class="panel">
+        <div class="panel-head">
+          <h3>Current leaderboard</h3>
+          <span class="panel-note" id="leaderboard-note">&mdash;</span>
+        </div>
+        <div class="table-wrap">
+          <table class="leaderboard" id="leaderboard-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Player</th>
+                <th>Team</th>
+                <th class="num">GP</th>
+                <th class="num">MPG</th>
+                <th class="num">PPG</th>
+                <th class="num">RPG</th>
+                <th class="num">APG</th>
+                <th class="num">FG%</th>
+                <th class="num">3P%</th>
+                <th class="num">+/-</th>
+                <th class="num">Score</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>Recent games</h3>
+          <span class="panel-note" id="recent-note">&mdash;</span>
+        </div>
+        <div class="games-list" id="recent-games"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span id="footer-stats">&mdash;</span>
+    <span class="footer-sep">&middot;</span>
+    <span>Data: ESPN scoreboard &amp; summary feeds &middot; refreshed automatically</span>
+  </footer>
+
+  <div class="tooltip" id="tooltip" role="tooltip" aria-hidden="true"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="data/timeline.js"></script>
+  <script src="court.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

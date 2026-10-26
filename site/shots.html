@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>All Rookie Shots — NBA 2026-27</title>
+  <meta name="description" content="Every shot every rookie has taken this season, plotted on a half court and colour-coded by shooter." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-glow" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <div>
+        <h1 id="season-title">All Rookie Shots</h1>
+        <p class="brand-sub">
+          Every shot attempt by every rookie &mdash;
+          <span id="scope-note">colour-coded by shooter</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="topbar-right">
+      <div class="status" id="status-pill">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span id="status-text">loading&hellip;</span>
+      </div>
+      <nav class="site-nav" aria-label="Site sections">
+        <a class="chip-btn" href="index.html">Weekly timeline</a>
+        <a class="chip-btn is-active" href="shots.html">All shots</a>
+      </nav>
+      <button type="button" class="icon-btn" id="refresh-btn" title="Refresh now" aria-label="Refresh now">&#8635;</button>
+    </div>
+  </header>
+
+  <main class="shotmap">
+    <section class="panel chart-panel">
+      <div class="panel-head">
+        <h3 id="scope-title">Season</h3>
+        <span class="panel-note" id="scope-meta">&mdash;</span>
+      </div>
+
+      <div class="shotmap-body">
+        <div class="court-wrap" id="court-wrap">
+          <div class="chart-empty">Loading shot data&hellip;</div>
+        </div>
+
+        <aside class="players" aria-label="Rookies">
+          <div class="players-head">
+            <input
+              id="player-search"
+              class="player-search"
+              type="search"
+              placeholder="Search rookie or team"
+              autocomplete="off"
+              aria-label="Search rookies"
+            />
+            <button type="button" class="icon-btn" id="clear-player" title="Clear selection" aria-label="Clear selection">&#10005;</button>
+          </div>
+          <div class="players-list" id="players-list"></div>
+        </aside>
+      </div>
+
+      <div class="stat-strip" id="scope-stats"></div>
+
+      <div class="chart-legend">
+        <span><i class="dot made"></i>made</span>
+        <span><i class="dot missed"></i>missed</span>
+        <span class="chart-legend-hint">Hover a shot for the shooter &middot; click to pin &middot; click a rookie to isolate</span>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h3>Scope</h3>
+        <span class="panel-note" id="week-note">&mdash;</span>
+      </div>
+      <div class="week-rail" id="week-rail" role="tablist" aria-label="Weeks"></div>
+      <div class="games-list" id="games-list"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h3>Shot detail</h3>
+        <span class="panel-note" id="detail-note">hover or click a shot</span>
+      </div>
+      <div class="detail-body" id="detail-body">
+        <div class="empty-state">Pick a shot to see who took it.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span id="footer-stats">&mdash;</span>
+    <span class="footer-sep">&middot;</span>
+    <span>Data: ESPN scoreboard &amp; summary feeds &middot; refreshed automatically</span>
+  </footer>
+
+  <div class="tooltip" id="tooltip" role="tooltip" aria-hidden="true"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="data/shots.js"></script>
+  <script src="court.js"></script>
+  <script src="shots.js"></script>
+</body>
+</html>
