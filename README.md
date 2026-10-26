@@ -4,25 +4,27 @@ Predicts second-year efficiency/minutes jump from rookie-year + Summer League st
 
 ## Top Performers
 
-Rookies ranked by plus/minus per game (team impact), then points — regular season
-and playoffs first, preseason as the fallback. Auto-refreshed on every
-`python -m src.timeline` run — no manual editing.
+The best-performing rookies so far, ranked by a per-game performance score
+(`PTS + 1.2×REB + 1.5×AST + 2×STL + 2×BLK − TOV`). The table uses regular-season
+and playoff games as soon as they exist, falling back to preseason before
+opening night. The weekly shot charts below spotlight the same ranking.
+Auto-refreshed on every `python -m src.timeline` run — no manual editing.
 
 <!-- TOP_PERFORMERS:START -->
-_Updated 2026-10-24 · ranked by +/- per game · min 3 games_
+_Updated 2026-10-26 · 2026-27 regular season through 2026-10-25 · ranked by performance score · min 10 MPG_
 
-| # | Player | Team | PPG | APG | RPG | +/- |
-|---|--------|------|-----|-----|-----|-----|
-| 1 | Cameron Boozer | MEM | 7.0 | 5.0 | 11.0 | +32.0 |
-| 2 | Aday Mara | OKC | 7.0 | 1.0 | 2.0 | +9.0 |
-| 3 | Allen Graves | TOR | 5.0 | 0.0 | 5.0 | +8.0 |
-| 4 | Christian Anderson | CHA | 0.0 | 2.0 | 2.0 | +5.0 |
-| 5 | Ryan Conwell | MIA | 0.0 | 2.0 | 0.0 | +4.0 |
-| 6 | Jaden Bradley | TOR | 0.0 | 0.0 | 0.0 | +1.0 |
-| 7 | Ja'Kobi Gillespie | SA | 2.0 | 0.0 | 0.0 | +0.0 |
-| 8 | Labaron Philon Jr. | PHI | 0.0 | 0.0 | 0.0 | +0.0 |
-| 9 | Maliq Brown | SA | 0.0 | 1.0 | 0.0 | +0.0 |
-| 10 | Tarris Reed Jr. | SA | 0.0 | 0.0 | 0.0 | +0.0 |
+| # | Player | Team | GP | MPG | PPG | RPG | APG | FG% | 3P% | +/- | Score |
+|---|--------|------|----|-----|-----|-----|-----|-----|-----|-----|-------|
+| 1 | Yaxel Lendeborg | GS | 2 | 36.5 | 22.0 | 11.0 | 5.5 | 43.3% | 50.0% | -2.0 | 43.5 |
+| 2 | Darius Acuff Jr. | SAC | 2 | 36.5 | 27.5 | 2.5 | 5.5 | 38.8% | 20.0% | -5.0 | 37.8 |
+| 3 | Cameron Boozer | MEM | 3 | 33.7 | 16.0 | 11.7 | 5.0 | 28.6% | 30.0% | +15.0 | 37.5 |
+| 4 | Caleb Wilson | CHI | 3 | 34.3 | 22.3 | 8.0 | 1.3 | 40.7% | 17.4% | -11.3 | 36.6 |
+| 5 | Trevon Brazile | DEN | 1 | 28.0 | 17.0 | 9.0 | 0.0 | 54.5% | 42.9% | +10.0 | 31.8 |
+| 6 | Graham Ike | GS | 2 | 19.0 | 11.0 | 6.0 | 1.5 | 45.0% | 100.0% | -11.0 | 21.9 |
+| 7 | Keaton Wagler | LAC | 2 | 25.0 | 12.0 | 4.0 | 3.5 | 26.7% | 33.3% | -1.0 | 20.1 |
+| 8 | Darryn Peterson | UTAH | 3 | 30.3 | 10.7 | 3.3 | 2.0 | 40.6% | 14.3% | -5.3 | 19.7 |
+| 9 | Allen Graves | TOR | 3 | 15.0 | 6.0 | 4.3 | 1.3 | 61.5% | 20.0% | +2.7 | 17.9 |
+| 10 | Mikel Brown Jr. | BKN | 2 | 20.0 | 7.0 | 2.5 | 4.0 | 27.8% | 33.3% | -4.5 | 16.5 |
 <!-- TOP_PERFORMERS:END -->
 
 ## Quick Start
@@ -30,27 +32,35 @@ _Updated 2026-10-24 · ranked by +/- per game · min 3 games_
 ```bash
 pip install -r requirements.txt
 python -m src.update_sl
-python -m src.preseason_db
+python -m src.season_tracker   # pull every completed game so far
+python -m src.timeline          # rebuild shot charts + README leaderboard
 ```
 
-`src.preseason_db` refreshes `data/processed/nba_preseason.db` from ESPN's completed
-NBA preseason games. It identifies first-year players from the season's team
-rosters (`experience.years == 0`) and stores only their player box scores in
-`preseason_rookie_game_stats`; `preseason_rookie_totals` contains season totals,
-per-game rates, and shooting percentages. Game metadata is stored separately in
-`preseason_games`. After the refresh the CLI prints a points leaderboard and
-rewrites the **Top Performers** table above (`python -m src.readme_leaderboard`
-does the README step on its own).
+`src.season_tracker` refreshes `data/processed/nba_season.db` from ESPN's
+completed preseason, regular-season and playoff games. It identifies first-year
+players from the season's team rosters (`experience.years == 0`) and stores every
+player box score plus every located shot. Only new days are fetched, so reruns are
+quick. `src.timeline` then rebuilds the weekly shot charts and rewrites the
+**Top Performers** table above (`python -m src.readme_leaderboard` updates just
+the README).
+
+Before the regular season starts, the same commands fall back to preseason data:
+
+```bash
+python -m src.preseason_db
+python -m src.readme_leaderboard --preseason
+```
 
 ## Shot Timeline
 
 `site/index.html` is a vanilla-JS page (no build step) that shows a weekly
-timeline of the **top-ranked** rookies with their shot attempts plotted on a
-court fixture.
+timeline of the **best-performing** rookies with their shot attempts plotted on
+a court fixture.
 
 - One row per week of the season, newest week selected on open.
 - **Three featured players per week** — the highest-ranked rookies who actually
-  suited up that week, ranked by +/- per game (cumulative season to date).
+  suited up that week, using the same performance score as the README table
+  (cumulative regular season + playoffs once the season starts).
 - Every card carries the player's shot chart (made = green, missed = red X),
   rim / mid-range / three splits, and their week and season lines.
 - Recent games panel with the tracked players' box-score lines.
