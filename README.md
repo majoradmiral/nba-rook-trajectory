@@ -51,6 +51,17 @@ python -m src.preseason_db
 python -m src.readme_leaderboard --preseason
 ```
 
+## Live Site
+
+The pages deploy to **GitHub Pages** on every change under `site/` and after each
+weekly refresh:
+
+https://majoradmiral.github.io/nba-rook-trajectory/
+
+One-time setup: open **Settings → Pages**, set **Source** to **GitHub Actions**,
+then run **Deploy Site** once from the Actions tab. The workflow can't enable
+Pages for you because `GITHUB_TOKEN` isn't allowed to change repository settings.
+
 ## Shot Timeline
 
 `site/index.html` is a vanilla-JS page (no build step) that shows a weekly
@@ -84,8 +95,9 @@ inside the baseline). Only new games are re-fetched, so weekly runs are quick.
 `src.timeline` buckets the games into weeks, ranks the rookies as of each week,
 and writes `site/data/timeline.json` (plus a `timeline.js` wrapper so the page
 also works when opened straight from disk). The **Weekly Shot Timeline** workflow
-runs the ingestion and both page builders every Monday and commits the refreshed
-page data, so the published timeline stays current without any manual step.
+runs the ingestion and both page builders every Monday, caches the season
+database between runs so only new days are fetched, commits the refreshed page
+data, and deploys `site/` to GitHub Pages.
 
 ## All Rookie Shots
 
@@ -117,6 +129,10 @@ a game index and one row per attempt. It runs automatically alongside
 ## Project Structure
 
 ```
+.github/
+└── workflows/
+    ├── weekly_timeline.yml   # Monday refresh, cache, commit and deploy
+    └── deploy_pages.yml      # Deploy site/ when it changes
 src/
 ├── config.py                 # Paths, SL schedule constants
 ├── pipeline.py               # Rookie stats + inference builder

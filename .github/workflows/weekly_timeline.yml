@@ -9,11 +9,20 @@ on:
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Restore season database
+        uses: actions/cache/restore@v4
+        with:
+          path: data/processed/nba_season.db
+          key: nba-season-db-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            nba-season-db-${{ github.ref_name }}-
       - run: pip install pandas requests
       - name: Sync season data (games, box scores, shot charts)
         run: python -m src.season_tracker
@@ -21,7 +30,37 @@ jobs:
         run: python -m src.timeline
       - name: Build the all-rookie shot map
         run: python -m src.shot_map
+      - name: Save season database
+        if: success()
+        uses: actions/cache/save@v4
+        with:
+          path: data/processed/nba_season.db
+          key: nba-season-db-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "auto: refresh weekly shot timeline"
           file_pattern: README.md site/data/timeline.json site/data/timeline.js site/data/shots.json site/data/shots.js
+
+  deploy:
+    needs: refresh
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4
