@@ -361,6 +361,7 @@ main {
 /* ── Panels ─────────────────────────────────────────────── */
 
 .lower-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 18px; }
+.limited-panel { margin-top: 18px; }
 
 .panel {
   background: var(--panel);

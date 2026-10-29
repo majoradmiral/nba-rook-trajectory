@@ -11,7 +11,7 @@ opening night. The weekly shot charts below spotlight the same ranking.
 Auto-refreshed on every `python -m src.timeline` run — no manual editing.
 
 <!-- TOP_PERFORMERS:START -->
-_Updated 2026-10-26 · 2026-27 regular season through 2026-10-25 · ranked by performance score · min 10 MPG_
+_Updated 2026-10-29 · 2026-27 regular season through 2026-10-25 · ranked by performance score · min 10 MPG_
 
 | # | Player | Team | GP | MPG | PPG | RPG | APG | FG% | 3P% | +/- | Score |
 |---|--------|------|----|-----|-----|-----|-----|-----|-----|-----|-------|
@@ -26,6 +26,30 @@ _Updated 2026-10-26 · 2026-27 regular season through 2026-10-25 · ranked by pe
 | 9 | Allen Graves | TOR | 3 | 15.0 | 6.0 | 4.3 | 1.3 | 61.5% | 20.0% | +2.7 | 17.9 |
 | 10 | Mikel Brown Jr. | BKN | 2 | 20.0 | 7.0 | 2.5 | 4.0 | 27.8% | 33.3% | -4.5 | 16.5 |
 <!-- TOP_PERFORMERS:END -->
+
+## Limited Sample
+
+Rookies who haven't cleared the Top Performers bar yet — **under 3 games or
+under 10 minutes per game**. This catches small-sample heaters, cameos and
+deep-bench minutes the main ranking can't judge yet. Players already shown
+above are skipped, and the table refreshes with the same command.
+
+<!-- LIMITED_SAMPLE:START -->
+_Updated 2026-10-29 · 2026-27 regular season through 2026-10-25 · small sample · under 3 GP or under 10 MPG_
+
+| # | Player | Team | GP | MPG | PPG | RPG | APG | FG% | 3P% | +/- | Score |
+|---|--------|------|----|-----|-----|-----|-----|-----|-----|-----|-------|
+| 1 | Aday Mara | OKC | 2 | 13.0 | 4.5 | 2.5 | 1.0 | 57.1% | — | +6.0 | 9.5 |
+| 2 | Bryce Hopkins | DEN | 1 | 19.0 | 2.0 | 2.0 | 1.0 | 50.0% | 0.0% | -9.0 | 5.9 |
+| 3 | Emanuel Sharp | SAC | 2 | 14.0 | 4.0 | 0.5 | 0.5 | 37.5% | 50.0% | +2.5 | 5.8 |
+| 4 | Tobe Awaka | CHI | 3 | 4.7 | 0.7 | 2.3 | 0.7 | 100.0% | — | -2.0 | 5.8 |
+| 5 | Hannes Steinbach | CHA | 3 | 4.0 | 2.0 | 1.7 | 0.0 | 60.0% | — | -4.0 | 4.0 |
+| 6 | Tobi Lawal | DAL | 3 | 1.7 | 1.7 | 0.3 | 0.3 | 50.0% | 50.0% | +2.0 | 3.2 |
+| 7 | Ryan Conwell | MIA | 3 | 3.3 | 1.7 | 0.3 | 0.7 | 40.0% | 33.3% | -0.7 | 3.1 |
+| 8 | Labaron Philon Jr. | PHI | 3 | 5.7 | 1.7 | 0.7 | 0.3 | 40.0% | 33.3% | +3.3 | 3.0 |
+| 9 | Bennett Stirtz | OKC | 2 | 6.0 | 1.0 | 0.5 | 0.0 | 33.3% | 0.0% | -3.5 | 2.6 |
+| 10 | Jaden Bradley | TOR | 3 | 3.7 | 2.0 | 0.3 | 0.3 | 50.0% | — | +3.0 | 2.6 |
+<!-- LIMITED_SAMPLE:END -->
 
 ## Quick Start
 

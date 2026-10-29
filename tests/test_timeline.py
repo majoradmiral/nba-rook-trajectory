@@ -201,8 +201,30 @@ def test_build_timeline_ranks_regular_season_weeks_on_regular_games_only():
     assert [row["name"] for row in payload["leaderboard"]] == ["Regular Rookie"]
 
 
+def test_build_timeline_adds_limited_sample():
+    games = pd.DataFrame([_game_row("g1", "2026-10-20")])
+    stats = pd.DataFrame([
+        _stats_row("g1", "2026-10-20", "p1", "Qualified Starter", minutes=30.0),
+        _stats_row("g1", "2026-10-20", "p2", "Deep Bench", minutes=4.0),
+    ])
+    shots = pd.DataFrame(
+        columns=[
+            "game_id", "season_year", "season_type", "game_date", "player_id",
+            "player_name", "team_abbr", "court_x", "court_y", "made", "is_three",
+            "distance", "shot_type", "period", "clock", "description",
+        ]
+    )
+
+    payload = timeline.build_timeline(games, stats, shots)
+
+    assert [row["name"] for row in payload["leaderboard"]] == ["Qualified Starter"]
+    assert [row["name"] for row in payload["limited_sample"]] == ["Deep Bench"]
+    assert payload["limited_note"] == "under 3 GP or under 10 MPG"
+
+
 def test_build_timeline_handles_empty_input():
     payload = timeline.build_timeline(pd.DataFrame(), pd.DataFrame(), pd.DataFrame())
     assert payload["weeks"] == []
     assert payload["leaderboard"] == []
+    assert payload["limited_sample"] == []
     assert payload["season_year"] is None

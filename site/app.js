@@ -33,6 +33,8 @@
     grid: document.getElementById("featured-grid"),
     leaderTable: document.querySelector("#leaderboard-table tbody"),
     leaderNote: document.getElementById("leaderboard-note"),
+    limitedTable: document.querySelector("#limited-table tbody"),
+    limitedNote: document.getElementById("limited-note"),
     games: document.getElementById("recent-games"),
     recentNote: document.getElementById("recent-note"),
     footerStats: document.getElementById("footer-stats"),
@@ -181,35 +183,44 @@
     el.grid.innerHTML = (week.featured || []).map(renderCard).join("");
   }
 
+  function leaderRow(row, featuredIds) {
+    const pm = Number(row.plus_minus);
+    const tone = pm > 0 ? "pm-pos" : pm < 0 ? "pm-neg" : "";
+    return (
+      "<tr" + (featuredIds.has(row.player_id) ? ' class="is-featured"' : "") + ">" +
+      "<td>" + row.rank + "</td>" +
+      '<td class="player-cell">' + escapeHtml(row.name) + "</td>" +
+      '<td class="team-cell">' + escapeHtml(row.team) + "</td>" +
+      '<td class="num">' + row.games + "</td>" +
+      '<td class="num">' + one(row.minutes) + "</td>" +
+      '<td class="num">' + one(row.points) + "</td>" +
+      '<td class="num">' + one(row.rebounds) + "</td>" +
+      '<td class="num">' + one(row.assists) + "</td>" +
+      '<td class="num">' + pct(row.fg_pct) + "</td>" +
+      '<td class="num">' + pct(row.three_pct) + "</td>" +
+      '<td class="num ' + tone + '">' + plusMinus(row.plus_minus) + "</td>" +
+      '<td class="num">' + one(row.score) + "</td>" +
+      "</tr>"
+    );
+  }
+
   function renderLeaderboard() {
     const rows = (state.data && state.data.leaderboard) || [];
+    const limited = (state.data && state.data.limited_sample) || [];
     const featuredIds = new Set(
       ((state.weeks[state.index] || {}).featured || []).map((player) => player.player_id)
     );
     el.leaderNote.textContent = rows.length
       ? "season to date · " + ((state.data && state.data.ranking_metric) || "performance score")
       : "no data yet";
-    el.leaderTable.innerHTML = rows
-      .map((row) => {
-        const pm = Number(row.plus_minus);
-        const tone = pm > 0 ? "pm-pos" : pm < 0 ? "pm-neg" : "";
-        return (
-          "<tr" + (featuredIds.has(row.player_id) ? ' class="is-featured"' : "") + ">" +
-          "<td>" + row.rank + "</td>" +
-          '<td class="player-cell">' + escapeHtml(row.name) + "</td>" +
-          '<td class="team-cell">' + escapeHtml(row.team) + "</td>" +
-          '<td class="num">' + row.games + "</td>" +
-          '<td class="num">' + one(row.minutes) + "</td>" +
-          '<td class="num">' + one(row.points) + "</td>" +
-          '<td class="num">' + one(row.rebounds) + "</td>" +
-          '<td class="num">' + one(row.assists) + "</td>" +
-          '<td class="num">' + pct(row.fg_pct) + "</td>" +
-          '<td class="num">' + pct(row.three_pct) + "</td>" +
-          '<td class="num ' + tone + '">' + plusMinus(row.plus_minus) + "</td>" +
-          '<td class="num">' + one(row.score) + "</td>" +
-          "</tr>"
-        );
-      })
+    el.leaderTable.innerHTML = rows.map((row) => leaderRow(row, featuredIds)).join("");
+
+    const limitedNote = (state.data && state.data.limited_note) || "under 3 GP or under 10 MPG";
+    el.limitedNote.textContent = limited.length
+      ? "small sample · " + limitedNote
+      : "no limited-sample players yet";
+    el.limitedTable.innerHTML = limited
+      .map((row) => leaderRow(row, featuredIds))
       .join("");
   }
 

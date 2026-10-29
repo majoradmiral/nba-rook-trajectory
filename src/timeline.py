@@ -40,6 +40,9 @@ FEATURED_PER_WEEK = 3
 MIN_GAMES = 1
 MIN_MINUTES = 10.0
 LEADERBOARD_SIZE = 10
+LIMITED_MIN_GAMES = 3
+LIMITED_MIN_MINUTES = 10.0
+LIMITED_SIZE = 10
 RECENT_GAMES = 12
 
 COMPETITIVE_TYPES = ("regular", "playoffs")
@@ -287,6 +290,55 @@ def _featured_ids(
     return [player_id for player_id in ordered if player_id in played][:per_week]
 
 
+def _leaderboard_rows(frame: pd.DataFrame, limit: int) -> list[dict]:
+    """Serialise a ranked frame for the leaderboard tables in the payload."""
+    rows = []
+    for index, row in enumerate(frame.head(limit).itertuples(index=False), start=1):
+        rows.append(
+            {
+                "rank": int(getattr(row, "rank", index)),
+                "player_id": str(row.player_id),
+                "name": row.player_name,
+                "team": row.team_abbr,
+                "position": row.position,
+                "is_rookie": int(row.is_rookie),
+                "games": int(row.games_played),
+                "minutes": float(row.minutes_per_game),
+                "points": float(row.points_per_game),
+                "rebounds": float(row.rebounds_per_game),
+                "assists": float(row.assists_per_game),
+                "plus_minus": float(row.plus_minus_per_game),
+                "fg_pct": float(row.field_goal_pct),
+                "three_pct": float(row.three_point_pct),
+                "score": float(row.performance_score),
+            }
+        )
+    return rows
+
+
+def _limited_rows(
+    agg: pd.DataFrame,
+    main_rows: list[dict],
+    limit: int = LIMITED_SIZE,
+) -> list[dict]:
+    """Small-sample rookies not already shown in the main leaderboard."""
+    if agg.empty:
+        return []
+
+    main_ids = {row["player_id"] for row in main_rows}
+    limited = agg[
+        (agg["games_played"] < LIMITED_MIN_GAMES)
+        | (agg["minutes_per_game"] < LIMITED_MIN_MINUTES)
+    ]
+    limited = limited[limited["minutes_per_game"] > 0]
+    limited = limited[~limited["player_id"].astype(str).isin(main_ids)]
+    limited = limited.sort_values(
+        ["performance_score", "plus_minus_per_game", "points_per_game", "player_name"],
+        ascending=[False, False, False, True],
+    ).head(limit)
+    return _leaderboard_rows(limited, limit)
+
+
 # ── Timeline ─────────────────────────────────────────────────────────────────
 
 def build_timeline(
@@ -311,6 +363,10 @@ def build_timeline(
         "ranking_metric": PERFORMANCE_SCORE_NOTE,
         "ranking_formula": PERFORMANCE_SCORE_FORMULA,
         "leaderboard": [],
+        "limited_sample": [],
+        "limited_note": (
+            f"under {LIMITED_MIN_GAMES} GP or under {LIMITED_MIN_MINUTES:g} MPG"
+        ),
         "weeks": [],
         "recent_games": [],
         "totals": {},
@@ -422,36 +478,21 @@ def build_timeline(
     competitive_stats = stats[stats["season_type"].isin(COMPETITIVE_TYPES)]
     if not competitive_stats.empty:
         final_stats = competitive_stats
+    final_agg = aggregate_stats(final_stats)
     final_leaderboard = rank_players(
-        aggregate_stats(final_stats),
+        final_agg,
         rookies_only=rookies_only,
         min_games=min_games,
         min_minutes=MIN_MINUTES,
     )
 
-    leaderboard_rows = []
-    if not final_leaderboard.empty:
-        for row in final_leaderboard.head(leaderboard_size).itertuples(index=False):
-            leaderboard_rows.append(
-                {
-                    "rank": int(row.rank),
-                    "player_id": str(row.player_id),
-                    "name": row.player_name,
-                    "team": row.team_abbr,
-                    "position": row.position,
-                    "is_rookie": int(row.is_rookie),
-                    "games": int(row.games_played),
-                    "minutes": float(row.minutes_per_game),
-                    "points": float(row.points_per_game),
-                    "rebounds": float(row.rebounds_per_game),
-                    "assists": float(row.assists_per_game),
-                    "plus_minus": float(row.plus_minus_per_game),
-                    "fg_pct": float(row.field_goal_pct),
-                    "three_pct": float(row.three_point_pct),
-                    "score": float(row.performance_score),
-                }
-            )
+    leaderboard_rows = _leaderboard_rows(final_leaderboard, leaderboard_size)
     payload["leaderboard"] = leaderboard_rows
+
+    limited_agg = final_agg
+    if rookies_only and "is_rookie" in limited_agg.columns:
+        limited_agg = limited_agg[limited_agg["is_rookie"] == 1]
+    payload["limited_sample"] = _limited_rows(limited_agg, leaderboard_rows)
 
     tracked_ids = {row["player_id"] for row in leaderboard_rows}
     recent_payload = []

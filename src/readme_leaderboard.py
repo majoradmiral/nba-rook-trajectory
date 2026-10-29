@@ -33,10 +33,15 @@ logger = logging.getLogger(__name__)
 README_PATH = ROOT / "README.md"
 START_MARKER = "<!-- TOP_PERFORMERS:START -->"
 END_MARKER = "<!-- TOP_PERFORMERS:END -->"
+LIMITED_START_MARKER = "<!-- LIMITED_SAMPLE:START -->"
+LIMITED_END_MARKER = "<!-- LIMITED_SAMPLE:END -->"
 MIN_GAMES = 3
 SEASON_MIN_GAMES = 1
 SEASON_MIN_MINUTES = 10.0
+LIMITED_MIN_GAMES = 3
+LIMITED_MIN_MINUTES = 10.0
 LIMIT = 10
+LIMITED_LIMIT = 10
 
 SEASON_DB_PATH = ROOT / "data" / "processed" / "nba_season.db"
 COMPETITIVE_TYPES = ("regular", "playoffs")
@@ -103,31 +108,45 @@ def _format_signed(value: object) -> str:
     return f"{float(value):+.1f}"
 
 
-def build_leaderboard(
-    totals: pd.DataFrame,
-    min_games: int = MIN_GAMES,
-    limit: int = LIMIT,
-    min_minutes: float = 0.0,
-    note: Optional[str] = None,
-) -> str:
-    """Render the top rookies as a markdown table, ranked by performance score."""
-    if totals.empty:
-        return "_No rookie data yet — run the season sync or `python -m src.preseason_db`._"
-
-    frame = _add_performance_score(totals)
-    qualified = frame[frame["games_played"] >= min_games]
+def _qualifies(
+    frame: pd.DataFrame,
+    min_games: int,
+    min_minutes: float,
+) -> pd.Series:
+    """Boolean mask of players who clear the games and minutes bars."""
+    mask = frame["games_played"] >= min_games
     if min_minutes and "minutes_per_game" in frame.columns:
-        qualified = qualified[qualified["minutes_per_game"] >= min_minutes]
-    if not qualified.empty:
-        frame = qualified
-    frame = frame.sort_values(
-        ["performance_score", "plus_minus_per_game", "points_per_game"],
-        ascending=False,
-    ).head(limit)
+        mask &= frame["minutes_per_game"] >= min_minutes
+    return mask
 
-    qualifier = f"min {min_minutes:g} MPG" if min_minutes else f"min {min_games} games"
-    header = f"_Updated {pd.Timestamp.today().date()} · {note + ' · ' if note else ''}" \
-             f"ranked by {SCORE_NOTE} · {qualifier}_"
+
+def _ranked(frame: pd.DataFrame) -> pd.DataFrame:
+    """Sort by the leaderboard tie-breakers."""
+    return frame.sort_values(
+        ["performance_score", "plus_minus_per_game", "points_per_game", "player_name"],
+        ascending=[False, False, False, True],
+    )
+
+
+def _select_leaderboard(
+    totals: pd.DataFrame,
+    min_games: int,
+    limit: int,
+    min_minutes: float,
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Return ``(all_players, ranked_leaderboard)`` for the main table.
+
+    The ranked frame falls back to every player when nobody clears the bars,
+    which keeps the table populated during the first days of a season.
+    """
+    frame = _add_performance_score(totals)
+    qualified = frame[_qualifies(frame, min_games, min_minutes)]
+    ranked = _ranked(qualified if not qualified.empty else frame).head(limit)
+    return frame, ranked
+
+
+def _render_table(frame: pd.DataFrame, header: str) -> str:
+    """Render a ranked frame as the shared markdown table."""
     lines = [
         header,
         "",
@@ -152,6 +171,65 @@ def build_leaderboard(
     return "\n".join(lines)
 
 
+def build_leaderboard(
+    totals: pd.DataFrame,
+    min_games: int = MIN_GAMES,
+    limit: int = LIMIT,
+    min_minutes: float = 0.0,
+    note: Optional[str] = None,
+) -> str:
+    """Render the top rookies as a markdown table, ranked by performance score."""
+    if totals.empty:
+        return "_No rookie data yet — run the season sync or `python -m src.preseason_db`._"
+
+    _, frame = _select_leaderboard(totals, min_games, limit, min_minutes)
+
+    qualifier = f"min {min_minutes:g} MPG" if min_minutes else f"min {min_games} games"
+    header = f"_Updated {pd.Timestamp.today().date()} · {note + ' · ' if note else ''}" \
+             f"ranked by {SCORE_NOTE} · {qualifier}_"
+    return _render_table(frame, header)
+
+
+def build_limited_table(
+    totals: pd.DataFrame,
+    min_games: int = LIMITED_MIN_GAMES,
+    limit: int = LIMITED_LIMIT,
+    min_minutes: float = LIMITED_MIN_MINUTES,
+    note: Optional[str] = None,
+    main_min_games: int = MIN_GAMES,
+    main_min_minutes: float = 0.0,
+) -> str:
+    """Render small-sample rookies who sit outside the main leaderboard.
+
+    A player belongs here when they have fewer than ``min_games`` appearances
+    or fewer than ``min_minutes`` per game. Anyone already shown in the main
+    table is skipped so the two tables don't repeat each other.
+    """
+    bar = f"under {min_games} GP or under {min_minutes:g} MPG"
+    empty = f"_No limited-sample rookies yet — every tracked player has cleared the {bar} bar._"
+    if totals.empty:
+        return empty
+
+    frame, main = _select_leaderboard(totals, main_min_games, limit, main_min_minutes)
+    limited = frame[
+        (frame["games_played"] < min_games) | (frame["minutes_per_game"] < min_minutes)
+    ]
+    if "total_minutes" in limited.columns:
+        limited = limited[limited["total_minutes"] > 0]
+    if "player_id" in limited.columns and "player_id" in main.columns:
+        limited = limited[~limited["player_id"].isin(main["player_id"])]
+    else:
+        limited = limited.drop(index=main.index, errors="ignore")
+
+    limited = _ranked(limited).head(limit)
+    if limited.empty:
+        return empty
+
+    header = f"_Updated {pd.Timestamp.today().date()} · {note + ' · ' if note else ''}" \
+             f"small sample · {bar}_"
+    return _render_table(limited, header)
+
+
 def render_section(
     totals: pd.DataFrame,
     min_games: int = MIN_GAMES,
@@ -168,6 +246,28 @@ def render_section(
         note=note,
     )
     return f"{START_MARKER}\n{body}\n{END_MARKER}"
+
+
+def render_limited_section(
+    totals: pd.DataFrame,
+    min_games: int = LIMITED_MIN_GAMES,
+    limit: int = LIMITED_LIMIT,
+    min_minutes: float = LIMITED_MIN_MINUTES,
+    note: Optional[str] = None,
+    main_min_games: int = MIN_GAMES,
+    main_min_minutes: float = 0.0,
+) -> str:
+    """Wrap the limited-sample table in the README markers."""
+    body = build_limited_table(
+        totals,
+        min_games=min_games,
+        limit=limit,
+        min_minutes=min_minutes,
+        note=note,
+        main_min_games=main_min_games,
+        main_min_minutes=main_min_minutes,
+    )
+    return f"{LIMITED_START_MARKER}\n{body}\n{LIMITED_END_MARKER}"
 
 
 def load_season_totals(
@@ -248,16 +348,38 @@ def load_season_totals(
     return rows
 
 
-def _write_section(readme_path: Path, section: str) -> None:
+def _write_block(
+    readme_path: Path,
+    start_marker: str,
+    end_marker: str,
+    section: str,
+    heading: str,
+) -> None:
     """Replace the marked block (or append it) inside the README."""
     text = readme_path.read_text(encoding="utf-8")
-    if START_MARKER in text and END_MARKER in text:
-        before = text.split(START_MARKER, 1)[0]
-        after = text.split(END_MARKER, 1)[1]
+    if start_marker in text and end_marker in text:
+        before = text.split(start_marker, 1)[0]
+        after = text.split(end_marker, 1)[1]
         updated = f"{before}{section}{after}"
     else:
-        updated = f"{text.rstrip()}\n\n## Top Performers\n\n{section}\n"
+        updated = f"{text.rstrip()}\n\n{heading}\n\n{section}\n"
     readme_path.write_text(updated, encoding="utf-8")
+
+
+def _write_section(readme_path: Path, section: str) -> None:
+    """Replace the Top Performers block (or append it)."""
+    _write_block(readme_path, START_MARKER, END_MARKER, section, "## Top Performers")
+
+
+def _write_limited_section(readme_path: Path, section: str) -> None:
+    """Replace the Limited Sample block (or append it)."""
+    _write_block(
+        readme_path,
+        LIMITED_START_MARKER,
+        LIMITED_END_MARKER,
+        section,
+        "## Limited Sample",
+    )
 
 
 def update_readme(
@@ -284,7 +406,13 @@ def update_readme(
         year = int(totals["season_year"].max())
         note = f"{year - 1}-{str(year)[-2:]} preseason"
     section = render_section(totals, min_games=min_games, limit=limit, note=note)
+    limited = render_limited_section(
+        totals,
+        note=note,
+        main_min_games=min_games,
+    )
     _write_section(readme_path, section)
+    _write_limited_section(readme_path, limited)
     logger.info("Updated leaderboard in %s", readme_path)
     return True
 
@@ -312,14 +440,22 @@ def update_readme_from_season(
         logger.warning("No regular-season rookie data in %s — README left unchanged", db_path)
         return False
 
+    note = _season_note(totals)
     section = render_section(
         totals,
         min_games=min_games,
         limit=limit,
         min_minutes=min_minutes,
-        note=_season_note(totals),
+        note=note,
+    )
+    limited = render_limited_section(
+        totals,
+        note=note,
+        main_min_games=min_games,
+        main_min_minutes=min_minutes,
     )
     _write_section(Path(readme_path), section)
+    _write_limited_section(Path(readme_path), limited)
     logger.info("Updated season leaderboard in %s", readme_path)
     return True
 

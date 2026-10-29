@@ -70,6 +70,66 @@ def test_leaderboard_filters_by_minutes():
     assert "min 25 MPG" in table
 
 
+def limited_totals() -> pd.DataFrame:
+    return pd.DataFrame(
+        [
+            {
+                "player_id": "p1",
+                "player_name": "Qualified Starter",
+                "team_abbr": "AAA",
+                "games_played": 5,
+                "minutes_per_game": 30.0,
+                "points_per_game": 15.0,
+                "rebounds_per_game": 5.0,
+                "assists_per_game": 3.0,
+                "plus_minus": 20,
+            },
+            {
+                "player_id": "p2",
+                "player_name": "Two-Game Heater",
+                "team_abbr": "BBB",
+                "games_played": 2,
+                "minutes_per_game": 28.0,
+                "points_per_game": 24.0,
+                "rebounds_per_game": 4.0,
+                "assists_per_game": 2.0,
+                "plus_minus": 12,
+            },
+            {
+                "player_id": "p3",
+                "player_name": "Deep Bench",
+                "team_abbr": "CCC",
+                "games_played": 5,
+                "minutes_per_game": 4.0,
+                "points_per_game": 2.0,
+                "rebounds_per_game": 1.0,
+                "assists_per_game": 0.0,
+                "plus_minus": -3,
+            },
+        ]
+    )
+
+
+def test_limited_table_lists_small_samples_outside_main_table():
+    table = readme_leaderboard.build_limited_table(
+        limited_totals(), main_min_games=1, main_min_minutes=10
+    )
+
+    assert "small sample" in table
+    assert "under 3 GP or under 10 MPG" in table
+    assert "Deep Bench" in table
+    assert "Qualified Starter" not in table
+    assert "Two-Game Heater" not in table
+
+
+def test_limited_table_returns_note_when_everyone_qualifies():
+    only_starter = limited_totals().iloc[[0]]
+    table = readme_leaderboard.build_limited_table(
+        only_starter, main_min_games=1, main_min_minutes=10
+    )
+    assert "No limited-sample rookies" in table
+
+
 def test_update_readme_replaces_marked_block(monkeypatch, tmp_path):
     readme = tmp_path / "README.md"
     readme.write_text(
