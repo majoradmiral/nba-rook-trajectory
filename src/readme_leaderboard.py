@@ -91,6 +91,38 @@ def _add_performance_score(frame: pd.DataFrame) -> pd.DataFrame:
         + 2.0 * frame["blocks_per_game"]
         - frame["turnovers_per_game"]
     ).round(2)
+    efficiency_components = {
+        "points": ("total_points", "points"),
+        "rebounds": ("total_rebounds", "rebounds"),
+        "assists": ("total_assists", "assists"),
+        "steals": ("total_steals", "steals"),
+        "blocks": ("total_blocks", "blocks"),
+        "field_goals_made": ("field_goals_made",),
+        "field_goals_attempted": ("field_goals_attempted",),
+        "free_throws_made": ("free_throws_made",),
+        "free_throws_attempted": ("free_throws_attempted",),
+        "turnovers": ("total_turnovers", "turnovers"),
+    }
+    per_game_components = {
+        name: _per_game(frame, columns, f"{name}_per_game")
+        for name, columns in efficiency_components.items()
+    }
+    frame["efficiency_per_game"] = (
+        per_game_components["points"]
+        + per_game_components["rebounds"]
+        + per_game_components["assists"]
+        + per_game_components["steals"]
+        + per_game_components["blocks"]
+        - (
+            per_game_components["field_goals_attempted"]
+            - per_game_components["field_goals_made"]
+        )
+        - (
+            per_game_components["free_throws_attempted"]
+            - per_game_components["free_throws_made"]
+        )
+        - per_game_components["turnovers"]
+    ).round(2)
     return frame
 
 
@@ -150,8 +182,8 @@ def _render_table(frame: pd.DataFrame, header: str) -> str:
     lines = [
         header,
         "",
-        "| # | Player | Team | GP | MPG | PPG | RPG | APG | FG% | 3P% | +/- | Score |",
-        "|---|--------|------|----|-----|-----|-----|-----|-----|-----|-----|-------|",
+        "| # | Player | Team | GP | MPG | PPG | RPG | APG | EFF | FG% | 3P% | +/- | Score |",
+        "|---|--------|------|----|-----|-----|-----|-----|-----|-----|-----|-----|-------|",
     ]
     for rank, row in enumerate(frame.itertuples(index=False), start=1):
         mpg = getattr(row, "minutes_per_game", None)
@@ -164,7 +196,8 @@ def _render_table(frame: pd.DataFrame, header: str) -> str:
             f"| {rank} | {row.player_name} | {row.team_abbr} | "
             f"{int(row.games_played)} | {mpg_text} | "
             f"{row.points_per_game:.1f} | {row.rebounds_per_game:.1f} | "
-            f"{row.assists_per_game:.1f} | {_format_pct(fg_pct, fg_att)} | "
+            f"{row.assists_per_game:.1f} | {row.efficiency_per_game:.1f} | "
+            f"{_format_pct(fg_pct, fg_att)} | "
             f"{_format_pct(tp_pct, tp_att)} | {_format_signed(row.plus_minus_per_game)} | "
             f"{row.performance_score:.1f} |"
         )
@@ -306,6 +339,8 @@ def load_season_totals(
                 SUM(turnovers) AS total_turnovers,
                 SUM(field_goals_made) AS field_goals_made,
                 SUM(field_goals_attempted) AS field_goals_attempted,
+                SUM(free_throws_made) AS free_throws_made,
+                SUM(free_throws_attempted) AS free_throws_attempted,
                 SUM(three_pointers_made) AS three_pointers_made,
                 SUM(three_pointers_attempted) AS three_pointers_attempted,
                 SUM(plus_minus) AS plus_minus

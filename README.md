@@ -5,26 +5,30 @@ Predicts second-year efficiency/minutes jump from rookie-year + Summer League st
 ## Top Performers
 
 The best-performing rookies so far, ranked by a per-game performance score
-(`PTS + 1.2×REB + 1.5×AST + 2×STL + 2×BLK − TOV`). The table uses regular-season
-and playoff games as soon as they exist, falling back to preseason before
-opening night. The weekly shot charts below spotlight the same ranking.
+(`PTS + 1.2×REB + 1.5×AST + 2×STL + 2×BLK − TOV`). The table also reports
+box-score efficiency per game (`PTS + REB + AST + STL + BLK − missed FG −
+missed FT − TOV`) as a separate ROTY comparison signal; it is not added to the
+impact score, which would double-count the box-score stats. The table uses
+regular-season and playoff games as soon as they exist, falling back to
+preseason before opening night. The weekly shot charts below spotlight the
+same ranking.
 Auto-refreshed on every `python -m src.timeline` run — no manual editing.
 
 <!-- TOP_PERFORMERS:START -->
-_Updated 2026-10-29 · 2026-27 regular season through 2026-10-25 · ranked by performance score · min 10 MPG_
+_Updated 2026-11-02 · 2026-27 regular season through 2026-11-01 · ranked by performance score · min 10 MPG_
 
-| # | Player | Team | GP | MPG | PPG | RPG | APG | FG% | 3P% | +/- | Score |
-|---|--------|------|----|-----|-----|-----|-----|-----|-----|-----|-------|
-| 1 | Yaxel Lendeborg | GS | 2 | 36.5 | 22.0 | 11.0 | 5.5 | 43.3% | 50.0% | -2.0 | 43.5 |
-| 2 | Darius Acuff Jr. | SAC | 2 | 36.5 | 27.5 | 2.5 | 5.5 | 38.8% | 20.0% | -5.0 | 37.8 |
-| 3 | Cameron Boozer | MEM | 3 | 33.7 | 16.0 | 11.7 | 5.0 | 28.6% | 30.0% | +15.0 | 37.5 |
-| 4 | Caleb Wilson | CHI | 3 | 34.3 | 22.3 | 8.0 | 1.3 | 40.7% | 17.4% | -11.3 | 36.6 |
-| 5 | Trevon Brazile | DEN | 1 | 28.0 | 17.0 | 9.0 | 0.0 | 54.5% | 42.9% | +10.0 | 31.8 |
-| 6 | Graham Ike | GS | 2 | 19.0 | 11.0 | 6.0 | 1.5 | 45.0% | 100.0% | -11.0 | 21.9 |
-| 7 | Keaton Wagler | LAC | 2 | 25.0 | 12.0 | 4.0 | 3.5 | 26.7% | 33.3% | -1.0 | 20.1 |
-| 8 | Darryn Peterson | UTAH | 3 | 30.3 | 10.7 | 3.3 | 2.0 | 40.6% | 14.3% | -5.3 | 19.7 |
-| 9 | Allen Graves | TOR | 3 | 15.0 | 6.0 | 4.3 | 1.3 | 61.5% | 20.0% | +2.7 | 17.9 |
-| 10 | Mikel Brown Jr. | BKN | 2 | 20.0 | 7.0 | 2.5 | 4.0 | 27.8% | 33.3% | -4.5 | 16.5 |
+| # | Player | Team | GP | MPG | PPG | RPG | APG | EFF | FG% | 3P% | +/- | Score |
+|---|--------|------|----|-----|-----|-----|-----|-----|-----|-----|-----|-------|
+| 1 | Darius Acuff Jr. | SAC | 5 | 36.8 | 29.2 | 3.8 | 7.0 | 23.2 | 43.3% | 36.5% | -7.8 | 41.5 |
+| 2 | Yaxel Lendeborg | GS | 6 | 32.8 | 24.0 | 8.0 | 4.0 | 24.5 | 52.7% | 42.5% | +1.8 | 38.1 |
+| 3 | Cameron Boozer | MEM | 6 | 31.0 | 17.3 | 10.5 | 5.7 | 22.3 | 36.5% | 35.9% | +7.8 | 37.4 |
+| 4 | Caleb Wilson | CHI | 6 | 34.0 | 21.2 | 6.7 | 2.5 | 18.5 | 41.7% | 29.8% | -6.8 | 36.4 |
+| 5 | AJ Dybantsa | WSH | 2 | 28.5 | 18.0 | 4.5 | 1.5 | 17.5 | 56.5% | 28.6% | +2.0 | 25.1 |
+| 6 | Darryn Peterson | UTAH | 6 | 29.8 | 13.3 | 4.3 | 2.8 | 12.0 | 35.9% | 35.7% | -5.2 | 24.3 |
+| 7 | Keaton Wagler | LAC | 5 | 24.4 | 12.8 | 4.4 | 3.2 | 10.0 | 24.5% | 26.9% | -8.4 | 21.7 |
+| 8 | Mikel Brown Jr. | BKN | 4 | 22.8 | 10.2 | 2.5 | 4.2 | 7.5 | 27.3% | 29.2% | -4.8 | 19.4 |
+| 9 | Trevon Brazile | DEN | 4 | 24.0 | 10.0 | 5.2 | 0.2 | 13.0 | 60.0% | 46.2% | +2.0 | 19.2 |
+| 10 | Kingston Flemings | ATL | 7 | 20.3 | 7.1 | 2.9 | 4.7 | 10.1 | 47.6% | 38.5% | -3.1 | 17.6 |
 <!-- TOP_PERFORMERS:END -->
 
 ## Limited Sample
@@ -35,20 +39,20 @@ deep-bench minutes the main ranking can't judge yet. Players already shown
 above are skipped, and the table refreshes with the same command.
 
 <!-- LIMITED_SAMPLE:START -->
-_Updated 2026-10-29 · 2026-27 regular season through 2026-10-25 · small sample · under 3 GP or under 10 MPG_
+_Updated 2026-11-02 · 2026-27 regular season through 2026-11-01 · small sample · under 3 GP or under 10 MPG_
 
-| # | Player | Team | GP | MPG | PPG | RPG | APG | FG% | 3P% | +/- | Score |
-|---|--------|------|----|-----|-----|-----|-----|-----|-----|-----|-------|
-| 1 | Aday Mara | OKC | 2 | 13.0 | 4.5 | 2.5 | 1.0 | 57.1% | — | +6.0 | 9.5 |
-| 2 | Bryce Hopkins | DEN | 1 | 19.0 | 2.0 | 2.0 | 1.0 | 50.0% | 0.0% | -9.0 | 5.9 |
-| 3 | Emanuel Sharp | SAC | 2 | 14.0 | 4.0 | 0.5 | 0.5 | 37.5% | 50.0% | +2.5 | 5.8 |
-| 4 | Tobe Awaka | CHI | 3 | 4.7 | 0.7 | 2.3 | 0.7 | 100.0% | — | -2.0 | 5.8 |
-| 5 | Hannes Steinbach | CHA | 3 | 4.0 | 2.0 | 1.7 | 0.0 | 60.0% | — | -4.0 | 4.0 |
-| 6 | Tobi Lawal | DAL | 3 | 1.7 | 1.7 | 0.3 | 0.3 | 50.0% | 50.0% | +2.0 | 3.2 |
-| 7 | Ryan Conwell | MIA | 3 | 3.3 | 1.7 | 0.3 | 0.7 | 40.0% | 33.3% | -0.7 | 3.1 |
-| 8 | Labaron Philon Jr. | PHI | 3 | 5.7 | 1.7 | 0.7 | 0.3 | 40.0% | 33.3% | +3.3 | 3.0 |
-| 9 | Bennett Stirtz | OKC | 2 | 6.0 | 1.0 | 0.5 | 0.0 | 33.3% | 0.0% | -3.5 | 2.6 |
-| 10 | Jaden Bradley | TOR | 3 | 3.7 | 2.0 | 0.3 | 0.3 | 50.0% | — | +3.0 | 2.6 |
+| # | Player | Team | GP | MPG | PPG | RPG | APG | EFF | FG% | 3P% | +/- | Score |
+|---|--------|------|----|-----|-----|-----|-----|-----|-----|-----|-----|-------|
+| 1 | Graham Ike | GS | 5 | 9.4 | 5.4 | 2.8 | 0.8 | 6.8 | 50.0% | 100.0% | -4.0 | 10.4 |
+| 2 | Tobe Awaka | CHI | 5 | 7.6 | 1.6 | 4.0 | 0.6 | 5.6 | 75.0% | — | -2.4 | 8.5 |
+| 3 | Baba Miller | LAC | 5 | 6.0 | 1.2 | 2.2 | 0.4 | 3.4 | 50.0% | — | -2.0 | 5.2 |
+| 4 | Nick Martinelli | LAC | 5 | 3.4 | 3.0 | 1.2 | 0.2 | 3.4 | 66.7% | 66.7% | +1.2 | 4.3 |
+| 5 | Jaden Bradley | TOR | 6 | 3.3 | 1.5 | 0.5 | 0.7 | 2.3 | 40.0% | — | +3.7 | 3.8 |
+| 6 | Labaron Philon Jr. | PHI | 6 | 5.5 | 2.0 | 0.8 | 0.2 | 1.3 | 41.7% | 28.6% | +2.5 | 3.1 |
+| 7 | Ryan Conwell | MIA | 6 | 2.8 | 1.5 | 0.2 | 0.3 | 1.3 | 42.9% | 50.0% | -1.0 | 2.5 |
+| 8 | Ja'Kobi Gillespie | SA | 2 | 2.0 | 2.5 | 0.0 | 0.0 | 1.5 | 50.0% | 33.3% | -3.5 | 2.5 |
+| 9 | Tarris Reed Jr. | SA | 6 | 2.2 | 1.0 | 1.3 | 0.0 | 1.7 | 75.0% | — | +0.7 | 2.1 |
+| 10 | Carson Cooper | MEM | 2 | 1.5 | 0.5 | 1.0 | 0.5 | 1.0 | — | — | +3.5 | 1.9 |
 <!-- LIMITED_SAMPLE:END -->
 
 ## Quick Start

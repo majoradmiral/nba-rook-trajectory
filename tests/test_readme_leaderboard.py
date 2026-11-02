@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import sqlite3
+
 import pandas as pd
 
 from src import readme_leaderboard
@@ -47,10 +49,68 @@ def sample_totals() -> pd.DataFrame:
 def test_leaderboard_ranks_by_performance_score():
     table = readme_leaderboard.build_leaderboard(sample_totals(), min_games=3)
 
-    assert "| # | Player | Team | GP | MPG | PPG | RPG | APG | FG% | 3P% | +/- | Score |" in table
+    assert "| # | Player | Team | GP | MPG | PPG | RPG | APG | EFF | FG% | 3P% | +/- | Score |" in table
     assert "ranked by performance score" in table
     assert table.index("Volume Scorer") < table.index("High Impact")
     assert "+10.0" in table
+    assert "23.0" in table
+
+
+def test_leaderboard_includes_box_score_efficiency():
+    totals = pd.DataFrame(
+        [
+            {
+                "player_name": "Efficient Rookie",
+                "team_abbr": "AAA",
+                "games_played": 1,
+                "minutes_per_game": 30.0,
+                "points_per_game": 20.0,
+                "rebounds_per_game": 5.0,
+                "assists_per_game": 4.0,
+                "steals_per_game": 1.0,
+                "blocks_per_game": 1.0,
+                "turnovers_per_game": 2.0,
+                "field_goals_made": 8,
+                "field_goals_attempted": 16,
+                "free_throws_made": 2,
+                "free_throws_attempted": 3,
+                "plus_minus": 9,
+            }
+        ]
+    )
+
+    table = readme_leaderboard.build_leaderboard(totals, min_games=1)
+
+    assert "| 1 | Efficient Rookie | AAA | 1 | 30.0 | 20.0 | 5.0 | 4.0 | 20.0 |" in table
+
+
+def test_season_totals_include_free_throws_in_efficiency(tmp_path):
+    db_path = tmp_path / "season.db"
+    conn = sqlite3.connect(db_path)
+    conn.execute(
+        "CREATE TABLE season_player_stats ("
+        "game_id TEXT, season_year INTEGER, game_date TEXT, season_type TEXT, "
+        "player_id TEXT, player_name TEXT, team_abbr TEXT, is_rookie INTEGER, "
+        "minutes REAL, points INTEGER, rebounds INTEGER, assists INTEGER, "
+        "steals INTEGER, blocks INTEGER, turnovers INTEGER, "
+        "field_goals_made INTEGER, field_goals_attempted INTEGER, "
+        "free_throws_made INTEGER, free_throws_attempted INTEGER, "
+        "three_pointers_made INTEGER, three_pointers_attempted INTEGER, plus_minus INTEGER)"
+    )
+    conn.execute(
+        "INSERT INTO season_player_stats VALUES "
+        "('g1', 2027, '2026-10-25', 'regular', 'p1', 'Rookie', 'AAA', 1, "
+        "30, 20, 5, 4, 1, 1, 2, 8, 16, 2, 3, 2, 5, 9)"
+    )
+    conn.commit()
+    conn.close()
+
+    totals = readme_leaderboard.load_season_totals(db_path)
+    efficiency = readme_leaderboard._add_performance_score(totals).iloc[0][
+        "efficiency_per_game"
+    ]
+
+    assert efficiency == 20.0
 
 
 def test_leaderboard_excludes_small_samples_but_falls_back():

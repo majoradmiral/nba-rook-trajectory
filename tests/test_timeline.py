@@ -122,6 +122,7 @@ def test_aggregate_stats_computes_rates():
     assert row["plus_minus_per_game"] == 16.0
     assert row["field_goal_pct"] == 0.5
     assert row["three_point_pct"] == 0.4
+    assert row["efficiency_per_game"] == 21.0
 
 
 def test_rank_players_orders_by_plus_minus_per_game():
@@ -168,6 +169,9 @@ def test_build_timeline_groups_weeks_and_features_three_players():
     assert alpha["week"]["points"] == 22.0
 
     assert payload["leaderboard"][0]["name"] == "Alpha Rookie"
+    assert payload["leaderboard"][0]["efficiency"] == 21.0
+    assert payload["recent_games"][1]["lines"][0]["efficiency"] == 19
+    assert payload["efficiency_formula"] == timeline.EFFICIENCY_FORMULA
     assert payload["recent_games"][0]["game_id"] == "g3"
     assert payload["totals"]["shots"] == 3
 

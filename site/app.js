@@ -161,7 +161,7 @@
       '<div class="card-foot">' +
       "<span>Season " + one(season.points) + " PPG · " + one(season.rebounds) + " RPG · " +
       one(season.assists) + " APG · " + plusMinus(season.plus_minus) + " +/- · " +
-      one(season.score) + " score</span>" +
+      one(season.efficiency) + " EFF · " + one(season.score) + " score</span>" +
       "<span>" + (player.shot_totals ? player.shot_totals.made : 0) + "/" +
       (player.shot_totals ? player.shot_totals.attempts : 0) + " FGA</span>" +
       "</div>" +
@@ -196,6 +196,7 @@
       '<td class="num">' + one(row.points) + "</td>" +
       '<td class="num">' + one(row.rebounds) + "</td>" +
       '<td class="num">' + one(row.assists) + "</td>" +
+      '<td class="num">' + one(row.efficiency) + "</td>" +
       '<td class="num">' + pct(row.fg_pct) + "</td>" +
       '<td class="num">' + pct(row.three_pct) + "</td>" +
       '<td class="num ' + tone + '">' + plusMinus(row.plus_minus) + "</td>" +
@@ -241,7 +242,7 @@
             return (
               '<span class="game-line">' + escapeHtml(line.name) + " (" + escapeHtml(line.team) + ") " +
               "<b>" + line.points + "</b> pts · <b>" + line.rebounds + "</b> reb · <b>" +
-              line.assists + "</b> ast · <span class='" + tone + "'>" +
+              line.assists + "</b> ast · <b>" + line.efficiency + "</b> EFF · <span class='" + tone + "'>" +
               (pm > 0 ? "+" : "") + pm + "</span></span>"
             );
           })
@@ -286,7 +287,10 @@
       el.rankingNote.textContent = data.scope === "rookies"
         ? "ranked by " + metric + " (rookies)"
         : "ranked by " + metric + " (all players)";
-      if (data.ranking_formula) el.rankingNote.title = data.ranking_formula;
+      if (data.ranking_formula) {
+        el.rankingNote.title =
+          data.ranking_formula + " · EFF: " + (data.efficiency_formula || "box-score efficiency per game");
+      }
       const totals = data.totals || {};
       el.footerStats.textContent =
         (totals.games || 0) + " games tracked · " + (totals.players || 0) + " players · " +

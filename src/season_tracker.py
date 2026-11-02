@@ -45,6 +45,7 @@ logger = logging.getLogger(__name__)
 DB_PATH = PROCESSED_DIR / "nba_season.db"
 
 SEASON_TYPES = {1: "preseason", 2: "regular", 3: "playoffs"}
+RECENT_RECHECK_DAYS = 7
 
 # ESPN shot coordinates: x spans the 50 ft width of the court (25 = centre
 # line of the floor), y is the depth in feet from the baseline of the basket
@@ -87,6 +88,7 @@ SHOT_COLUMNS = [
     "court_x", "court_y", "made", "is_three", "distance",
     "shot_type", "period", "clock", "description",
 ]
+SHOT_KEY_COLUMNS = ("game_id", "player_id", "period", "clock", "description")
 
 
 # ── Database ──────────────────────────────────────────────────────────────────
@@ -445,6 +447,18 @@ def _shot_rows(summary: dict, game: dict, names: dict[str, str]) -> list[dict]:
     return rows
 
 
+def _deduplicate_shot_rows(rows: list[dict]) -> list[dict]:
+    """Keep the first play for each shot key enforced by the database schema."""
+    unique: dict[tuple[object, ...], dict] = {}
+    for row in rows:
+        key = tuple(row[column] for column in SHOT_KEY_COLUMNS)
+        unique.setdefault(key, row)
+    duplicates = len(rows) - len(unique)
+    if duplicates:
+        logger.warning("Skipped %d duplicate ESPN shot rows", duplicates)
+    return list(unique.values())
+
+
 def fetch_game_details(
     game: dict,
     rookie_ids: set[str],
@@ -520,6 +534,24 @@ def _refresh_rookie_flags(
     )
 
 
+def _days_to_fetch(
+    start: date,
+    end: date,
+    today: date,
+    logged: set[str],
+    force_days: bool,
+) -> list[date]:
+    """Include new dates and the recent window, where completed scores can change."""
+    recheck_from = today - timedelta(days=RECENT_RECHECK_DAYS - 1)
+    return [
+        start + timedelta(days=offset)
+        for offset in range((end - start).days + 1)
+        if force_days
+        or (start + timedelta(days=offset)).isoformat() not in logged
+        or start + timedelta(days=offset) >= recheck_from
+    ]
+
+
 def sync_season(
     season_year: Optional[int] = None,
     start: Optional[date] = None,
@@ -545,15 +577,9 @@ def sync_season(
                 for row in conn.execute("SELECT game_date FROM season_fetch_log").fetchall()
             }
 
-            today_iso = today.isoformat()
-            todo_days = []
-            for offset in range((end - start).days + 1):
-                day = start + timedelta(days=offset)
-                day_iso = day.isoformat()
-                # Today is always re-checked so games that finished late are not
-                # missed; earlier days are only fetched once.
-                if force_days or day_iso not in logged or day_iso == today_iso:
-                    todo_days.append(day)
+            # Recent scoreboards are rechecked to catch late corrections and
+            # games that were not yet marked complete during the previous run.
+            todo_days = _days_to_fetch(start, end, today, logged, force_days)
 
             session = _session()
             games: list[dict] = []
@@ -605,6 +631,7 @@ def sync_season(
 
                 player_rows = [row for pair in detail_rows for row in pair[0]]
                 shot_rows = [row for pair in detail_rows for row in pair[1]]
+                shot_rows = _deduplicate_shot_rows(shot_rows)
                 if player_rows:
                     pd.DataFrame(player_rows, columns=PLAYER_STAT_COLUMNS).to_sql(
                         "season_player_stats", conn, if_exists="append", index=False

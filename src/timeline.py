@@ -57,11 +57,13 @@ _STAT_COLUMNS = [
     "games_played", "minutes_per_game", "points_per_game", "rebounds_per_game",
     "assists_per_game", "turnovers_per_game", "steals_per_game", "blocks_per_game",
     "field_goal_pct", "three_point_pct", "free_throw_pct",
-    "plus_minus", "plus_minus_per_game", "performance_score",
+    "plus_minus", "plus_minus_per_game", "efficiency_per_game",
+    "performance_score",
 ]
 
 PERFORMANCE_SCORE_NOTE = "performance score"
 PERFORMANCE_SCORE_FORMULA = "PTS + 1.2×REB + 1.5×AST + 2×STL + 2×BLK − TOV"
+EFFICIENCY_FORMULA = "PTS + REB + AST + STL + BLK − missed FG − missed FT − TOV"
 
 
 # ── Helpers ──────────────────────────────────────────────────────────────────
@@ -116,6 +118,16 @@ def aggregate_stats(stats: pd.DataFrame) -> pd.DataFrame:
     agg["steals_per_game"] = (agg["total_steals"] / games).fillna(0).astype(float).round(2)
     agg["blocks_per_game"] = (agg["total_blocks"] / games).fillna(0).astype(float).round(2)
     agg["plus_minus_per_game"] = (agg["plus_minus"] / games).fillna(0).astype(float).round(2)
+    agg["efficiency_per_game"] = (
+        agg["total_points"]
+        + agg["total_rebounds"]
+        + agg["total_assists"]
+        + agg["total_steals"]
+        + agg["total_blocks"]
+        - (agg["field_goals_attempted"] - agg["field_goals_made"])
+        - (agg["free_throws_attempted"] - agg["free_throws_made"])
+        - agg["total_turnovers"]
+    ).div(games).fillna(0).astype(float).round(2)
     agg["field_goal_pct"] = [
         _safe_rate(m, a) for m, a in zip(agg["field_goals_made"], agg["field_goals_attempted"])
     ]
@@ -229,6 +241,7 @@ def _player_payload(
             "three_pct": float(row["three_point_pct"]),
             "ft_pct": float(row["free_throw_pct"]),
             "plus_minus": float(row["plus_minus_per_game"]),
+            "efficiency": float(row["efficiency_per_game"]),
             "score": float(row["performance_score"]),
         }
 
@@ -308,6 +321,7 @@ def _leaderboard_rows(frame: pd.DataFrame, limit: int) -> list[dict]:
                 "rebounds": float(row.rebounds_per_game),
                 "assists": float(row.assists_per_game),
                 "plus_minus": float(row.plus_minus_per_game),
+                "efficiency": float(row.efficiency_per_game),
                 "fg_pct": float(row.field_goal_pct),
                 "three_pct": float(row.three_point_pct),
                 "score": float(row.performance_score),
@@ -362,6 +376,7 @@ def build_timeline(
         "scope": "rookies" if rookies_only else "all",
         "ranking_metric": PERFORMANCE_SCORE_NOTE,
         "ranking_formula": PERFORMANCE_SCORE_FORMULA,
+        "efficiency_formula": EFFICIENCY_FORMULA,
         "leaderboard": [],
         "limited_sample": [],
         "limited_note": (
@@ -512,6 +527,16 @@ def build_timeline(
                     "rebounds": int(line_row.rebounds),
                     "assists": int(line_row.assists),
                     "plus_minus": int(line_row.plus_minus),
+                    "efficiency": int(
+                        line_row.points
+                        + line_row.rebounds
+                        + line_row.assists
+                        + line_row.steals
+                        + line_row.blocks
+                        - (line_row.field_goals_attempted - line_row.field_goals_made)
+                        - (line_row.free_throws_attempted - line_row.free_throws_made)
+                        - line_row.turnovers
+                    ),
                 }
             )
         recent_payload.append(

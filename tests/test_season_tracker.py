@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import sqlite3
+from datetime import date, timedelta
 
 from src import season_tracker
 
@@ -62,6 +63,19 @@ def test_reported_distance_parsing():
     assert season_tracker.parse_reported_distance("Player makes layup") is None
 
 
+def test_duplicate_shot_rows_are_removed_by_database_key():
+    shot = {
+        "game_id": "g1",
+        "player_id": "p1",
+        "period": 1,
+        "clock": "11:30",
+        "description": "Player makes 1-foot dunk",
+        "made": 1,
+    }
+
+    assert season_tracker._deduplicate_shot_rows([shot, shot.copy()]) == [shot]
+
+
 def test_game_rows_include_season_type_and_scores():
     game = {
         "game_id": "401909834",
@@ -82,3 +96,16 @@ def test_game_rows_include_season_type_and_scores():
     assert season_tracker.SEASON_TYPES[2] == "regular"
     assert game["season_type"] == "regular"
     assert game["home_score"] > game["away_score"]
+
+
+def test_days_to_fetch_rechecks_recently_logged_dates():
+    today = date(2026, 11, 2)
+    start = today - timedelta(days=9)
+    logged = {
+        (start + timedelta(days=offset)).isoformat()
+        for offset in range(10)
+    }
+
+    days = season_tracker._days_to_fetch(start, today, today, logged, False)
+
+    assert days == [today - timedelta(days=offset) for offset in range(6, -1, -1)]
