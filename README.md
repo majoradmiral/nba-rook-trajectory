@@ -15,7 +15,7 @@ same ranking.
 Auto-refreshed on every `python -m src.timeline` run — no manual editing.
 
 <!-- TOP_PERFORMERS:START -->
-_Updated 2026-11-02 · 2026-27 regular season through 2026-11-01 · ranked by performance score · min 10 MPG_
+_Updated 2026-11-03 · 2026-27 regular season through 2026-11-01 · ranked by performance score · min 10 MPG_
 
 | # | Player | Team | GP | MPG | PPG | RPG | APG | EFF | FG% | 3P% | +/- | Score |
 |---|--------|------|----|-----|-----|-----|-----|-----|-----|-----|-----|-------|
@@ -39,7 +39,7 @@ deep-bench minutes the main ranking can't judge yet. Players already shown
 above are skipped, and the table refreshes with the same command.
 
 <!-- LIMITED_SAMPLE:START -->
-_Updated 2026-11-02 · 2026-27 regular season through 2026-11-01 · small sample · under 3 GP or under 10 MPG_
+_Updated 2026-11-03 · 2026-27 regular season through 2026-11-01 · small sample · under 3 GP or under 10 MPG_
 
 | # | Player | Team | GP | MPG | PPG | RPG | APG | EFF | FG% | 3P% | +/- | Score |
 |---|--------|------|----|-----|-----|-----|-----|-----|-----|-----|-----|-------|
