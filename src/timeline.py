@@ -3,7 +3,7 @@
 Every week of the season gets its own slice:
 
 * the leaderboard as it stood at the end of that week (per-game performance
-  score — the same metric as the README leaderboard),
+  impact score — the same metric as the README ROTY race),
 * the top three players of that week,
 * each of their shot attempts on a court fixture, taken from the ESPN shot
   coordinates stored by :mod:`src.season_tracker`.
@@ -61,7 +61,8 @@ _STAT_COLUMNS = [
     "performance_score",
 ]
 
-PERFORMANCE_SCORE_NOTE = "performance score"
+PERFORMANCE_SCORE_NOTE = "impact score"
+ROTY_RANKING_NOTE = "unofficial ROTY candidate ranking · impact score"
 PERFORMANCE_SCORE_FORMULA = "PTS + 1.2×REB + 1.5×AST + 2×STL + 2×BLK − TOV"
 EFFICIENCY_FORMULA = "PTS + REB + AST + STL + BLK − missed FG − missed FT − TOV"
 
@@ -155,7 +156,7 @@ def rank_players(
     min_games: int = MIN_GAMES,
     min_minutes: float = 0.0,
 ) -> pd.DataFrame:
-    """Rank players by per-game performance score, then plus/minus and points."""
+    """Rank players by per-game impact score, then plus/minus and points."""
     if agg.empty:
         return agg.assign(rank=pd.Series(dtype=int))
 
@@ -320,6 +321,10 @@ def _leaderboard_rows(frame: pd.DataFrame, limit: int) -> list[dict]:
                 "points": float(row.points_per_game),
                 "rebounds": float(row.rebounds_per_game),
                 "assists": float(row.assists_per_game),
+                "steals": float(row.steals_per_game),
+                "blocks": float(row.blocks_per_game),
+                "steals": float(row.steals_per_game),
+                "blocks": float(row.blocks_per_game),
                 "plus_minus": float(row.plus_minus_per_game),
                 "efficiency": float(row.efficiency_per_game),
                 "fg_pct": float(row.field_goal_pct),
@@ -375,8 +380,10 @@ def build_timeline(
         "featured_per_week": per_week,
         "scope": "rookies" if rookies_only else "all",
         "ranking_metric": PERFORMANCE_SCORE_NOTE,
+        "ranking_note": ROTY_RANKING_NOTE if rookies_only else PERFORMANCE_SCORE_NOTE,
         "ranking_formula": PERFORMANCE_SCORE_FORMULA,
         "efficiency_formula": EFFICIENCY_FORMULA,
+        "data_through": None,
         "leaderboard": [],
         "limited_sample": [],
         "limited_note": (
@@ -493,6 +500,8 @@ def build_timeline(
     competitive_stats = stats[stats["season_type"].isin(COMPETITIVE_TYPES)]
     if not competitive_stats.empty:
         final_stats = competitive_stats
+    if not final_stats.empty:
+        payload["data_through"] = max(final_stats["game_date"]).isoformat()
     final_agg = aggregate_stats(final_stats)
     final_leaderboard = rank_players(
         final_agg,

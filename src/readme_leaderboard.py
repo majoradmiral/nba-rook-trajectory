@@ -2,7 +2,7 @@
 
 Rewrites the block between the ``<!-- TOP_PERFORMERS:START -->`` and
 ``<!-- TOP_PERFORMERS:END -->`` markers with the best-performing rookies,
-ranked by a per-game performance score:
+ranked by a per-game impact score:
 
     PTS + 1.2*REB + 1.5*AST + 2*STL + 2*BLK - TOV
 
@@ -46,7 +46,7 @@ LIMITED_LIMIT = 10
 SEASON_DB_PATH = ROOT / "data" / "processed" / "nba_season.db"
 COMPETITIVE_TYPES = ("regular", "playoffs")
 
-SCORE_NOTE = "performance score"
+SCORE_NOTE = "impact score"
 
 
 def _per_game(
@@ -182,8 +182,8 @@ def _render_table(frame: pd.DataFrame, header: str) -> str:
     lines = [
         header,
         "",
-        "| # | Player | Team | GP | MPG | PPG | RPG | APG | EFF | FG% | 3P% | +/- | Score |",
-        "|---|--------|------|----|-----|-----|-----|-----|-----|-----|-----|-----|-------|",
+        "| Rank | Rookie | Team | GP | MPG | PPG | RPG | APG | SPG | BPG | EFF | FG% | 3P% | Impact |",
+        "|------|--------|------|----|-----|-----|-----|-----|-----|-----|-----|-----|-----|--------|",
     ]
     for rank, row in enumerate(frame.itertuples(index=False), start=1):
         mpg = getattr(row, "minutes_per_game", None)
@@ -192,14 +192,16 @@ def _render_table(frame: pd.DataFrame, header: str) -> str:
         fg_att = getattr(row, "field_goals_attempted", None)
         tp_pct = getattr(row, "three_point_pct", None)
         tp_att = getattr(row, "three_pointers_attempted", None)
+        steals = getattr(row, "steals_per_game", 0.0)
+        blocks = getattr(row, "blocks_per_game", 0.0)
         lines.append(
             f"| {rank} | {row.player_name} | {row.team_abbr} | "
             f"{int(row.games_played)} | {mpg_text} | "
             f"{row.points_per_game:.1f} | {row.rebounds_per_game:.1f} | "
-            f"{row.assists_per_game:.1f} | {row.efficiency_per_game:.1f} | "
+            f"{row.assists_per_game:.1f} | {steals:.1f} | {blocks:.1f} | "
+            f"{row.efficiency_per_game:.1f} | "
             f"{_format_pct(fg_pct, fg_att)} | "
-            f"{_format_pct(tp_pct, tp_att)} | {_format_signed(row.plus_minus_per_game)} | "
-            f"{row.performance_score:.1f} |"
+            f"{_format_pct(tp_pct, tp_att)} | {row.performance_score:.1f} |"
         )
     return "\n".join(lines)
 
@@ -211,15 +213,15 @@ def build_leaderboard(
     min_minutes: float = 0.0,
     note: Optional[str] = None,
 ) -> str:
-    """Render the top rookies as a markdown table, ranked by performance score."""
+    """Render an unofficial ROTY candidate table ranked by impact score."""
     if totals.empty:
         return "_No rookie data yet — run the season sync or `python -m src.preseason_db`._"
 
     _, frame = _select_leaderboard(totals, min_games, limit, min_minutes)
 
     qualifier = f"min {min_minutes:g} MPG" if min_minutes else f"min {min_games} games"
-    header = f"_Updated {pd.Timestamp.today().date()} · {note + ' · ' if note else ''}" \
-             f"ranked by {SCORE_NOTE} · {qualifier}_"
+    header = f"_Updated {pd.Timestamp.today().date()} · unofficial ROTY candidate ranking · " \
+             f"{note + ' · ' if note else ''}ranked by {SCORE_NOTE} · {qualifier}_"
     return _render_table(frame, header)
 
 
@@ -402,8 +404,14 @@ def _write_block(
 
 
 def _write_section(readme_path: Path, section: str) -> None:
-    """Replace the Top Performers block (or append it)."""
-    _write_block(readme_path, START_MARKER, END_MARKER, section, "## Top Performers")
+    """Replace the ROTY race block (or append it)."""
+    _write_block(
+        readme_path,
+        START_MARKER,
+        END_MARKER,
+        section,
+        "## Rookie of the Year Race (Unofficial)",
+    )
 
 
 def _write_limited_section(readme_path: Path, section: str) -> None:

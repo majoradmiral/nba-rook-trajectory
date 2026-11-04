@@ -374,6 +374,7 @@ main {
 .panel-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
 .panel-head h3 { margin: 0; font-size: 1rem; font-weight: 700; }
 .panel-note { font-size: 0.72rem; color: var(--muted-dim); }
+.race-label { margin-left: 6px; color: var(--gold); font-size: 0.58rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; vertical-align: middle; }
 
 .table-wrap { overflow-x: auto; }
 
@@ -382,6 +383,8 @@ main {
 .leaderboard td { padding: 8px; border-bottom: 1px solid rgba(120, 150, 200, 0.08); color: var(--text); }
 .leaderboard td.num, .leaderboard th.num { text-align: right; font-family: var(--mono); font-variant-numeric: tabular-nums; }
 .leaderboard tr.is-featured td:first-child { color: var(--gold); }
+#leaderboard-table tr:nth-child(-n+3) td:first-child { font-weight: 700; }
+#leaderboard-table tr:nth-child(1) td:first-child { color: var(--gold); }
 .leaderboard .player-cell { font-weight: 600; }
 .leaderboard .team-cell { color: var(--muted); }
 .leaderboard .pm-pos { color: var(--made); }

@@ -184,8 +184,6 @@
   }
 
   function leaderRow(row, featuredIds) {
-    const pm = Number(row.plus_minus);
-    const tone = pm > 0 ? "pm-pos" : pm < 0 ? "pm-neg" : "";
     return (
       "<tr" + (featuredIds.has(row.player_id) ? ' class="is-featured"' : "") + ">" +
       "<td>" + row.rank + "</td>" +
@@ -196,10 +194,11 @@
       '<td class="num">' + one(row.points) + "</td>" +
       '<td class="num">' + one(row.rebounds) + "</td>" +
       '<td class="num">' + one(row.assists) + "</td>" +
+      '<td class="num">' + one(row.steals) + "</td>" +
+      '<td class="num">' + one(row.blocks) + "</td>" +
       '<td class="num">' + one(row.efficiency) + "</td>" +
       '<td class="num">' + pct(row.fg_pct) + "</td>" +
       '<td class="num">' + pct(row.three_pct) + "</td>" +
-      '<td class="num ' + tone + '">' + plusMinus(row.plus_minus) + "</td>" +
       '<td class="num">' + one(row.score) + "</td>" +
       "</tr>"
     );
@@ -212,7 +211,8 @@
       ((state.weeks[state.index] || {}).featured || []).map((player) => player.player_id)
     );
     el.leaderNote.textContent = rows.length
-      ? "season to date · " + ((state.data && state.data.ranking_metric) || "performance score")
+      ? "unofficial · through " + ((state.data && state.data.data_through) || "latest game") +
+        " · ranked by " + ((state.data && state.data.ranking_metric) || "impact score")
       : "no data yet";
     el.leaderTable.innerHTML = rows.map((row) => leaderRow(row, featuredIds)).join("");
 
@@ -283,9 +283,9 @@
     const data = state.data;
     if (data) {
       el.seasonTitle.textContent = "Rookie Shot Timeline · " + (data.season_label || "");
-      const metric = data.ranking_metric || "performance score";
+      const metric = data.ranking_metric || "impact score";
       el.rankingNote.textContent = data.scope === "rookies"
-        ? "ranked by " + metric + " (rookies)"
+        ? (data.ranking_note || "unofficial candidate ranking · " + metric)
         : "ranked by " + metric + " (all players)";
       if (data.ranking_formula) {
         el.rankingNote.title =

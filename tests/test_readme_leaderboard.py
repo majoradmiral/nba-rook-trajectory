@@ -49,10 +49,10 @@ def sample_totals() -> pd.DataFrame:
 def test_leaderboard_ranks_by_performance_score():
     table = readme_leaderboard.build_leaderboard(sample_totals(), min_games=3)
 
-    assert "| # | Player | Team | GP | MPG | PPG | RPG | APG | EFF | FG% | 3P% | +/- | Score |" in table
-    assert "ranked by performance score" in table
+    assert "| Rank | Rookie | Team | GP | MPG | PPG | RPG | APG | SPG | BPG | EFF | FG% | 3P% | Impact |" in table
+    assert "unofficial ROTY candidate ranking" in table
+    assert "ranked by impact score" in table
     assert table.index("Volume Scorer") < table.index("High Impact")
-    assert "+10.0" in table
     assert "23.0" in table
 
 
@@ -81,7 +81,7 @@ def test_leaderboard_includes_box_score_efficiency():
 
     table = readme_leaderboard.build_leaderboard(totals, min_games=1)
 
-    assert "| 1 | Efficient Rookie | AAA | 1 | 30.0 | 20.0 | 5.0 | 4.0 | 20.0 |" in table
+    assert "| 1 | Efficient Rookie | AAA | 1 | 30.0 | 20.0 | 5.0 | 4.0 | 1.0 | 1.0 | 20.0 |" in table
 
 
 def test_season_totals_include_free_throws_in_efficiency(tmp_path):
@@ -225,7 +225,7 @@ def test_update_readme_appends_section_when_markers_missing(monkeypatch, tmp_pat
     assert readme_leaderboard.update_readme(db_path=db, readme_path=readme) is True
 
     text = readme.read_text(encoding="utf-8")
-    assert "## Top Performers" in text
+    assert "## Rookie of the Year Race (Unofficial)" in text
     assert readme_leaderboard.START_MARKER in text
 
 

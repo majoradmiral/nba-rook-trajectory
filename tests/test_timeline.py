@@ -169,9 +169,13 @@ def test_build_timeline_groups_weeks_and_features_three_players():
     assert alpha["week"]["points"] == 22.0
 
     assert payload["leaderboard"][0]["name"] == "Alpha Rookie"
+    assert payload["leaderboard"][0]["steals"] == 1.0
+    assert payload["leaderboard"][0]["blocks"] == 0.0
     assert payload["leaderboard"][0]["efficiency"] == 21.0
     assert payload["recent_games"][1]["lines"][0]["efficiency"] == 19
     assert payload["efficiency_formula"] == timeline.EFFICIENCY_FORMULA
+    assert payload["data_through"] == "2026-10-27"
+    assert payload["ranking_note"] == timeline.ROTY_RANKING_NOTE
     assert payload["recent_games"][0]["game_id"] == "g3"
     assert payload["totals"]["shots"] == 3
 
