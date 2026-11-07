@@ -16,20 +16,20 @@ shot charts spotlight the same rookie class.
 Auto-refreshed on every `python -m src.timeline` run — no manual editing.
 
 <!-- TOP_PERFORMERS:START -->
-_Updated 2026-11-05 · unofficial ROTY candidate ranking · 2026-27 regular season through 2026-11-02 · ranked by impact score · min 10 MPG_
+_Updated 2026-11-07 · unofficial ROTY candidate ranking · 2026-27 regular season through 2026-11-06 · ranked by impact score · min 10 MPG_
 
 | Rank | Rookie | Team | GP | MPG | PPG | RPG | APG | SPG | BPG | EFF | FG% | 3P% | Impact |
 |------|--------|------|----|-----|-----|-----|-----|-----|-----|-----|-----|-----|--------|
-| 1 | Darius Acuff Jr. | SAC | 6 | 36.8 | 28.5 | 4.0 | 6.8 | 0.2 | 0.2 | 22.7 | 44.0% | 35.0% | 40.7 |
-| 2 | Caleb Wilson | CHI | 7 | 34.0 | 21.6 | 6.7 | 2.7 | 2.0 | 1.3 | 19.9 | 43.2% | 32.1% | 37.6 |
-| 3 | Cameron Boozer | MEM | 7 | 32.0 | 17.4 | 10.3 | 5.6 | 0.3 | 0.9 | 22.6 | 37.5% | 36.4% | 37.4 |
-| 4 | Yaxel Lendeborg | GS | 7 | 32.3 | 22.9 | 7.6 | 4.1 | 0.9 | 0.6 | 23.6 | 50.5% | 41.3% | 37.2 |
-| 5 | AJ Dybantsa | WSH | 3 | 30.0 | 19.0 | 4.7 | 1.7 | 1.3 | 0.0 | 18.0 | 50.0% | 27.3% | 28.1 |
-| 6 | Darryn Peterson | UTAH | 7 | 30.3 | 13.4 | 4.3 | 3.3 | 1.3 | 0.7 | 13.3 | 36.3% | 37.5% | 26.4 |
-| 7 | Keaton Wagler | LAC | 6 | 24.3 | 11.7 | 4.3 | 3.3 | 0.5 | 0.3 | 9.8 | 25.9% | 25.9% | 21.0 |
-| 8 | Mikel Brown Jr. | BKN | 5 | 23.6 | 10.8 | 2.4 | 4.0 | 0.6 | 0.0 | 7.6 | 29.8% | 25.0% | 19.1 |
-| 9 | Trevon Brazile | DEN | 5 | 22.8 | 9.2 | 5.2 | 0.4 | 1.0 | 0.8 | 12.6 | 64.3% | 46.2% | 18.6 |
-| 10 | Aday Mara | OKC | 6 | 19.2 | 7.2 | 6.0 | 1.3 | 0.0 | 1.8 | 11.5 | 58.1% | — | 17.7 |
+| 1 | Darius Acuff Jr. | SAC | 7 | 37.6 | 27.6 | 3.9 | 7.6 | 0.4 | 0.1 | 22.0 | 42.4% | 33.8% | 41.1 |
+| 2 | Yaxel Lendeborg | GS | 8 | 32.0 | 22.1 | 7.6 | 4.4 | 1.1 | 0.6 | 23.5 | 49.6% | 40.8% | 37.7 |
+| 3 | Cameron Boozer | MEM | 9 | 32.0 | 15.6 | 10.0 | 5.2 | 0.3 | 0.7 | 19.3 | 33.9% | 31.6% | 34.3 |
+| 4 | Caleb Wilson | CHI | 8 | 32.5 | 19.5 | 6.5 | 2.4 | 1.9 | 1.1 | 17.1 | 40.9% | 30.2% | 34.1 |
+| 5 | AJ Dybantsa | WSH | 5 | 31.6 | 15.4 | 5.8 | 2.2 | 1.6 | 0.0 | 15.2 | 41.5% | 30.8% | 27.5 |
+| 6 | Darryn Peterson | UTAH | 9 | 30.2 | 13.6 | 3.8 | 3.9 | 1.2 | 0.9 | 13.9 | 36.9% | 34.1% | 26.8 |
+| 7 | Mikel Brown Jr. | BKN | 6 | 23.0 | 12.0 | 2.3 | 4.0 | 0.7 | 0.2 | 9.0 | 33.8% | 29.7% | 20.3 |
+| 8 | Keaton Wagler | LAC | 7 | 23.1 | 11.6 | 4.0 | 3.0 | 0.4 | 0.3 | 10.0 | 28.3% | 32.3% | 20.2 |
+| 9 | Brayden Burries | MIL | 9 | 20.1 | 10.2 | 5.2 | 2.0 | 0.6 | 0.1 | 11.7 | 44.3% | 21.9% | 19.7 |
+| 10 | Aday Mara | OKC | 8 | 19.8 | 7.6 | 6.0 | 1.2 | 0.0 | 1.9 | 12.0 | 60.5% | — | 18.6 |
 <!-- TOP_PERFORMERS:END -->
 
 ## Limited Sample
@@ -40,20 +40,20 @@ deep-bench minutes the main ranking can't judge yet. Players already shown
 above are skipped, and the table refreshes with the same command.
 
 <!-- LIMITED_SAMPLE:START -->
-_Updated 2026-11-05 · 2026-27 regular season through 2026-11-02 · small sample · under 3 GP or under 10 MPG_
+_Updated 2026-11-07 · 2026-27 regular season through 2026-11-06 · small sample · under 3 GP or under 10 MPG_
 
 | Rank | Rookie | Team | GP | MPG | PPG | RPG | APG | SPG | BPG | EFF | FG% | 3P% | Impact |
 |------|--------|------|----|-----|-----|-----|-----|-----|-----|-----|-----|-----|--------|
-| 1 | Graham Ike | GS | 6 | 9.0 | 4.5 | 2.3 | 0.7 | 0.3 | 0.0 | 5.7 | 50.0% | 100.0% | 8.6 |
-| 2 | Tobe Awaka | CHI | 6 | 6.7 | 1.3 | 3.5 | 0.5 | 0.3 | 0.5 | 5.0 | 75.0% | — | 7.6 |
-| 3 | Baba Miller | LAC | 6 | 7.0 | 1.7 | 1.8 | 0.5 | 0.3 | 0.5 | 3.3 | 50.0% | 50.0% | 5.5 |
-| 4 | Tarris Reed Jr. | SA | 7 | 2.9 | 1.4 | 2.1 | 0.0 | 0.0 | 0.1 | 3.0 | 80.0% | — | 3.7 |
-| 5 | Nick Martinelli | LAC | 6 | 2.8 | 2.5 | 1.0 | 0.2 | 0.0 | 0.0 | 2.8 | 66.7% | 66.7% | 3.6 |
-| 6 | Ryan Conwell | MIA | 7 | 3.6 | 2.0 | 0.3 | 0.4 | 0.3 | 0.0 | 2.0 | 45.5% | 42.9% | 3.6 |
-| 7 | Jaden Bradley | TOR | 7 | 2.9 | 1.3 | 0.4 | 0.6 | 0.4 | 0.0 | 2.0 | 40.0% | — | 3.2 |
-| 8 | Labaron Philon Jr. | PHI | 7 | 5.0 | 1.7 | 0.7 | 0.1 | 0.0 | 0.0 | 1.0 | 38.5% | 28.6% | 2.6 |
-| 9 | Ja'Kobi Gillespie | SA | 2 | 2.0 | 2.5 | 0.0 | 0.0 | 0.0 | 0.0 | 1.5 | 50.0% | 33.3% | 2.5 |
-| 10 | Zuby Ejiofor | ATL | 7 | 3.4 | 0.9 | 1.0 | 0.3 | 0.0 | 0.0 | 1.1 | 28.6% | 50.0% | 2.2 |
+| 1 | Tobe Awaka | CHI | 6 | 6.7 | 1.3 | 3.5 | 0.5 | 0.3 | 0.5 | 5.0 | 75.0% | — | 7.6 |
+| 2 | Graham Ike | GS | 7 | 7.9 | 3.9 | 2.1 | 0.6 | 0.3 | 0.0 | 5.0 | 50.0% | 100.0% | 7.6 |
+| 3 | Zuby Ejiofor | ATL | 9 | 6.2 | 3.0 | 1.7 | 1.0 | 0.3 | 0.0 | 4.4 | 57.9% | 42.9% | 6.7 |
+| 4 | Ryan Conwell | MIA | 9 | 8.0 | 3.0 | 0.6 | 0.8 | 0.6 | 0.0 | 3.1 | 39.1% | 40.0% | 5.8 |
+| 5 | Baba Miller | LAC | 7 | 6.9 | 1.7 | 1.7 | 0.6 | 0.4 | 0.6 | 3.6 | 57.1% | 50.0% | 5.8 |
+| 6 | Jaylin Sellers | CHI | 8 | 5.6 | 2.9 | 0.5 | 0.6 | 0.2 | 0.1 | 2.0 | 33.3% | 37.5% | 4.7 |
+| 7 | Hannes Steinbach | CHA | 10 | 5.0 | 1.2 | 1.8 | 0.2 | 0.0 | 0.3 | 2.4 | 46.2% | — | 4.0 |
+| 8 | Norchad Omier | CLE | 1 | 3.0 | 0.0 | 2.0 | 1.0 | 0.0 | 0.0 | 3.0 | — | — | 3.9 |
+| 9 | Jaden Bradley | TOR | 9 | 3.6 | 1.6 | 0.4 | 0.6 | 0.4 | 0.0 | 2.1 | 42.9% | — | 3.5 |
+| 10 | Tarris Reed Jr. | SA | 8 | 2.5 | 1.2 | 1.9 | 0.0 | 0.0 | 0.1 | 2.6 | 80.0% | — | 3.2 |
 <!-- LIMITED_SAMPLE:END -->
 
 ## Quick Start
@@ -83,7 +83,7 @@ python -m src.readme_leaderboard --preseason
 ## Live Site
 
 The pages deploy to **GitHub Pages** on every change under `site/` and after each
-weekly refresh:
+daily refresh:
 
 https://majoradmiral.github.io/nba-rook-trajectory/
 
@@ -103,7 +103,8 @@ a court fixture.
   (cumulative regular season + playoffs once the season starts).
 - Every card carries the player's shot chart (made = green, missed = red X),
   rim / mid-range / three splits, and their week and season lines.
-- Recent games panel with the tracked players' box-score lines.
+- Recent games panel with the latest completed NBA matches and tracked rookies'
+  box-score lines.
 - The page polls `site/data/timeline.json` every minute, so it updates itself
   without a reload; arrow keys step through the weeks and the play button
   auto-advances week by week.
@@ -119,14 +120,14 @@ python -m http.server 8777 --directory site   # then open http://localhost:8777
 playoffs — into `data/processed/nba_season.db`: one row per game, one row per
 player per game, and one row per shot with court coordinates (ESPN reports x
 across the 50 ft width of the floor and y from the baseline; the rim sits 1.575 ft
-inside the baseline). Only new games are re-fetched, so weekly runs are quick.
+inside the baseline). Only new games are re-fetched, so daily runs are quick.
 
 `src.timeline` buckets the games into weeks, ranks the rookies as of each week,
 and writes `site/data/timeline.json` (plus a `timeline.js` wrapper so the page
-also works when opened straight from disk). The **Weekly Shot Timeline** workflow
-runs the ingestion and both page builders every Monday, caches the season
-database between runs so only new days are fetched, commits the refreshed page
-data, and deploys `site/` to GitHub Pages.
+also works when opened straight from disk). The **Daily NBA Timeline Refresh** workflow
+runs the ingestion and both page builders every day, caches the season database
+between runs so only new days are fetched, commits the refreshed page data, and
+deploys `site/` to GitHub Pages.
 
 ## All Rookie Shots
 

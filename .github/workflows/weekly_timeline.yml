@@ -1,9 +1,9 @@
-name: Weekly Shot Timeline
+name: Daily NBA Timeline Refresh
 
 on:
   schedule:
-    # Mondays at 11:30 UTC — after the weekend slate has settled.
-    - cron: '30 11 * * 1'
+    # Refresh the latest completed games each day after the NBA slate settles.
+    - cron: '30 12 * * *'
   workflow_dispatch:
 
 jobs:
@@ -38,7 +38,7 @@ jobs:
           key: nba-season-db-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "auto: refresh weekly shot timeline"
+          commit_message: "auto: refresh NBA timeline and recent games"
           file_pattern: README.md site/data/timeline.json site/data/timeline.js site/data/shots.json site/data/shots.js
 
   deploy:
