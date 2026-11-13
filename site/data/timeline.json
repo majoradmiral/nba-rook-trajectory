@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T20:14:19+00:00",
+  "generated_at": "2026-11-13T19:56:00+00:00",
   "season_year": 2027,
   "season_label": "2026-27",
   "featured_per_week": 3,
@@ -8,7 +8,7 @@
   "ranking_note": "unofficial ROTY candidate ranking \u00b7 impact score",
   "ranking_formula": "PTS + 1.2\u00d7REB + 1.5\u00d7AST + 2\u00d7STL + 2\u00d7BLK \u2212 TOV",
   "efficiency_formula": "PTS + REB + AST + STL + BLK \u2212 missed FG \u2212 missed FT \u2212 TOV",
-  "data_through": "2026-11-11",
+  "data_through": "2026-11-12",
   "leaderboard": [
     {
       "rank": 1,
@@ -117,18 +117,18 @@
       "team": "WSH",
       "position": "F",
       "is_rookie": 1,
-      "games": 8,
-      "minutes": 32.5,
-      "points": 16.25,
-      "rebounds": 5.88,
-      "assists": 2.12,
-      "steals": 1.12,
-      "blocks": 0.38,
-      "plus_minus": -4.88,
-      "efficiency": 14.12,
-      "fg_pct": 0.4286,
-      "three_pct": 0.2308,
-      "score": 27.24
+      "games": 9,
+      "minutes": 33.78,
+      "points": 15.0,
+      "rebounds": 6.11,
+      "assists": 2.33,
+      "steals": 1.11,
+      "blocks": 0.44,
+      "plus_minus": -2.89,
+      "efficiency": 13.33,
+      "fg_pct": 0.4098,
+      "three_pct": 0.2333,
+      "score": 26.49
     },
     {
       "rank": 7,
@@ -379,18 +379,18 @@
       "team": "TOR",
       "position": "G",
       "is_rookie": 1,
-      "games": 11,
-      "minutes": 3.73,
-      "points": 1.27,
-      "rebounds": 0.45,
-      "assists": 0.73,
-      "steals": 0.36,
+      "games": 12,
+      "minutes": 3.58,
+      "points": 1.25,
+      "rebounds": 0.42,
+      "assists": 0.67,
+      "steals": 0.33,
       "blocks": 0.0,
-      "plus_minus": 2.45,
-      "efficiency": 1.91,
+      "plus_minus": 2.33,
+      "efficiency": 1.75,
       "fg_pct": 0.4286,
       "three_pct": 0.0,
-      "score": 3.18
+      "score": 3.0
     },
     {
       "rank": 10,
@@ -7915,7 +7915,7 @@
       "season_types": [
         "regular"
       ],
-      "games": 24,
+      "games": 28,
       "featured": [
         {
           "rank": 1,
@@ -8932,6 +8932,74 @@
   ],
   "recent_games": [
     {
+      "game_id": "401909979",
+      "date": "2026-11-12",
+      "season_type": "regular",
+      "away": {
+        "abbr": "CHA",
+        "score": 96
+      },
+      "home": {
+        "abbr": "PHX",
+        "score": 101
+      },
+      "lines": []
+    },
+    {
+      "game_id": "401909976",
+      "date": "2026-11-12",
+      "season_type": "regular",
+      "away": {
+        "abbr": "TOR",
+        "score": 112
+      },
+      "home": {
+        "abbr": "PHI",
+        "score": 123
+      },
+      "lines": []
+    },
+    {
+      "game_id": "401909978",
+      "date": "2026-11-12",
+      "season_type": "regular",
+      "away": {
+        "abbr": "DAL",
+        "score": 94
+      },
+      "home": {
+        "abbr": "MIN",
+        "score": 133
+      },
+      "lines": []
+    },
+    {
+      "game_id": "401909977",
+      "date": "2026-11-12",
+      "season_type": "regular",
+      "away": {
+        "abbr": "DET",
+        "score": 144
+      },
+      "home": {
+        "abbr": "WSH",
+        "score": 140
+      },
+      "lines": [
+        {
+          "player_id": "5142718",
+          "name": "AJ Dybantsa",
+          "team": "WSH",
+          "minutes": 44.0,
+          "points": 5,
+          "rebounds": 8,
+          "assists": 4,
+          "plus_minus": 13,
+          "efficiency": 7
+        }
+      ]
+    },
+    {
       "game_id": "401909975",
       "date": "2026-11-11",
       "season_type": "regular",
@@ -8954,6 +9022,32 @@
           "assists": 2,
           "plus_minus": -6,
           "efficiency": 13
+        }
+      ]
+    },
+    {
+      "game_id": "401909974",
+      "date": "2026-11-11",
+      "season_type": "regular",
+      "away": {
+        "abbr": "GS",
+        "score": 108
+      },
+      "home": {
+        "abbr": "HOU",
+        "score": 115
+      },
+      "lines": [
+        {
+          "player_id": "5175737",
+          "name": "Yaxel Lendeborg",
+          "team": "GS",
+          "minutes": 36.0,
+          "points": 25,
+          "rebounds": 10,
+          "assists": 0,
+          "plus_minus": -15,
+          "efficiency": 22
         }
       ]
     },
@@ -9088,122 +9182,16 @@
         "score": 93
       },
       "lines": []
-    },
-    {
-      "game_id": "401909967",
-      "date": "2026-11-11",
-      "season_type": "regular",
-      "away": {
-        "abbr": "CLE",
-        "score": 115
-      },
-      "home": {
-        "abbr": "NY",
-        "score": 107
-      },
-      "lines": []
-    },
-    {
-      "game_id": "401909966",
-      "date": "2026-11-11",
-      "season_type": "regular",
-      "away": {
-        "abbr": "WSH",
-        "score": 101
-      },
-      "home": {
-        "abbr": "IND",
-        "score": 114
-      },
-      "lines": [
-        {
-          "player_id": "5142718",
-          "name": "AJ Dybantsa",
-          "team": "WSH",
-          "minutes": 34.0,
-          "points": 13,
-          "rebounds": 4,
-          "assists": 2,
-          "plus_minus": -18,
-          "efficiency": 6
-        }
-      ]
-    },
-    {
-      "game_id": "401909974",
-      "date": "2026-11-11",
-      "season_type": "regular",
-      "away": {
-        "abbr": "GS",
-        "score": 108
-      },
-      "home": {
-        "abbr": "HOU",
-        "score": 115
-      },
-      "lines": [
-        {
-          "player_id": "5175737",
-          "name": "Yaxel Lendeborg",
-          "team": "GS",
-          "minutes": 36.0,
-          "points": 25,
-          "rebounds": 10,
-          "assists": 0,
-          "plus_minus": -15,
-          "efficiency": 22
-        }
-      ]
-    },
-    {
-      "game_id": "401909961",
-      "date": "2026-11-10",
-      "season_type": "regular",
-      "away": {
-        "abbr": "BOS",
-        "score": 123
-      },
-      "home": {
-        "abbr": "PHI",
-        "score": 101
-      },
-      "lines": []
-    },
-    {
-      "game_id": "401909960",
-      "date": "2026-11-10",
-      "season_type": "regular",
-      "away": {
-        "abbr": "MIL",
-        "score": 85
-      },
-      "home": {
-        "abbr": "NY",
-        "score": 117
-      },
-      "lines": [
-        {
-          "player_id": "5082206",
-          "name": "Brayden Burries",
-          "team": "MIL",
-          "minutes": 26.0,
-          "points": 3,
-          "rebounds": 3,
-          "assists": 3,
-          "plus_minus": -23,
-          "efficiency": 4
-        }
-      ]
     }
   ],
   "totals": {
-    "games": 237,
+    "games": 241,
     "games_by_type": {
-      "regular": 170,
+      "regular": 174,
       "preseason": 67
     },
     "players": 658,
-    "shots": 41766,
+    "shots": 42496,
     "weeks": 7
   }
 }

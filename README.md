@@ -16,7 +16,7 @@ shot charts spotlight the same rookie class.
 Auto-refreshed on every `python -m src.timeline` run — no manual editing.
 
 <!-- TOP_PERFORMERS:START -->
-_Updated 2026-11-12 · unofficial ROTY candidate ranking · 2026-27 regular season through 2026-11-11 · ranked by impact score · min 10 MPG_
+_Updated 2026-11-13 · unofficial ROTY candidate ranking · 2026-27 regular season through 2026-11-12 · ranked by impact score · min 10 MPG_
 
 | Rank | Rookie | Team | GP | MPG | PPG | RPG | APG | SPG | BPG | EFF | FG% | 3P% | Impact |
 |------|--------|------|----|-----|-----|-----|-----|-----|-----|-----|-----|-----|--------|
@@ -25,7 +25,7 @@ _Updated 2026-11-12 · unofficial ROTY candidate ranking · 2026-27 regular seas
 | 3 | Cameron Boozer | MEM | 11 | 32.2 | 15.9 | 9.8 | 5.5 | 0.5 | 0.5 | 19.7 | 36.6% | 29.0% | 34.6 |
 | 4 | Caleb Wilson | CHI | 10 | 30.7 | 18.9 | 6.2 | 1.9 | 1.8 | 0.9 | 16.5 | 42.0% | 32.4% | 31.9 |
 | 5 | Darryn Peterson | UTAH | 12 | 30.9 | 16.2 | 4.0 | 4.0 | 1.2 | 0.8 | 15.7 | 40.6% | 35.7% | 29.1 |
-| 6 | AJ Dybantsa | WSH | 8 | 32.5 | 16.2 | 5.9 | 2.1 | 1.1 | 0.4 | 14.1 | 42.9% | 23.1% | 27.2 |
+| 6 | AJ Dybantsa | WSH | 9 | 33.8 | 15.0 | 6.1 | 2.3 | 1.1 | 0.4 | 13.3 | 41.0% | 23.3% | 26.5 |
 | 7 | Keaton Wagler | LAC | 10 | 23.2 | 12.2 | 3.5 | 3.4 | 0.8 | 0.2 | 11.7 | 32.9% | 35.4% | 21.6 |
 | 8 | Mikel Brown Jr. | BKN | 7 | 23.3 | 12.9 | 2.1 | 3.9 | 0.7 | 0.1 | 9.3 | 34.6% | 31.1% | 20.8 |
 | 9 | Aday Mara | OKC | 12 | 21.3 | 8.5 | 6.2 | 1.4 | 0.1 | 1.8 | 13.2 | 60.3% | 100.0% | 20.2 |
@@ -40,7 +40,7 @@ deep-bench minutes the main ranking can't judge yet. Players already shown
 above are skipped, and the table refreshes with the same command.
 
 <!-- LIMITED_SAMPLE:START -->
-_Updated 2026-11-12 · 2026-27 regular season through 2026-11-11 · small sample · under 3 GP or under 10 MPG_
+_Updated 2026-11-13 · 2026-27 regular season through 2026-11-12 · small sample · under 3 GP or under 10 MPG_
 
 | Rank | Rookie | Team | GP | MPG | PPG | RPG | APG | SPG | BPG | EFF | FG% | 3P% | Impact |
 |------|--------|------|----|-----|-----|-----|-----|-----|-----|-----|-----|-----|--------|
@@ -52,7 +52,7 @@ _Updated 2026-11-12 · 2026-27 regular season through 2026-11-11 · small sample
 | 6 | Jaylin Sellers | CHI | 9 | 5.2 | 2.9 | 0.4 | 0.9 | 0.2 | 0.1 | 2.4 | 36.4% | 41.2% | 5.0 |
 | 7 | Hannes Steinbach | CHA | 11 | 5.7 | 1.3 | 1.9 | 0.2 | 0.0 | 0.3 | 2.4 | 43.8% | — | 4.0 |
 | 8 | Tarris Reed Jr. | SA | 12 | 3.6 | 1.3 | 1.8 | 0.2 | 0.0 | 0.2 | 2.5 | 58.3% | — | 3.5 |
-| 9 | Jaden Bradley | TOR | 11 | 3.7 | 1.3 | 0.5 | 0.7 | 0.4 | 0.0 | 1.9 | 42.9% | — | 3.2 |
+| 9 | Jaden Bradley | TOR | 12 | 3.6 | 1.2 | 0.4 | 0.7 | 0.3 | 0.0 | 1.8 | 42.9% | — | 3.0 |
 | 10 | Nick Martinelli | LAC | 9 | 2.3 | 1.9 | 0.8 | 0.2 | 0.0 | 0.0 | 2.2 | 63.6% | 66.7% | 2.9 |
 <!-- LIMITED_SAMPLE:END -->
 
