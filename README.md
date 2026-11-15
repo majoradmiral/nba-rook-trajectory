@@ -16,19 +16,19 @@ shot charts spotlight the same rookie class.
 Auto-refreshed on every `python -m src.timeline` run — no manual editing.
 
 <!-- TOP_PERFORMERS:START -->
-_Updated 2026-11-14 · unofficial ROTY candidate ranking · 2026-27 regular season through 2026-11-13 · ranked by impact score · min 10 MPG_
+_Updated 2026-11-15 · unofficial ROTY candidate ranking · 2026-27 regular season through 2026-11-14 · ranked by impact score · min 10 MPG_
 
 | Rank | Rookie | Team | GP | MPG | PPG | RPG | APG | SPG | BPG | EFF | FG% | 3P% | Impact |
 |------|--------|------|----|-----|-----|-----|-----|-----|-----|-----|-----|-----|--------|
 | 1 | Darius Acuff Jr. | SAC | 12 | 37.1 | 25.4 | 3.8 | 7.2 | 1.1 | 0.1 | 20.0 | 41.1% | 32.7% | 39.4 |
-| 2 | Yaxel Lendeborg | GS | 13 | 31.5 | 20.2 | 7.4 | 3.5 | 1.0 | 0.7 | 20.8 | 48.6% | 41.4% | 34.4 |
-| 3 | Cameron Boozer | MEM | 12 | 31.6 | 15.6 | 9.8 | 5.2 | 0.6 | 0.6 | 19.8 | 37.0% | 29.6% | 34.4 |
+| 2 | Cameron Boozer | MEM | 13 | 31.4 | 15.5 | 9.7 | 5.2 | 0.7 | 0.7 | 19.9 | 38.3% | 28.4% | 34.7 |
+| 3 | Yaxel Lendeborg | GS | 13 | 31.5 | 20.2 | 7.4 | 3.5 | 1.0 | 0.7 | 20.8 | 48.6% | 41.4% | 34.4 |
 | 4 | Caleb Wilson | CHI | 10 | 30.7 | 18.9 | 6.2 | 1.9 | 1.8 | 0.9 | 16.5 | 42.0% | 32.4% | 31.9 |
 | 5 | Darryn Peterson | UTAH | 13 | 31.2 | 17.2 | 4.2 | 3.8 | 1.2 | 0.8 | 16.5 | 41.1% | 35.8% | 30.2 |
 | 6 | AJ Dybantsa | WSH | 9 | 33.8 | 15.0 | 6.1 | 2.3 | 1.1 | 0.4 | 13.3 | 41.0% | 23.3% | 26.5 |
 | 7 | Keaton Wagler | LAC | 11 | 22.7 | 12.4 | 3.4 | 3.2 | 0.7 | 0.2 | 11.7 | 34.8% | 35.8% | 21.1 |
-| 8 | Mikel Brown Jr. | BKN | 7 | 23.3 | 12.9 | 2.1 | 3.9 | 0.7 | 0.1 | 9.3 | 34.6% | 31.1% | 20.8 |
-| 9 | Aday Mara | OKC | 13 | 21.3 | 8.6 | 6.0 | 1.3 | 0.1 | 1.8 | 13.2 | 62.0% | 100.0% | 20.0 |
+| 8 | Aday Mara | OKC | 13 | 21.3 | 8.6 | 6.0 | 1.3 | 0.1 | 1.8 | 13.2 | 62.0% | 100.0% | 20.0 |
+| 9 | Mikel Brown Jr. | BKN | 8 | 22.9 | 12.0 | 2.0 | 3.6 | 0.9 | 0.1 | 9.0 | 34.9% | 33.3% | 19.8 |
 | 10 | Brayden Burries | MIL | 13 | 21.4 | 9.2 | 5.2 | 2.2 | 0.5 | 0.2 | 11.1 | 41.8% | 25.0% | 19.1 |
 <!-- TOP_PERFORMERS:END -->
 
@@ -40,7 +40,7 @@ deep-bench minutes the main ranking can't judge yet. Players already shown
 above are skipped, and the table refreshes with the same command.
 
 <!-- LIMITED_SAMPLE:START -->
-_Updated 2026-11-14 · 2026-27 regular season through 2026-11-13 · small sample · under 3 GP or under 10 MPG_
+_Updated 2026-11-15 · 2026-27 regular season through 2026-11-14 · small sample · under 3 GP or under 10 MPG_
 
 | Rank | Rookie | Team | GP | MPG | PPG | RPG | APG | SPG | BPG | EFF | FG% | 3P% | Impact |
 |------|--------|------|----|-----|-----|-----|-----|-----|-----|-----|-----|-----|--------|
@@ -48,11 +48,11 @@ _Updated 2026-11-14 · 2026-27 regular season through 2026-11-13 · small sample
 | 2 | Baba Miller | LAC | 11 | 8.5 | 3.7 | 2.2 | 0.8 | 0.5 | 0.6 | 6.0 | 59.1% | 40.0% | 9.0 |
 | 3 | Zuby Ejiofor | ATL | 12 | 6.5 | 2.8 | 1.8 | 0.8 | 0.2 | 0.2 | 4.3 | 58.3% | 44.4% | 6.5 |
 | 4 | Tobe Awaka | CHI | 7 | 5.7 | 1.1 | 3.0 | 0.4 | 0.1 | 0.4 | 4.1 | 75.0% | — | 6.2 |
-| 5 | Jaylin Sellers | CHI | 9 | 5.2 | 2.9 | 0.4 | 0.9 | 0.2 | 0.1 | 2.4 | 36.4% | 41.2% | 5.0 |
-| 6 | Jaron Pierre Jr. | NO | 2 | 5.5 | 2.0 | 2.0 | 0.0 | 0.5 | 0.0 | 0.0 | 14.3% | 25.0% | 4.4 |
-| 7 | Tarris Reed Jr. | SA | 13 | 4.2 | 1.4 | 2.0 | 0.2 | 0.2 | 0.2 | 2.8 | 57.1% | — | 4.2 |
-| 8 | Hannes Steinbach | CHA | 11 | 5.7 | 1.3 | 1.9 | 0.2 | 0.0 | 0.3 | 2.4 | 43.8% | — | 4.0 |
-| 9 | Malik Dia | NO | 1 | 4.0 | 2.0 | 0.0 | 1.0 | 0.0 | 0.0 | 1.0 | 33.3% | 0.0% | 3.5 |
+| 5 | Norchad Omier | CLE | 6 | 7.0 | 2.2 | 2.2 | 0.8 | 0.2 | 0.0 | 5.0 | 83.3% | 50.0% | 6.2 |
+| 6 | Bryce Hopkins | DEN | 11 | 9.1 | 3.5 | 1.3 | 0.3 | 0.2 | 0.0 | 3.7 | 63.6% | 40.0% | 5.3 |
+| 7 | Jaylin Sellers | CHI | 9 | 5.2 | 2.9 | 0.4 | 0.9 | 0.2 | 0.1 | 2.4 | 36.4% | 41.2% | 5.0 |
+| 8 | Tarris Reed Jr. | SA | 13 | 4.2 | 1.4 | 2.0 | 0.2 | 0.2 | 0.2 | 2.8 | 57.1% | — | 4.2 |
+| 9 | Hannes Steinbach | CHA | 11 | 5.7 | 1.3 | 1.9 | 0.2 | 0.0 | 0.3 | 2.4 | 43.8% | — | 4.0 |
 | 10 | Jaden Bradley | TOR | 12 | 3.6 | 1.2 | 0.4 | 0.7 | 0.3 | 0.0 | 1.8 | 42.9% | — | 3.0 |
 <!-- LIMITED_SAMPLE:END -->
 
