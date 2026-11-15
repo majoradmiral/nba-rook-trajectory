@@ -26,6 +26,11 @@
     </div>
 
     <div class="topbar-right">
+      <div class="filters" role="group" aria-label="Filter view">
+        <button type="button" class="chip-btn is-active" data-view="court" aria-pressed="true" title="Court view">Court</button>
+        <button type="button" class="chip-btn" data-view="players" aria-pressed="false" title="Rookie list">Rookies</button>
+        <button type="button" class="chip-btn" data-view="focus" aria-pressed="false" title="Focus mode">Focus</button>
+      </div>
       <div class="status" id="status-pill">
         <span class="status-dot" aria-hidden="true"></span>
         <span id="status-text">loading&hellip;</span>
@@ -71,7 +76,7 @@
       <div class="chart-legend">
         <span><i class="dot made"></i>made</span>
         <span><i class="dot missed"></i>missed</span>
-        <span class="chart-legend-hint">Hover a shot for the shooter &middot; click to pin &middot; click a rookie to isolate</span>
+        <span class="chart-legend-hint">Hover a shot &middot; click to pin &middot; click a rookie to isolate</span>
       </div>
     </section>
 
@@ -91,6 +96,10 @@
       </div>
       <div class="detail-body" id="detail-body">
         <div class="empty-state">Pick a shot to see who took it.</div>
+      </div>
+      <div class="card-foot">
+        <button type="button" class="icon-btn" id="copy-shot-btn" title="Copy shot details" aria-label="Copy shot details" disabled>&#128203;</button>
+        <button type="button" class="icon-btn" id="pin-shot-btn" title="Pin this shot" aria-label="Pin this shot" aria-pressed="false" disabled>&#128204;</button>
       </div>
     </section>
   </main>

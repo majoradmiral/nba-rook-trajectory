@@ -52,7 +52,8 @@
     return String(value == null ? "" : value)
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;");
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
   }
 
   /* ── Formatting ────────────────────────────────────────────────────────── */
@@ -98,6 +99,16 @@
         );
       })
       .join("");
+    const active = el.rail.querySelector(".week-chip.is-active");
+    if (active) {
+      const activeBounds = active.getBoundingClientRect();
+      const railBounds = el.rail.getBoundingClientRect();
+      if (activeBounds.left < railBounds.left + 8) {
+        el.rail.scrollLeft -= railBounds.left + 8 - activeBounds.left;
+      } else if (activeBounds.right > railBounds.right - 8) {
+        el.rail.scrollLeft += activeBounds.right - (railBounds.right - 8);
+      }
+    }
   }
 
   function statCell(label, value, tone) {
@@ -248,18 +259,19 @@
           })
           .join("");
         return (
-          '<div class="game">' +
-          '<div class="game-top"><span>' + escapeHtml(game.date) + "</span>" +
-          "<span>" + escapeHtml(game.season_type) + "</span></div>" +
-          '<div class="game-teams">' +
+          '<button type="button" class="game game-btn" data-game="' + escapeHtml(game.game_id) +
+            '" aria-pressed="false">' +
+          '<span class="game-top"><span>' + escapeHtml(game.date) + "</span>" +
+          "<span>" + escapeHtml(game.season_type) + "</span></span>" +
+          '<span class="game-teams">' +
           '<span class="abbr away' + (awayWin ? " winner" : "") + '">' + escapeHtml(game.away.abbr) + "</span>" +
           '<span class="score' + (awayWin ? " winner" : "") + '">' + game.away.score + "</span>" +
           '<span class="vs">@</span>' +
           '<span class="score' + (!awayWin ? " winner" : "") + '">' + game.home.score + "</span>" +
           '<span class="abbr' + (!awayWin ? " winner" : "") + '">' + escapeHtml(game.home.abbr) + "</span>" +
-          "</div>" +
-          (lines ? '<div class="game-lines">' + lines + "</div>" : "") +
-          "</div>"
+          "</span>" +
+          (lines ? '<span class="game-lines">' + lines + "</span>" : "") +
+          "</button>"
         );
       })
       .join("");
@@ -415,6 +427,18 @@
   el.next.addEventListener("click", () => { togglePlay(false); selectWeek(state.index + 1); });
   el.play.addEventListener("click", () => togglePlay());
   el.refresh.addEventListener("click", () => loadData(false));
+
+  el.games.addEventListener("click", (event) => {
+    const btn = event.target.closest(".game-btn");
+    if (!btn) return;
+    const active = !btn.classList.contains("is-active");
+    document.querySelectorAll(".game-btn").forEach((other) => {
+      other.classList.toggle("is-active", active && other === btn);
+      other.setAttribute("aria-pressed", String(active && other === btn));
+    });
+    const teams = Array.from(btn.querySelectorAll(".abbr"), (team) => team.textContent);
+    toast(active ? "Selected " + teams.join(" vs ") : "Game selection cleared");
+  });
 
   document.querySelectorAll(".chip-btn[data-phase]").forEach((button) => {
     button.addEventListener("click", () => {

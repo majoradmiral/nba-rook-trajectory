@@ -19,6 +19,7 @@
   const state = {
     data: null,
     scope: { kind: "season" },
+    view: "court",          // court | players | focus
     player: null,
     search: "",
     pinned: null,
@@ -47,6 +48,9 @@
     tooltip: document.getElementById("tooltip"),
     toast: document.getElementById("toast"),
     refresh: document.getElementById("refresh-btn"),
+    copyShot: document.getElementById("copy-shot-btn"),
+    pinShot: document.getElementById("pin-shot-btn"),
+    viewButtons: document.querySelectorAll('[data-view]'),
   };
 
   const playersById = new Map();
@@ -308,6 +312,16 @@
       );
     });
     el.rail.innerHTML = chips.join("");
+    const active = el.rail.querySelector(".week-chip.is-active");
+    if (active) {
+      const activeBounds = active.getBoundingClientRect();
+      const railBounds = el.rail.getBoundingClientRect();
+      if (activeBounds.left < railBounds.left + 8) {
+        el.rail.scrollLeft -= railBounds.left + 8 - activeBounds.left;
+      } else if (activeBounds.right > railBounds.right - 8) {
+        el.rail.scrollLeft += activeBounds.right - (railBounds.right - 8);
+      }
+    }
   }
 
   function renderGames() {
@@ -355,6 +369,11 @@
 
   function renderDetail() {
     const shot = state.pinned;
+    el.copyShot.disabled = !shot;
+    el.pinShot.disabled = !shot;
+    el.pinShot.setAttribute("aria-pressed", String(Boolean(shot)));
+    el.pinShot.setAttribute("aria-label", shot ? "Unpin selected shot" : "Pin selected shot");
+    el.pinShot.title = shot ? "Unpin selected shot" : "Pin selected shot";
     if (!shot) {
       el.detailNote.textContent = "hover or click a shot";
       el.detailBody.innerHTML = '<div class="empty-state">Pick a shot to see who took it.</div>';
@@ -451,6 +470,7 @@
     }
     el.scopeMeta.textContent = meta;
 
+    renderViewMode();
     renderRail();
     renderCourt(list);
     renderPlayers();
@@ -458,6 +478,16 @@
     renderGames();
     renderDetail();
     renderStatus();
+  }
+
+  function renderViewMode() {
+    ["court", "players", "focus"].forEach((view) => {
+      document.body.classList.toggle("view-mode-" + view, state.view === view);
+    });
+    el.viewButtons.forEach((btn) => {
+      btn.classList.toggle("is-active", btn.dataset.view === state.view);
+      btn.setAttribute("aria-pressed", String(btn.dataset.view === state.view));
+    });
   }
 
   /* ── State changes ─────────────────────────────────────────────────────── */
@@ -612,10 +642,43 @@
 
   el.refresh.addEventListener("click", () => loadData(false));
 
+  el.copyShot.addEventListener("click", () => {
+    const shot = state.pinned;
+    if (!shot) return;
+    if (!navigator.clipboard || !navigator.clipboard.writeText) {
+      toast("Clipboard access is unavailable in this browser");
+      return;
+    }
+    const player = playersById.get(shot.player_id);
+    const text =
+      shot.date + " · " + (player ? player.name : shot.player_id) + " · " +
+      shot.type + " · " + shot.distance + " ft · " + (shot.made ? "made" : "missed");
+    navigator.clipboard.writeText(text).then(() => {
+      toast("Copied shot details");
+    }).catch(() => {
+      toast("Could not copy shot details");
+    });
+  });
+
+  el.pinShot.addEventListener("click", () => {
+    if (!state.pinned) return;
+    state.pinned = null;
+    render();
+    toast("Shot unpinned");
+  });
+
+  el.viewButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      state.view = btn.dataset.view;
+      render();
+    });
+  });
+
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       state.player = null;
       state.pinned = null;
+      state.view = "court";
       render();
       writeUrlState();
       return;

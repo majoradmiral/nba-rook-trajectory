@@ -1,6 +1,6 @@
 # nba-rook-trajectory
 
-Predicts second-year efficiency/minutes jump from rookie-year + Summer League stats. Regression + classification tiers.
+NBA rookie performance tracking, weekly shot charts, and an unofficial 2026-27 Rookie of the Year race.
 
 ## Rookie of the Year Race (Unofficial)
 
