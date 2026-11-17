@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-11-16T21:06:47+00:00",
+  "generated_at": "2026-11-17T20:34:41+00:00",
   "season_year": 2027,
   "season_label": "2026-27",
   "scope": "rookies",
   "totals": {
-    "games": 259,
-    "games_with_shots": 233,
+    "games": 267,
+    "games_with_shots": 241,
     "players": 73,
     "players_with_shots": 66,
-    "shots": 4097,
-    "made": 1798,
-    "weeks": 7
+    "shots": 4226,
+    "made": 1848,
+    "weeks": 8
   },
   "weeks": [
     {
@@ -96,6 +96,18 @@
       "games": 51,
       "shots": 726,
       "players": 41
+    },
+    {
+      "index": 8,
+      "start": "2026-11-16",
+      "end": "2026-11-22",
+      "label": "Nov 16 \u2013 22, 2026",
+      "season_types": [
+        "regular"
+      ],
+      "games": 8,
+      "shots": 129,
+      "players": 16
     }
   ],
   "games": [
@@ -3983,6 +3995,126 @@
       },
       "shots": 52,
       "players": 5
+    },
+    {
+      "game_id": "401909994",
+      "date": "2026-11-16",
+      "season_type": "regular",
+      "away": {
+        "abbr": "ORL",
+        "score": 115
+      },
+      "home": {
+        "abbr": "BOS",
+        "score": 105
+      },
+      "shots": 3,
+      "players": 1
+    },
+    {
+      "game_id": "401909995",
+      "date": "2026-11-16",
+      "season_type": "regular",
+      "away": {
+        "abbr": "CHI",
+        "score": 115
+      },
+      "home": {
+        "abbr": "CLE",
+        "score": 126
+      },
+      "shots": 17,
+      "players": 2
+    },
+    {
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "season_type": "regular",
+      "away": {
+        "abbr": "MEM",
+        "score": 136
+      },
+      "home": {
+        "abbr": "WSH",
+        "score": 120
+      },
+      "shots": 37,
+      "players": 2
+    },
+    {
+      "game_id": "401909997",
+      "date": "2026-11-16",
+      "season_type": "regular",
+      "away": {
+        "abbr": "PHI",
+        "score": 135
+      },
+      "home": {
+        "abbr": "BKN",
+        "score": 123
+      },
+      "shots": 7,
+      "players": 1
+    },
+    {
+      "game_id": "401909998",
+      "date": "2026-11-16",
+      "season_type": "regular",
+      "away": {
+        "abbr": "HOU",
+        "score": 110
+      },
+      "home": {
+        "abbr": "MIA",
+        "score": 128
+      },
+      "shots": 18,
+      "players": 3
+    },
+    {
+      "game_id": "401909999",
+      "date": "2026-11-16",
+      "season_type": "regular",
+      "away": {
+        "abbr": "POR",
+        "score": 98
+      },
+      "home": {
+        "abbr": "MIN",
+        "score": 106
+      },
+      "shots": 3,
+      "players": 1
+    },
+    {
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "season_type": "regular",
+      "away": {
+        "abbr": "GS",
+        "score": 94
+      },
+      "home": {
+        "abbr": "NO",
+        "score": 115
+      },
+      "shots": 37,
+      "players": 4
+    },
+    {
+      "game_id": "401910001",
+      "date": "2026-11-16",
+      "season_type": "regular",
+      "away": {
+        "abbr": "PHX",
+        "score": 117
+      },
+      "home": {
+        "abbr": "DEN",
+        "score": 105
+      },
+      "shots": 7,
+      "players": 2
     }
   ],
   "players": [
@@ -4026,29 +4158,29 @@
       "position": "F",
       "is_rookie": 1,
       "rank": 2,
-      "games": 17,
-      "minutes": 29.18,
-      "points": 19.35,
-      "rebounds": 7.65,
-      "assists": 3.71,
-      "plus_minus": 1.59,
-      "shots": 226,
-      "made": 113,
+      "games": 18,
+      "minutes": 29.39,
+      "points": 19.83,
+      "rebounds": 7.67,
+      "assists": 3.67,
+      "plus_minus": -0.17,
+      "shots": 249,
+      "made": 122,
       "zones": {
         "rim": {
-          "made": 70,
-          "attempts": 114,
-          "pct": 0.614
+          "made": 77,
+          "attempts": 125,
+          "pct": 0.616
         },
         "mid": {
           "made": 7,
-          "attempts": 26,
-          "pct": 0.2692
+          "attempts": 29,
+          "pct": 0.2414
         },
         "three": {
-          "made": 36,
-          "attempts": 86,
-          "pct": 0.4186
+          "made": 38,
+          "attempts": 95,
+          "pct": 0.4
         }
       }
     },
@@ -4059,19 +4191,19 @@
       "position": "F",
       "is_rookie": 1,
       "rank": 3,
-      "games": 17,
-      "minutes": 28.76,
-      "points": 15.18,
-      "rebounds": 8.71,
-      "assists": 4.71,
-      "plus_minus": 3.82,
-      "shots": 211,
-      "made": 84,
+      "games": 18,
+      "minutes": 28.78,
+      "points": 15.94,
+      "rebounds": 8.61,
+      "assists": 4.83,
+      "plus_minus": 4.06,
+      "shots": 232,
+      "made": 94,
       "zones": {
         "rim": {
-          "made": 50,
-          "attempts": 98,
-          "pct": 0.5102
+          "made": 53,
+          "attempts": 106,
+          "pct": 0.5
         },
         "mid": {
           "made": 9,
@@ -4079,9 +4211,9 @@
           "pct": 0.3462
         },
         "three": {
-          "made": 25,
-          "attempts": 87,
-          "pct": 0.2874
+          "made": 32,
+          "attempts": 100,
+          "pct": 0.32
         }
       }
     },
@@ -4158,19 +4290,19 @@
       "position": "F",
       "is_rookie": 1,
       "rank": 6,
-      "games": 14,
-      "minutes": 30.0,
-      "points": 14.43,
-      "rebounds": 5.5,
-      "assists": 2.07,
-      "plus_minus": -4.14,
-      "shots": 181,
-      "made": 74,
+      "games": 15,
+      "minutes": 30.13,
+      "points": 14.87,
+      "rebounds": 5.47,
+      "assists": 2.13,
+      "plus_minus": -4.87,
+      "shots": 197,
+      "made": 81,
       "zones": {
         "rim": {
-          "made": 47,
-          "attempts": 84,
-          "pct": 0.5595
+          "made": 53,
+          "attempts": 93,
+          "pct": 0.5699
         },
         "mid": {
           "made": 16,
@@ -4178,9 +4310,9 @@
           "pct": 0.3265
         },
         "three": {
-          "made": 11,
-          "attempts": 48,
-          "pct": 0.2292
+          "made": 12,
+          "attempts": 55,
+          "pct": 0.2182
         }
       }
     },
@@ -4290,28 +4422,28 @@
       "position": "G",
       "is_rookie": 1,
       "rank": 10,
-      "games": 9,
-      "minutes": 22.33,
-      "points": 12.33,
-      "rebounds": 2.11,
-      "assists": 3.56,
-      "plus_minus": -5.44,
-      "shots": 94,
-      "made": 34,
+      "games": 10,
+      "minutes": 21.9,
+      "points": 11.4,
+      "rebounds": 2.0,
+      "assists": 3.7,
+      "plus_minus": -6.4,
+      "shots": 101,
+      "made": 35,
       "zones": {
         "rim": {
           "made": 10,
-          "attempts": 27,
-          "pct": 0.3704
+          "attempts": 29,
+          "pct": 0.3448
         },
         "mid": {
           "made": 6,
-          "attempts": 13,
-          "pct": 0.4615
+          "attempts": 15,
+          "pct": 0.4
         },
         "three": {
-          "made": 18,
-          "attempts": 54,
+          "made": 19,
+          "attempts": 57,
           "pct": 0.3333
         }
       }
@@ -4323,29 +4455,29 @@
       "position": "G",
       "is_rookie": 1,
       "rank": 11,
-      "games": 15,
-      "minutes": 20.8,
-      "points": 12.07,
-      "rebounds": 2.33,
-      "assists": 1.33,
-      "plus_minus": 0.53,
-      "shots": 148,
-      "made": 71,
+      "games": 16,
+      "minutes": 21.38,
+      "points": 11.94,
+      "rebounds": 2.56,
+      "assists": 1.44,
+      "plus_minus": 0.62,
+      "shots": 161,
+      "made": 75,
       "zones": {
         "rim": {
-          "made": 25,
-          "attempts": 45,
-          "pct": 0.5556
+          "made": 27,
+          "attempts": 49,
+          "pct": 0.551
         },
         "mid": {
-          "made": 14,
-          "attempts": 26,
-          "pct": 0.5385
+          "made": 15,
+          "attempts": 28,
+          "pct": 0.5357
         },
         "three": {
-          "made": 32,
-          "attempts": 77,
-          "pct": 0.4156
+          "made": 33,
+          "attempts": 84,
+          "pct": 0.3929
         }
       }
     },
@@ -4356,19 +4488,19 @@
       "position": "F",
       "is_rookie": 1,
       "rank": 12,
-      "games": 15,
-      "minutes": 19.47,
-      "points": 8.0,
-      "rebounds": 4.47,
-      "assists": 0.47,
-      "plus_minus": 0.8,
-      "shots": 72,
-      "made": 48,
+      "games": 16,
+      "minutes": 19.69,
+      "points": 8.06,
+      "rebounds": 4.44,
+      "assists": 0.44,
+      "plus_minus": 0.25,
+      "shots": 77,
+      "made": 52,
       "zones": {
         "rim": {
-          "made": 34,
-          "attempts": 38,
-          "pct": 0.8947
+          "made": 37,
+          "attempts": 41,
+          "pct": 0.9024
         },
         "mid": {
           "made": 0,
@@ -4376,9 +4508,9 @@
           "pct": 0.0
         },
         "three": {
-          "made": 14,
-          "attempts": 31,
-          "pct": 0.4516
+          "made": 15,
+          "attempts": 33,
+          "pct": 0.4545
         }
       }
     },
@@ -4554,19 +4686,19 @@
       "position": "G",
       "is_rookie": 1,
       "rank": 18,
-      "games": 18,
-      "minutes": 16.06,
-      "points": 7.33,
-      "rebounds": 1.61,
-      "assists": 2.11,
-      "plus_minus": 0.5,
-      "shots": 112,
-      "made": 45,
+      "games": 19,
+      "minutes": 16.79,
+      "points": 7.68,
+      "rebounds": 1.63,
+      "assists": 2.16,
+      "plus_minus": 1.37,
+      "shots": 122,
+      "made": 48,
       "zones": {
         "rim": {
-          "made": 15,
-          "attempts": 29,
-          "pct": 0.5172
+          "made": 17,
+          "attempts": 32,
+          "pct": 0.5312
         },
         "mid": {
           "made": 7,
@@ -4574,9 +4706,9 @@
           "pct": 0.4667
         },
         "three": {
-          "made": 23,
-          "attempts": 68,
-          "pct": 0.3382
+          "made": 24,
+          "attempts": 75,
+          "pct": 0.32
         }
       }
     },
@@ -4752,19 +4884,19 @@
       "position": "G",
       "is_rookie": 1,
       "rank": 24,
-      "games": 7,
-      "minutes": 11.43,
-      "points": 6.29,
-      "rebounds": 1.86,
-      "assists": 0.71,
-      "plus_minus": -2.57,
-      "shots": 35,
-      "made": 14,
+      "games": 8,
+      "minutes": 12.38,
+      "points": 6.75,
+      "rebounds": 2.12,
+      "assists": 0.62,
+      "plus_minus": -2.25,
+      "shots": 45,
+      "made": 18,
       "zones": {
         "rim": {
-          "made": 4,
-          "attempts": 8,
-          "pct": 0.5
+          "made": 6,
+          "attempts": 11,
+          "pct": 0.5455
         },
         "mid": {
           "made": 1,
@@ -4772,9 +4904,9 @@
           "pct": 0.2
         },
         "three": {
-          "made": 9,
-          "attempts": 22,
-          "pct": 0.4091
+          "made": 11,
+          "attempts": 29,
+          "pct": 0.3793
         }
       }
     },
@@ -4785,19 +4917,19 @@
       "position": "F",
       "is_rookie": 1,
       "rank": 25,
-      "games": 16,
-      "minutes": 9.75,
-      "points": 4.69,
-      "rebounds": 2.75,
+      "games": 17,
+      "minutes": 9.65,
+      "points": 4.59,
+      "rebounds": 2.88,
       "assists": 1.06,
-      "plus_minus": -1.25,
-      "shots": 60,
-      "made": 27,
+      "plus_minus": -0.82,
+      "shots": 61,
+      "made": 28,
       "zones": {
         "rim": {
-          "made": 15,
-          "attempts": 36,
-          "pct": 0.4167
+          "made": 16,
+          "attempts": 37,
+          "pct": 0.4324
         },
         "mid": {
           "made": 6,
@@ -4944,34 +5076,34 @@
       }
     },
     {
-      "player_id": "5106283",
-      "name": "Dillon Mitchell",
-      "team": "BOS",
-      "position": "F",
+      "player_id": "4702134",
+      "name": "Norchad Omier",
+      "team": "CLE",
+      "position": "C",
       "is_rookie": 1,
       "rank": 30,
-      "games": 8,
-      "minutes": 8.38,
-      "points": 2.88,
-      "rebounds": 2.62,
-      "assists": 1.25,
-      "plus_minus": 2.25,
-      "shots": 17,
+      "games": 13,
+      "minutes": 7.92,
+      "points": 2.15,
+      "rebounds": 2.92,
+      "assists": 1.15,
+      "plus_minus": 3.92,
+      "shots": 24,
       "made": 10,
       "zones": {
         "rim": {
-          "made": 9,
-          "attempts": 13,
-          "pct": 0.6923
+          "made": 7,
+          "attempts": 17,
+          "pct": 0.4118
         },
         "mid": {
-          "made": 0,
+          "made": 1,
           "attempts": 1,
-          "pct": 0.0
+          "pct": 1.0
         },
         "three": {
-          "made": 1,
-          "attempts": 3,
+          "made": 2,
+          "attempts": 6,
           "pct": 0.3333
         }
       }
@@ -5010,45 +5142,12 @@
       }
     },
     {
-      "player_id": "4848625",
-      "name": "Dailyn Swain",
-      "team": "CHI",
-      "position": "G",
-      "is_rookie": 1,
-      "rank": 32,
-      "games": 9,
-      "minutes": 10.89,
-      "points": 3.22,
-      "rebounds": 1.22,
-      "assists": 1.78,
-      "plus_minus": -1.0,
-      "shots": 26,
-      "made": 11,
-      "zones": {
-        "rim": {
-          "made": 8,
-          "attempts": 13,
-          "pct": 0.6154
-        },
-        "mid": {
-          "made": 3,
-          "attempts": 3,
-          "pct": 1.0
-        },
-        "three": {
-          "made": 0,
-          "attempts": 10,
-          "pct": 0.0
-        }
-      }
-    },
-    {
       "player_id": "5281370",
       "name": "Hannes Steinbach",
       "team": "CHA",
       "position": "F",
       "is_rookie": 1,
-      "rank": 33,
+      "rank": 32,
       "games": 15,
       "minutes": 8.2,
       "points": 3.33,
@@ -5081,7 +5180,7 @@
       "team": "SA",
       "position": "F",
       "is_rookie": 1,
-      "rank": 34,
+      "rank": 33,
       "games": 5,
       "minutes": 9.8,
       "points": 4.6,
@@ -5109,68 +5208,68 @@
       }
     },
     {
-      "player_id": "4837356",
-      "name": "Tre Donaldson",
-      "team": "MIA",
+      "player_id": "4848625",
+      "name": "Dailyn Swain",
+      "team": "CHI",
       "position": "G",
       "is_rookie": 1,
-      "rank": 35,
-      "games": 7,
+      "rank": 34,
+      "games": 10,
       "minutes": 10.0,
-      "points": 4.14,
-      "rebounds": 0.57,
-      "assists": 1.57,
-      "plus_minus": -2.71,
-      "shots": 25,
-      "made": 10,
+      "points": 2.9,
+      "rebounds": 1.2,
+      "assists": 1.6,
+      "plus_minus": -0.3,
+      "shots": 26,
+      "made": 11,
       "zones": {
         "rim": {
-          "made": 4,
-          "attempts": 8,
-          "pct": 0.5
+          "made": 8,
+          "attempts": 13,
+          "pct": 0.6154
         },
         "mid": {
           "made": 3,
-          "attempts": 5,
-          "pct": 0.6
+          "attempts": 3,
+          "pct": 1.0
         },
         "three": {
-          "made": 3,
-          "attempts": 12,
-          "pct": 0.25
+          "made": 0,
+          "attempts": 10,
+          "pct": 0.0
         }
       }
     },
     {
-      "player_id": "4702134",
-      "name": "Norchad Omier",
-      "team": "CLE",
-      "position": "C",
+      "player_id": "5106283",
+      "name": "Dillon Mitchell",
+      "team": "BOS",
+      "position": "F",
       "is_rookie": 1,
-      "rank": 36,
-      "games": 12,
-      "minutes": 7.5,
-      "points": 2.0,
-      "rebounds": 2.67,
-      "assists": 1.08,
-      "plus_minus": 3.08,
-      "shots": 20,
-      "made": 8,
+      "rank": 35,
+      "games": 9,
+      "minutes": 7.44,
+      "points": 2.56,
+      "rebounds": 2.33,
+      "assists": 1.11,
+      "plus_minus": 2.0,
+      "shots": 17,
+      "made": 10,
       "zones": {
         "rim": {
-          "made": 6,
-          "attempts": 15,
-          "pct": 0.4
+          "made": 9,
+          "attempts": 13,
+          "pct": 0.6923
         },
         "mid": {
           "made": 0,
-          "attempts": 0,
+          "attempts": 1,
           "pct": 0.0
         },
         "three": {
-          "made": 2,
-          "attempts": 5,
-          "pct": 0.4
+          "made": 1,
+          "attempts": 3,
+          "pct": 0.3333
         }
       }
     },
@@ -5180,7 +5279,7 @@
       "team": "OKC",
       "position": "G",
       "is_rookie": 1,
-      "rank": 37,
+      "rank": 36,
       "games": 15,
       "minutes": 16.0,
       "points": 3.47,
@@ -5213,7 +5312,7 @@
       "team": "CHI",
       "position": "F",
       "is_rookie": 1,
-      "rank": 38,
+      "rank": 37,
       "games": 12,
       "minutes": 7.08,
       "points": 1.83,
@@ -5241,45 +5340,12 @@
       }
     },
     {
-      "player_id": "4873090",
-      "name": "Labaron Philon Jr.",
-      "team": "PHI",
-      "position": "G",
-      "is_rookie": 1,
-      "rank": 39,
-      "games": 17,
-      "minutes": 8.88,
-      "points": 3.35,
-      "rebounds": 0.94,
-      "assists": 1.35,
-      "plus_minus": -3.12,
-      "shots": 59,
-      "made": 20,
-      "zones": {
-        "rim": {
-          "made": 7,
-          "attempts": 17,
-          "pct": 0.4118
-        },
-        "mid": {
-          "made": 4,
-          "attempts": 15,
-          "pct": 0.2667
-        },
-        "three": {
-          "made": 9,
-          "attempts": 27,
-          "pct": 0.3333
-        }
-      }
-    },
-    {
       "player_id": "4838721",
       "name": "Tyler Nickel",
       "team": "NY",
       "position": "F",
       "is_rookie": 1,
-      "rank": 40,
+      "rank": 38,
       "games": 5,
       "minutes": 7.8,
       "points": 3.2,
@@ -5307,35 +5373,68 @@
       }
     },
     {
-      "player_id": "4565698",
-      "name": "Bryce Hopkins",
-      "team": "DEN",
-      "position": "F",
+      "player_id": "4837356",
+      "name": "Tre Donaldson",
+      "team": "MIA",
+      "position": "G",
       "is_rookie": 1,
-      "rank": 41,
-      "games": 15,
-      "minutes": 10.8,
-      "points": 3.87,
-      "rebounds": 1.4,
-      "assists": 0.53,
-      "plus_minus": -1.67,
-      "shots": 33,
-      "made": 19,
+      "rank": 39,
+      "games": 8,
+      "minutes": 9.12,
+      "points": 3.62,
+      "rebounds": 0.5,
+      "assists": 1.38,
+      "plus_minus": -2.88,
+      "shots": 28,
+      "made": 10,
       "zones": {
         "rim": {
-          "made": 16,
-          "attempts": 22,
-          "pct": 0.7273
+          "made": 4,
+          "attempts": 8,
+          "pct": 0.5
         },
         "mid": {
-          "made": 1,
-          "attempts": 4,
-          "pct": 0.25
+          "made": 3,
+          "attempts": 6,
+          "pct": 0.5
         },
         "three": {
-          "made": 2,
-          "attempts": 7,
-          "pct": 0.2857
+          "made": 3,
+          "attempts": 14,
+          "pct": 0.2143
+        }
+      }
+    },
+    {
+      "player_id": "4873090",
+      "name": "Labaron Philon Jr.",
+      "team": "PHI",
+      "position": "G",
+      "is_rookie": 1,
+      "rank": 40,
+      "games": 18,
+      "minutes": 8.39,
+      "points": 3.17,
+      "rebounds": 0.89,
+      "assists": 1.28,
+      "plus_minus": -2.94,
+      "shots": 59,
+      "made": 20,
+      "zones": {
+        "rim": {
+          "made": 7,
+          "attempts": 17,
+          "pct": 0.4118
+        },
+        "mid": {
+          "made": 4,
+          "attempts": 15,
+          "pct": 0.2667
+        },
+        "three": {
+          "made": 9,
+          "attempts": 27,
+          "pct": 0.3333
         }
       }
     },
@@ -5345,7 +5444,7 @@
       "team": "CHA",
       "position": "F",
       "is_rookie": 1,
-      "rank": 42,
+      "rank": 41,
       "games": 6,
       "minutes": 7.5,
       "points": 2.0,
@@ -5378,20 +5477,20 @@
       "team": "BOS",
       "position": "F",
       "is_rookie": 1,
-      "rank": 43,
-      "games": 15,
-      "minutes": 4.73,
-      "points": 2.67,
-      "rebounds": 1.93,
-      "assists": 0.13,
-      "plus_minus": -0.53,
-      "shots": 40,
-      "made": 18,
+      "rank": 42,
+      "games": 16,
+      "minutes": 5.19,
+      "points": 2.75,
+      "rebounds": 1.94,
+      "assists": 0.19,
+      "plus_minus": -0.88,
+      "shots": 43,
+      "made": 20,
       "zones": {
         "rim": {
-          "made": 16,
-          "attempts": 21,
-          "pct": 0.7619
+          "made": 18,
+          "attempts": 23,
+          "pct": 0.7826
         },
         "mid": {
           "made": 1,
@@ -5400,8 +5499,41 @@
         },
         "three": {
           "made": 1,
-          "attempts": 12,
-          "pct": 0.0833
+          "attempts": 13,
+          "pct": 0.0769
+        }
+      }
+    },
+    {
+      "player_id": "4565698",
+      "name": "Bryce Hopkins",
+      "team": "DEN",
+      "position": "F",
+      "is_rookie": 1,
+      "rank": 43,
+      "games": 16,
+      "minutes": 10.38,
+      "points": 3.62,
+      "rebounds": 1.38,
+      "assists": 0.5,
+      "plus_minus": -1.56,
+      "shots": 35,
+      "made": 19,
+      "zones": {
+        "rim": {
+          "made": 16,
+          "attempts": 24,
+          "pct": 0.6667
+        },
+        "mid": {
+          "made": 1,
+          "attempts": 4,
+          "pct": 0.25
+        },
+        "three": {
+          "made": 2,
+          "attempts": 7,
+          "pct": 0.2857
         }
       }
     },
@@ -5439,45 +5571,12 @@
       }
     },
     {
-      "player_id": "4065813",
-      "name": "Alpha Diallo",
-      "team": "DEN",
-      "position": "F",
-      "is_rookie": 1,
-      "rank": 45,
-      "games": 11,
-      "minutes": 8.55,
-      "points": 1.91,
-      "rebounds": 1.45,
-      "assists": 0.55,
-      "plus_minus": 0.36,
-      "shots": 20,
-      "made": 6,
-      "zones": {
-        "rim": {
-          "made": 3,
-          "attempts": 8,
-          "pct": 0.375
-        },
-        "mid": {
-          "made": 0,
-          "attempts": 3,
-          "pct": 0.0
-        },
-        "three": {
-          "made": 3,
-          "attempts": 9,
-          "pct": 0.3333
-        }
-      }
-    },
-    {
       "player_id": "4684443",
       "name": "Rafael Castro",
       "team": "LAL",
       "position": "F",
       "is_rookie": 1,
-      "rank": 46,
+      "rank": 45,
       "games": 2,
       "minutes": 8.0,
       "points": 1.0,
@@ -5510,7 +5609,7 @@
       "team": "WSH",
       "position": "F",
       "is_rookie": 1,
-      "rank": 47,
+      "rank": 46,
       "games": 11,
       "minutes": 5.73,
       "points": 2.0,
@@ -5543,7 +5642,7 @@
       "team": "TOR",
       "position": "G",
       "is_rookie": 1,
-      "rank": 48,
+      "rank": 47,
       "games": 18,
       "minutes": 7.28,
       "points": 2.5,
@@ -5576,7 +5675,7 @@
       "team": "LAC",
       "position": "F",
       "is_rookie": 1,
-      "rank": 49,
+      "rank": 48,
       "games": 11,
       "minutes": 6.82,
       "points": 3.55,
@@ -5609,7 +5708,7 @@
       "team": "BKN",
       "position": "F",
       "is_rookie": 1,
-      "rank": 50,
+      "rank": 49,
       "games": 4,
       "minutes": 5.0,
       "points": 2.5,
@@ -5642,7 +5741,7 @@
       "team": "SAC",
       "position": "F",
       "is_rookie": 1,
-      "rank": 51,
+      "rank": 50,
       "games": 16,
       "minutes": 9.5,
       "points": 1.62,
@@ -5666,6 +5765,39 @@
           "made": 6,
           "attempts": 17,
           "pct": 0.3529
+        }
+      }
+    },
+    {
+      "player_id": "4065813",
+      "name": "Alpha Diallo",
+      "team": "DEN",
+      "position": "F",
+      "is_rookie": 1,
+      "rank": 51,
+      "games": 12,
+      "minutes": 7.83,
+      "points": 1.75,
+      "rebounds": 1.33,
+      "assists": 0.5,
+      "plus_minus": 0.33,
+      "shots": 20,
+      "made": 6,
+      "zones": {
+        "rim": {
+          "made": 3,
+          "attempts": 8,
+          "pct": 0.375
+        },
+        "mid": {
+          "made": 0,
+          "attempts": 3,
+          "pct": 0.0
+        },
+        "three": {
+          "made": 3,
+          "attempts": 9,
+          "pct": 0.3333
         }
       }
     },
@@ -5808,12 +5940,12 @@
       "position": "F",
       "is_rookie": 1,
       "rank": 56,
-      "games": 16,
-      "minutes": 4.81,
-      "points": 2.56,
+      "games": 17,
+      "minutes": 4.59,
+      "points": 2.41,
       "rebounds": 1.06,
       "assists": 0.12,
-      "plus_minus": -1.38,
+      "plus_minus": -1.0,
       "shots": 32,
       "made": 19,
       "zones": {
@@ -5841,19 +5973,19 @@
       "position": "F",
       "is_rookie": 1,
       "rank": 57,
-      "games": 19,
-      "minutes": 5.21,
-      "points": 2.11,
-      "rebounds": 0.63,
-      "assists": 0.37,
-      "plus_minus": -1.16,
-      "shots": 40,
+      "games": 20,
+      "minutes": 5.15,
+      "points": 2.0,
+      "rebounds": 0.6,
+      "assists": 0.35,
+      "plus_minus": -1.6,
+      "shots": 43,
       "made": 12,
       "zones": {
         "rim": {
           "made": 2,
-          "attempts": 7,
-          "pct": 0.2857
+          "attempts": 8,
+          "pct": 0.25
         },
         "mid": {
           "made": 1,
@@ -5862,8 +5994,41 @@
         },
         "three": {
           "made": 9,
-          "attempts": 29,
-          "pct": 0.3103
+          "attempts": 31,
+          "pct": 0.2903
+        }
+      }
+    },
+    {
+      "player_id": "5105837",
+      "name": "Bruce Thornton",
+      "team": "HOU",
+      "position": "G",
+      "is_rookie": 1,
+      "rank": 58,
+      "games": 18,
+      "minutes": 4.33,
+      "points": 2.67,
+      "rebounds": 0.06,
+      "assists": 0.11,
+      "plus_minus": -1.67,
+      "shots": 31,
+      "made": 15,
+      "zones": {
+        "rim": {
+          "made": 5,
+          "attempts": 7,
+          "pct": 0.7143
+        },
+        "mid": {
+          "made": 4,
+          "attempts": 8,
+          "pct": 0.5
+        },
+        "three": {
+          "made": 6,
+          "attempts": 16,
+          "pct": 0.375
         }
       }
     },
@@ -5873,7 +6038,7 @@
       "team": "NY",
       "position": "G",
       "is_rookie": 1,
-      "rank": 58,
+      "rank": 59,
       "games": 9,
       "minutes": 3.33,
       "points": 1.33,
@@ -5897,39 +6062,6 @@
           "made": 2,
           "attempts": 6,
           "pct": 0.3333
-        }
-      }
-    },
-    {
-      "player_id": "5105837",
-      "name": "Bruce Thornton",
-      "team": "HOU",
-      "position": "G",
-      "is_rookie": 1,
-      "rank": 59,
-      "games": 17,
-      "minutes": 3.88,
-      "points": 2.41,
-      "rebounds": 0.06,
-      "assists": 0.12,
-      "plus_minus": -1.88,
-      "shots": 26,
-      "made": 13,
-      "zones": {
-        "rim": {
-          "made": 3,
-          "attempts": 5,
-          "pct": 0.6
-        },
-        "mid": {
-          "made": 4,
-          "attempts": 7,
-          "pct": 0.5714
-        },
-        "three": {
-          "made": 6,
-          "attempts": 14,
-          "pct": 0.4286
         }
       }
     },
@@ -6039,12 +6171,12 @@
       "position": "F",
       "is_rookie": 1,
       "rank": 63,
-      "games": 14,
-      "minutes": 3.43,
-      "points": 0.86,
-      "rebounds": 0.79,
+      "games": 15,
+      "minutes": 3.27,
+      "points": 0.8,
+      "rebounds": 0.73,
       "assists": 0.07,
-      "plus_minus": 0.79,
+      "plus_minus": 0.47,
       "shots": 9,
       "made": 5,
       "zones": {
@@ -6066,12 +6198,45 @@
       }
     },
     {
+      "player_id": "4712862",
+      "name": "Malik Dia",
+      "team": "NO",
+      "position": "F",
+      "is_rookie": 1,
+      "rank": 64,
+      "games": 7,
+      "minutes": 3.0,
+      "points": 0.57,
+      "rebounds": 0.14,
+      "assists": 0.29,
+      "plus_minus": -4.0,
+      "shots": 10,
+      "made": 2,
+      "zones": {
+        "rim": {
+          "made": 1,
+          "attempts": 3,
+          "pct": 0.3333
+        },
+        "mid": {
+          "made": 1,
+          "attempts": 4,
+          "pct": 0.25
+        },
+        "three": {
+          "made": 0,
+          "attempts": 3,
+          "pct": 0.0
+        }
+      }
+    },
+    {
       "player_id": "5214989",
       "name": "Bogoljub Markovic",
       "team": "MIL",
       "position": "F",
       "is_rookie": 1,
-      "rank": 64,
+      "rank": 65,
       "games": 16,
       "minutes": 3.44,
       "points": 0.75,
@@ -6104,7 +6269,7 @@
       "team": "DET",
       "position": "C",
       "is_rookie": 1,
-      "rank": 65,
+      "rank": 66,
       "games": 4,
       "minutes": 1.75,
       "points": 0.0,
@@ -6127,39 +6292,6 @@
         "three": {
           "made": 0,
           "attempts": 0,
-          "pct": 0.0
-        }
-      }
-    },
-    {
-      "player_id": "4712862",
-      "name": "Malik Dia",
-      "team": "NO",
-      "position": "F",
-      "is_rookie": 1,
-      "rank": 66,
-      "games": 6,
-      "minutes": 2.67,
-      "points": 0.33,
-      "rebounds": 0.0,
-      "assists": 0.17,
-      "plus_minus": -3.17,
-      "shots": 7,
-      "made": 1,
-      "zones": {
-        "rim": {
-          "made": 1,
-          "attempts": 3,
-          "pct": 0.3333
-        },
-        "mid": {
-          "made": 0,
-          "attempts": 2,
-          "pct": 0.0
-        },
-        "three": {
-          "made": 0,
-          "attempts": 2,
           "pct": 0.0
         }
       }
@@ -6303,7 +6435,7 @@
       "position": "C",
       "is_rookie": 1,
       "rank": 71,
-      "games": 4,
+      "games": 5,
       "minutes": 0.0,
       "points": 0.0,
       "rebounds": 0.0,
@@ -63754,6 +63886,1812 @@
       "period": 4,
       "clock": "1:28",
       "description": "Emanuel Sharp misses 10-foot fade away jump shot"
+    },
+    {
+      "player_id": "5142621",
+      "game_id": "401909994",
+      "date": "2026-11-16",
+      "x": 22.0,
+      "y": 1.0,
+      "made": 0,
+      "three": 1,
+      "distance": 22.0,
+      "type": "jumper",
+      "period": 2,
+      "clock": "8:08",
+      "description": "Chris Cenac Jr. misses 22-foot three point jumper"
+    },
+    {
+      "player_id": "5142621",
+      "game_id": "401909994",
+      "date": "2026-11-16",
+      "x": 0.0,
+      "y": 0.0,
+      "made": 1,
+      "three": 0,
+      "distance": 1.6,
+      "type": "dunk",
+      "period": 3,
+      "clock": "3:37",
+      "description": "Chris Cenac Jr. makes alley oop dunk (Payton Pritchard assists)"
+    },
+    {
+      "player_id": "5142621",
+      "game_id": "401909994",
+      "date": "2026-11-16",
+      "x": 1.0,
+      "y": 0.0,
+      "made": 1,
+      "three": 0,
+      "distance": 1.9,
+      "type": "dunk",
+      "period": 3,
+      "clock": "3:12",
+      "description": "Chris Cenac Jr. makes dunk (Jayson Tatum assists)"
+    },
+    {
+      "player_id": "5041951",
+      "game_id": "401909995",
+      "date": "2026-11-16",
+      "x": 5.0,
+      "y": 7.0,
+      "made": 0,
+      "three": 0,
+      "distance": 7.4,
+      "type": "floater",
+      "period": 1,
+      "clock": "6:01",
+      "description": "Meleek Thomas misses driving floating jump shot"
+    },
+    {
+      "player_id": "5041951",
+      "game_id": "401909995",
+      "date": "2026-11-16",
+      "x": 12.0,
+      "y": 24.0,
+      "made": 0,
+      "three": 1,
+      "distance": 25.4,
+      "type": "jumper",
+      "period": 1,
+      "clock": "5:36",
+      "description": "Meleek Thomas misses 26-foot three point jumper"
+    },
+    {
+      "player_id": "5041951",
+      "game_id": "401909995",
+      "date": "2026-11-16",
+      "x": -12.0,
+      "y": 22.0,
+      "made": 0,
+      "three": 1,
+      "distance": 23.7,
+      "type": "jump shot",
+      "period": 1,
+      "clock": "1:26",
+      "description": "Meleek Thomas misses 25-foot three point pullup jump shot"
+    },
+    {
+      "player_id": "5041951",
+      "game_id": "401909995",
+      "date": "2026-11-16",
+      "x": -3.0,
+      "y": 6.0,
+      "made": 1,
+      "three": 0,
+      "distance": 5.3,
+      "type": "floater",
+      "period": 2,
+      "clock": "9:55",
+      "description": "Meleek Thomas makes 6-foot driving floating jump shot (Donovan Mitchell assists)"
+    },
+    {
+      "player_id": "5041951",
+      "game_id": "401909995",
+      "date": "2026-11-16",
+      "x": 19.0,
+      "y": 18.0,
+      "made": 0,
+      "three": 1,
+      "distance": 25.1,
+      "type": "jumper",
+      "period": 2,
+      "clock": "8:32",
+      "description": "Meleek Thomas misses 25-foot three point jumper"
+    },
+    {
+      "player_id": "5041951",
+      "game_id": "401909995",
+      "date": "2026-11-16",
+      "x": -23.0,
+      "y": 4.0,
+      "made": 1,
+      "three": 1,
+      "distance": 23.1,
+      "type": "jumper",
+      "period": 2,
+      "clock": "7:34",
+      "description": "Meleek Thomas makes 23-foot three point jumper (Norchad Omier assists)"
+    },
+    {
+      "player_id": "5041951",
+      "game_id": "401909995",
+      "date": "2026-11-16",
+      "x": 23.0,
+      "y": -2.0,
+      "made": 0,
+      "three": 1,
+      "distance": 23.3,
+      "type": "jumper",
+      "period": 2,
+      "clock": "2:15",
+      "description": "Meleek Thomas misses 23-foot three point jumper"
+    },
+    {
+      "player_id": "5041951",
+      "game_id": "401909995",
+      "date": "2026-11-16",
+      "x": 20.0,
+      "y": 18.0,
+      "made": 0,
+      "three": 1,
+      "distance": 25.9,
+      "type": "jumper",
+      "period": 2,
+      "clock": "34.1",
+      "description": "Meleek Thomas misses 27-foot three point jumper"
+    },
+    {
+      "player_id": "5041951",
+      "game_id": "401909995",
+      "date": "2026-11-16",
+      "x": 1.0,
+      "y": 1.0,
+      "made": 1,
+      "three": 0,
+      "distance": 1.1,
+      "type": "shot",
+      "period": 3,
+      "clock": "6:01",
+      "description": "Meleek Thomas makes two point shot"
+    },
+    {
+      "player_id": "5041951",
+      "game_id": "401909995",
+      "date": "2026-11-16",
+      "x": 1.0,
+      "y": 5.0,
+      "made": 0,
+      "three": 0,
+      "distance": 3.6,
+      "type": "floater",
+      "period": 3,
+      "clock": "5:33",
+      "description": "Meleek Thomas misses driving floating jump shot"
+    },
+    {
+      "player_id": "5041951",
+      "game_id": "401909995",
+      "date": "2026-11-16",
+      "x": -16.0,
+      "y": 1.0,
+      "made": 1,
+      "three": 0,
+      "distance": 16.0,
+      "type": "jump shot",
+      "period": 3,
+      "clock": "3:21",
+      "description": "Meleek Thomas makes 15-foot pullup jump shot"
+    },
+    {
+      "player_id": "5041951",
+      "game_id": "401909995",
+      "date": "2026-11-16",
+      "x": 24.0,
+      "y": 0.0,
+      "made": 0,
+      "three": 1,
+      "distance": 24.1,
+      "type": "jumper",
+      "period": 4,
+      "clock": "6:51",
+      "description": "Meleek Thomas misses 23-foot three point jumper"
+    },
+    {
+      "player_id": "5041951",
+      "game_id": "401909995",
+      "date": "2026-11-16",
+      "x": -8.0,
+      "y": 8.0,
+      "made": 0,
+      "three": 0,
+      "distance": 10.3,
+      "type": "floater",
+      "period": 4,
+      "clock": "4:34",
+      "description": "Meleek Thomas misses driving floating jump shot"
+    },
+    {
+      "player_id": "4702134",
+      "game_id": "401909995",
+      "date": "2026-11-16",
+      "x": 9.0,
+      "y": 6.0,
+      "made": 1,
+      "three": 0,
+      "distance": 10.0,
+      "type": "floater",
+      "period": 2,
+      "clock": "9:28",
+      "description": "Norchad Omier makes 10-foot driving floating jump shot (Thomas Bryant assists)"
+    },
+    {
+      "player_id": "4702134",
+      "game_id": "401909995",
+      "date": "2026-11-16",
+      "x": -23.0,
+      "y": 0.0,
+      "made": 0,
+      "three": 1,
+      "distance": 23.1,
+      "type": "jumper",
+      "period": 2,
+      "clock": "8:41",
+      "description": "Norchad Omier misses 23-foot three point jumper"
+    },
+    {
+      "player_id": "4702134",
+      "game_id": "401909995",
+      "date": "2026-11-16",
+      "x": 0.0,
+      "y": 5.0,
+      "made": 0,
+      "three": 0,
+      "distance": 3.4,
+      "type": "shot",
+      "period": 2,
+      "clock": "8:28",
+      "description": "Josh Giddey blocks Norchad Omier's two point shot"
+    },
+    {
+      "player_id": "4702134",
+      "game_id": "401909995",
+      "date": "2026-11-16",
+      "x": 0.0,
+      "y": 1.0,
+      "made": 1,
+      "three": 0,
+      "distance": 0.6,
+      "type": "layup",
+      "period": 4,
+      "clock": "7:32",
+      "description": "Norchad Omier makes driving layup (Thomas Bryant assists)"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": 21.0,
+      "y": 12.0,
+      "made": 0,
+      "three": 1,
+      "distance": 23.4,
+      "type": "jumper",
+      "period": 1,
+      "clock": "10:59",
+      "description": "AJ Dybantsa misses 24-foot three point jumper"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": -25.0,
+      "y": -1.0,
+      "made": 1,
+      "three": 1,
+      "distance": 25.1,
+      "type": "jumper",
+      "period": 1,
+      "clock": "8:05",
+      "description": "AJ Dybantsa makes 24-foot three point jumper (Trae Young assists)"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": 0.0,
+      "y": 0.0,
+      "made": 1,
+      "three": 0,
+      "distance": 1.6,
+      "type": "dunk",
+      "period": 2,
+      "clock": "6:27",
+      "description": "AJ Dybantsa makes tip in dunk"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": 22.0,
+      "y": 0.0,
+      "made": 0,
+      "three": 1,
+      "distance": 22.1,
+      "type": "jumper",
+      "period": 2,
+      "clock": "5:23",
+      "description": "AJ Dybantsa misses 22-foot three point jumper"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": -4.0,
+      "y": 2.0,
+      "made": 1,
+      "three": 0,
+      "distance": 4.0,
+      "type": "dunk",
+      "period": 2,
+      "clock": "3:42",
+      "description": "AJ Dybantsa makes 4-foot dunk (Trae Young assists)"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": 2.0,
+      "y": 2.0,
+      "made": 0,
+      "three": 0,
+      "distance": 2.0,
+      "type": "dunk",
+      "period": 2,
+      "clock": "2:35",
+      "description": "Cedric Coward blocks AJ Dybantsa 's 3-foot driving dunk"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": 6.0,
+      "y": 4.0,
+      "made": 1,
+      "three": 0,
+      "distance": 6.5,
+      "type": "jump shot",
+      "period": 2,
+      "clock": "1:33",
+      "description": "AJ Dybantsa makes 6-foot pullup jump shot (Trae Young assists)"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": -1.0,
+      "y": 1.0,
+      "made": 1,
+      "three": 0,
+      "distance": 1.1,
+      "type": "dunk",
+      "period": 2,
+      "clock": "1:09",
+      "description": "AJ Dybantsa makes driving dunk"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": -25.0,
+      "y": -1.0,
+      "made": 0,
+      "three": 1,
+      "distance": 25.1,
+      "type": "jumper",
+      "period": 3,
+      "clock": "9:45",
+      "description": "AJ Dybantsa misses 25-foot three point jumper"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": 24.0,
+      "y": 1.0,
+      "made": 0,
+      "three": 1,
+      "distance": 24.0,
+      "type": "jumper",
+      "period": 3,
+      "clock": "8:35",
+      "description": "AJ Dybantsa misses 24-foot three point jumper"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": -1.0,
+      "y": 4.0,
+      "made": 0,
+      "three": 0,
+      "distance": 2.6,
+      "type": "shot",
+      "period": 3,
+      "clock": "7:23",
+      "description": "AJ Dybantsa misses two point shot"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": -3.0,
+      "y": 7.0,
+      "made": 1,
+      "three": 0,
+      "distance": 6.2,
+      "type": "jump shot",
+      "period": 4,
+      "clock": "6:38",
+      "description": "AJ Dybantsa makes 7-foot pullup jump shot"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": -1.0,
+      "y": 1.0,
+      "made": 1,
+      "three": 0,
+      "distance": 1.1,
+      "type": "layup",
+      "period": 4,
+      "clock": "5:23",
+      "description": "AJ Dybantsa makes driving layup"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": 2.0,
+      "y": 8.0,
+      "made": 0,
+      "three": 0,
+      "distance": 6.7,
+      "type": "layup",
+      "period": 4,
+      "clock": "4:40",
+      "description": "Cameron Boozer blocks AJ Dybantsa 's 8-foot driving layup"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": 18.0,
+      "y": 18.0,
+      "made": 0,
+      "three": 1,
+      "distance": 24.4,
+      "type": "jump shot",
+      "period": 4,
+      "clock": "4:02",
+      "description": "AJ Dybantsa misses 25-foot three point pullup jump shot"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": 24.0,
+      "y": 6.0,
+      "made": 0,
+      "three": 1,
+      "distance": 24.4,
+      "type": "jump shot",
+      "period": 4,
+      "clock": "2:31",
+      "description": "AJ Dybantsa misses 25-foot three point pullup jump shot"
+    },
+    {
+      "player_id": "5041935",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": -5.0,
+      "y": 26.0,
+      "made": 0,
+      "three": 1,
+      "distance": 24.9,
+      "type": "jump shot",
+      "period": 1,
+      "clock": "11:28",
+      "description": "Cameron Boozer misses 26-foot three point pullup jump shot"
+    },
+    {
+      "player_id": "5041935",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": -23.0,
+      "y": 13.0,
+      "made": 0,
+      "three": 1,
+      "distance": 25.7,
+      "type": "jumper",
+      "period": 1,
+      "clock": "11:15",
+      "description": "Cameron Boozer misses 26-foot three point jumper"
+    },
+    {
+      "player_id": "5041935",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": 7.0,
+      "y": 26.0,
+      "made": 0,
+      "three": 1,
+      "distance": 25.4,
+      "type": "jumper",
+      "period": 1,
+      "clock": "10:47",
+      "description": "Cameron Boozer misses 26-foot three point jumper"
+    },
+    {
+      "player_id": "5041935",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": -23.0,
+      "y": 13.0,
+      "made": 0,
+      "three": 1,
+      "distance": 25.7,
+      "type": "shot",
+      "period": 1,
+      "clock": "9:49",
+      "description": "Cameron Boozer misses 26-foot three point step back jumpshot"
+    },
+    {
+      "player_id": "5041935",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": 15.0,
+      "y": 21.0,
+      "made": 0,
+      "three": 1,
+      "distance": 24.5,
+      "type": "jumper",
+      "period": 1,
+      "clock": "9:15",
+      "description": "Cameron Boozer misses 25-foot three point jumper"
+    },
+    {
+      "player_id": "5041935",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": 24.0,
+      "y": -1.0,
+      "made": 1,
+      "three": 1,
+      "distance": 24.1,
+      "type": "jumper",
+      "period": 1,
+      "clock": "7:38",
+      "description": "Cameron Boozer makes 24-foot three point jumper (Cedric Coward assists)"
+    },
+    {
+      "player_id": "5041935",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": -20.0,
+      "y": 14.0,
+      "made": 1,
+      "three": 1,
+      "distance": 23.6,
+      "type": "jumper",
+      "period": 1,
+      "clock": "7:17",
+      "description": "Cameron Boozer makes 24-foot three point jumper (Jerami Grant assists)"
+    },
+    {
+      "player_id": "5041935",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": -24.0,
+      "y": 11.0,
+      "made": 1,
+      "three": 1,
+      "distance": 25.8,
+      "type": "jumper",
+      "period": 1,
+      "clock": "57.2",
+      "description": "Cameron Boozer makes 26-foot three point jumper (Cam Spencer assists)"
+    },
+    {
+      "player_id": "5041935",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": -22.0,
+      "y": 9.0,
+      "made": 1,
+      "three": 1,
+      "distance": 23.2,
+      "type": "jumper",
+      "period": 2,
+      "clock": "6:05",
+      "description": "Cameron Boozer makes 24-foot three point jumper (Javon Small assists)"
+    },
+    {
+      "player_id": "5041935",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": -4.0,
+      "y": 2.0,
+      "made": 0,
+      "three": 0,
+      "distance": 4.0,
+      "type": "layup",
+      "period": 2,
+      "clock": "4:44",
+      "description": "Anthony Davis blocks Cameron Boozer 's 4-foot driving layup"
+    },
+    {
+      "player_id": "5041935",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": 1.0,
+      "y": 3.0,
+      "made": 1,
+      "three": 0,
+      "distance": 1.7,
+      "type": "layup",
+      "period": 2,
+      "clock": "1:54",
+      "description": "Cameron Boozer makes driving layup (Cedric Coward assists)"
+    },
+    {
+      "player_id": "5041935",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": 19.0,
+      "y": 21.0,
+      "made": 0,
+      "three": 1,
+      "distance": 27.2,
+      "type": "jumper",
+      "period": 2,
+      "clock": "1:03",
+      "description": "Cameron Boozer misses 28-foot three point jumper"
+    },
+    {
+      "player_id": "5041935",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": 1.0,
+      "y": 3.0,
+      "made": 0,
+      "three": 0,
+      "distance": 1.7,
+      "type": "shot",
+      "period": 2,
+      "clock": "42.1",
+      "description": "Cameron Boozer misses 2-foot two point shot"
+    },
+    {
+      "player_id": "5041935",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": 0.0,
+      "y": -1.0,
+      "made": 0,
+      "three": 0,
+      "distance": 2.6,
+      "type": "tip-in",
+      "period": 2,
+      "clock": "41.3",
+      "description": "Cameron Boozer misses 1-foot tip shot"
+    },
+    {
+      "player_id": "5041935",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": 2.0,
+      "y": 1.0,
+      "made": 0,
+      "three": 0,
+      "distance": 2.1,
+      "type": "shot",
+      "period": 2,
+      "clock": "38.8",
+      "description": "Kyshawn George blocks Cameron Boozer 's 2-foot two point shot"
+    },
+    {
+      "player_id": "5041935",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": 6.0,
+      "y": 2.0,
+      "made": 0,
+      "three": 0,
+      "distance": 6.0,
+      "type": "shot",
+      "period": 3,
+      "clock": "10:03",
+      "description": "Cameron Boozer misses two point shot"
+    },
+    {
+      "player_id": "5041935",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": 16.0,
+      "y": 20.0,
+      "made": 1,
+      "three": 0,
+      "distance": 24.4,
+      "type": "jump shot",
+      "period": 3,
+      "clock": "9:16",
+      "description": "Cameron Boozer makes 25-foot running jump shot (Jaylen Wells assists)"
+    },
+    {
+      "player_id": "5041935",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": 22.0,
+      "y": 12.0,
+      "made": 1,
+      "three": 1,
+      "distance": 24.4,
+      "type": "jumper",
+      "period": 3,
+      "clock": "8:52",
+      "description": "Cameron Boozer makes 24-foot three point jumper (Cedric Coward assists)"
+    },
+    {
+      "player_id": "5041935",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": -2.0,
+      "y": 2.0,
+      "made": 1,
+      "three": 0,
+      "distance": 2.0,
+      "type": "shot",
+      "period": 3,
+      "clock": "6:45",
+      "description": "Cameron Boozer makes 2-foot two point shot"
+    },
+    {
+      "player_id": "5041935",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": -1.0,
+      "y": 6.0,
+      "made": 1,
+      "three": 0,
+      "distance": 4.5,
+      "type": "floater",
+      "period": 4,
+      "clock": "5:05",
+      "description": "Cameron Boozer makes 5-foot driving floating jump shot (Javon Small assists)"
+    },
+    {
+      "player_id": "5041935",
+      "game_id": "401909996",
+      "date": "2026-11-16",
+      "x": 22.0,
+      "y": 9.0,
+      "made": 1,
+      "three": 1,
+      "distance": 23.2,
+      "type": "jumper",
+      "period": 4,
+      "clock": "2:41",
+      "description": "Cameron Boozer makes 24-foot three point jumper (Javon Small assists)"
+    },
+    {
+      "player_id": "5101761",
+      "game_id": "401909997",
+      "date": "2026-11-16",
+      "x": -15.0,
+      "y": 20.0,
+      "made": 0,
+      "three": 1,
+      "distance": 23.8,
+      "type": "shot",
+      "period": 2,
+      "clock": "10:04",
+      "description": "Mikel Brown Jr. misses 24-foot three point step back jumpshot"
+    },
+    {
+      "player_id": "5101761",
+      "game_id": "401909997",
+      "date": "2026-11-16",
+      "x": -10.0,
+      "y": 13.0,
+      "made": 0,
+      "three": 0,
+      "distance": 15.2,
+      "type": "jump shot",
+      "period": 2,
+      "clock": "9:13",
+      "description": "Mikel Brown Jr. misses 16-foot pullup jump shot"
+    },
+    {
+      "player_id": "5101761",
+      "game_id": "401909997",
+      "date": "2026-11-16",
+      "x": -3.0,
+      "y": 3.0,
+      "made": 0,
+      "three": 0,
+      "distance": 3.3,
+      "type": "layup",
+      "period": 3,
+      "clock": "2:20",
+      "description": "Mikel Brown Jr. misses driving layup"
+    },
+    {
+      "player_id": "5101761",
+      "game_id": "401909997",
+      "date": "2026-11-16",
+      "x": 2.0,
+      "y": 2.0,
+      "made": 0,
+      "three": 0,
+      "distance": 2.0,
+      "type": "layup",
+      "period": 4,
+      "clock": "11:50",
+      "description": "Mikel Brown Jr. misses driving layup"
+    },
+    {
+      "player_id": "5101761",
+      "game_id": "401909997",
+      "date": "2026-11-16",
+      "x": 11.0,
+      "y": 15.0,
+      "made": 0,
+      "three": 0,
+      "distance": 17.4,
+      "type": "jump shot",
+      "period": 4,
+      "clock": "10:17",
+      "description": "Mikel Brown Jr. misses 18-foot pullup jump shot"
+    },
+    {
+      "player_id": "5101761",
+      "game_id": "401909997",
+      "date": "2026-11-16",
+      "x": 12.0,
+      "y": 23.0,
+      "made": 1,
+      "three": 1,
+      "distance": 24.6,
+      "type": "shot",
+      "period": 4,
+      "clock": "8:08",
+      "description": "Mikel Brown Jr. makes 25-foot three pointer (Danny Wolf assists)"
+    },
+    {
+      "player_id": "5101761",
+      "game_id": "401909997",
+      "date": "2026-11-16",
+      "x": 3.0,
+      "y": 26.0,
+      "made": 0,
+      "three": 0,
+      "distance": 24.6,
+      "type": "jump shot",
+      "period": 4,
+      "clock": "7:12",
+      "description": "Mikel Brown Jr. misses running pullup jump shot"
+    },
+    {
+      "player_id": "5105837",
+      "game_id": "401909998",
+      "date": "2026-11-16",
+      "x": 21.0,
+      "y": 12.0,
+      "made": 0,
+      "three": 0,
+      "distance": 23.4,
+      "type": "jump shot",
+      "period": 4,
+      "clock": "9:35",
+      "description": "Bruce Thornton misses 24-foot running jump shot"
+    },
+    {
+      "player_id": "5105837",
+      "game_id": "401909998",
+      "date": "2026-11-16",
+      "x": 0.0,
+      "y": 9.0,
+      "made": 1,
+      "three": 0,
+      "distance": 7.4,
+      "type": "jump shot",
+      "period": 4,
+      "clock": "6:19",
+      "description": "Bruce Thornton makes 8-foot pullup jump shot (Isaiah Crawford assists)"
+    },
+    {
+      "player_id": "5105837",
+      "game_id": "401909998",
+      "date": "2026-11-16",
+      "x": 9.0,
+      "y": 8.0,
+      "made": 0,
+      "three": 0,
+      "distance": 11.1,
+      "type": "floater",
+      "period": 4,
+      "clock": "5:26",
+      "description": "Bruce Thornton misses driving floating jump shot"
+    },
+    {
+      "player_id": "5105837",
+      "game_id": "401909998",
+      "date": "2026-11-16",
+      "x": 0.0,
+      "y": 1.0,
+      "made": 1,
+      "three": 0,
+      "distance": 0.6,
+      "type": "shot",
+      "period": 4,
+      "clock": "4:46",
+      "description": "Bruce Thornton makes two point shot"
+    },
+    {
+      "player_id": "5105837",
+      "game_id": "401909998",
+      "date": "2026-11-16",
+      "x": -21.0,
+      "y": 14.0,
+      "made": 0,
+      "three": 1,
+      "distance": 24.4,
+      "type": "jumper",
+      "period": 4,
+      "clock": "3:29",
+      "description": "Bruce Thornton misses 24-foot three point jumper"
+    },
+    {
+      "player_id": "5107157",
+      "game_id": "401909998",
+      "date": "2026-11-16",
+      "x": -17.0,
+      "y": 19.0,
+      "made": 0,
+      "three": 1,
+      "distance": 24.3,
+      "type": "jumper",
+      "period": 1,
+      "clock": "4:09",
+      "description": "Ryan Conwell misses 25-foot three point jumper"
+    },
+    {
+      "player_id": "5107157",
+      "game_id": "401909998",
+      "date": "2026-11-16",
+      "x": -24.0,
+      "y": 1.0,
+      "made": 1,
+      "three": 1,
+      "distance": 24.0,
+      "type": "jumper",
+      "period": 1,
+      "clock": "2:51",
+      "description": "Ryan Conwell makes 23-foot three point jumper (Davion Mitchell assists)"
+    },
+    {
+      "player_id": "5107157",
+      "game_id": "401909998",
+      "date": "2026-11-16",
+      "x": -23.0,
+      "y": 0.0,
+      "made": 0,
+      "three": 1,
+      "distance": 23.1,
+      "type": "jumper",
+      "period": 1,
+      "clock": "1:05",
+      "description": "Ryan Conwell misses 23-foot three point jumper"
+    },
+    {
+      "player_id": "5107157",
+      "game_id": "401909998",
+      "date": "2026-11-16",
+      "x": 0.0,
+      "y": 0.0,
+      "made": 0,
+      "three": 0,
+      "distance": 1.6,
+      "type": "shot",
+      "period": 1,
+      "clock": "30.4",
+      "description": "Ryan Conwell misses two point shot"
+    },
+    {
+      "player_id": "5107157",
+      "game_id": "401909998",
+      "date": "2026-11-16",
+      "x": -1.0,
+      "y": 0.0,
+      "made": 1,
+      "three": 0,
+      "distance": 1.9,
+      "type": "shot",
+      "period": 2,
+      "clock": "2:01",
+      "description": "Ryan Conwell makes two point shot"
+    },
+    {
+      "player_id": "5107157",
+      "game_id": "401909998",
+      "date": "2026-11-16",
+      "x": -23.0,
+      "y": 1.0,
+      "made": 0,
+      "three": 1,
+      "distance": 23.0,
+      "type": "jumper",
+      "period": 3,
+      "clock": "2:02",
+      "description": "Ryan Conwell misses 23-foot three point jumper"
+    },
+    {
+      "player_id": "5107157",
+      "game_id": "401909998",
+      "date": "2026-11-16",
+      "x": -22.0,
+      "y": 12.0,
+      "made": 0,
+      "three": 1,
+      "distance": 24.4,
+      "type": "jumper",
+      "period": 4,
+      "clock": "8:13",
+      "description": "Ryan Conwell misses 25-foot three point jumper"
+    },
+    {
+      "player_id": "5107157",
+      "game_id": "401909998",
+      "date": "2026-11-16",
+      "x": 1.0,
+      "y": 0.0,
+      "made": 1,
+      "three": 0,
+      "distance": 1.9,
+      "type": "layup",
+      "period": 4,
+      "clock": "6:40",
+      "description": "Ryan Conwell makes running layup (Davion Mitchell assists)"
+    },
+    {
+      "player_id": "5107157",
+      "game_id": "401909998",
+      "date": "2026-11-16",
+      "x": -18.0,
+      "y": 24.0,
+      "made": 0,
+      "three": 1,
+      "distance": 28.8,
+      "type": "jump shot",
+      "period": 4,
+      "clock": "1:47",
+      "description": "Ryan Conwell misses 29-foot three point pullup jump shot"
+    },
+    {
+      "player_id": "5107157",
+      "game_id": "401909998",
+      "date": "2026-11-16",
+      "x": 23.0,
+      "y": 3.0,
+      "made": 0,
+      "three": 1,
+      "distance": 23.0,
+      "type": "jump shot",
+      "period": 4,
+      "clock": "22.1",
+      "description": "Ryan Conwell misses 23-foot three point pullup jump shot"
+    },
+    {
+      "player_id": "4837356",
+      "game_id": "401909998",
+      "date": "2026-11-16",
+      "x": 13.0,
+      "y": 21.0,
+      "made": 0,
+      "three": 1,
+      "distance": 23.4,
+      "type": "jumper",
+      "period": 4,
+      "clock": "2:38",
+      "description": "Tre Donaldson misses 24-foot three point jumper"
+    },
+    {
+      "player_id": "4837356",
+      "game_id": "401909998",
+      "date": "2026-11-16",
+      "x": -7.0,
+      "y": 10.0,
+      "made": 0,
+      "three": 0,
+      "distance": 10.9,
+      "type": "jump shot",
+      "period": 4,
+      "clock": "1:17",
+      "description": "Tre Donaldson misses 11-foot pullup jump shot"
+    },
+    {
+      "player_id": "4837356",
+      "game_id": "401909998",
+      "date": "2026-11-16",
+      "x": -16.0,
+      "y": 19.0,
+      "made": 0,
+      "three": 1,
+      "distance": 23.7,
+      "type": "shot",
+      "period": 4,
+      "clock": "43.6",
+      "description": "Tre Donaldson misses 25-foot three point step back jumpshot"
+    },
+    {
+      "player_id": "5061585",
+      "game_id": "401909999",
+      "date": "2026-11-16",
+      "x": -22.0,
+      "y": 1.0,
+      "made": 0,
+      "three": 1,
+      "distance": 22.0,
+      "type": "jumper",
+      "period": 4,
+      "clock": "2:29",
+      "description": "Isaiah Evans misses 22-foot three point jumper"
+    },
+    {
+      "player_id": "5061585",
+      "game_id": "401909999",
+      "date": "2026-11-16",
+      "x": 0.0,
+      "y": 2.0,
+      "made": 0,
+      "three": 0,
+      "distance": 0.4,
+      "type": "shot",
+      "period": 4,
+      "clock": "1:02",
+      "description": "Isaiah Evans misses two point shot"
+    },
+    {
+      "player_id": "5061585",
+      "game_id": "401909999",
+      "date": "2026-11-16",
+      "x": 24.0,
+      "y": 3.0,
+      "made": 0,
+      "three": 1,
+      "distance": 24.0,
+      "type": "jumper",
+      "period": 4,
+      "clock": "30.0",
+      "description": "Isaiah Evans misses 24-foot three point jumper"
+    },
+    {
+      "player_id": "4703396",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": -1.0,
+      "y": 0.0,
+      "made": 1,
+      "three": 0,
+      "distance": 1.9,
+      "type": "dunk",
+      "period": 4,
+      "clock": "5.0",
+      "description": "Graham Ike makes driving dunk (LJ Cryer assists)"
+    },
+    {
+      "player_id": "4703115",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": -20.0,
+      "y": 16.0,
+      "made": 0,
+      "three": 1,
+      "distance": 24.7,
+      "type": "jumper",
+      "period": 1,
+      "clock": "2:40",
+      "description": "Jaron Pierre Jr. misses 25-foot three point jumper"
+    },
+    {
+      "player_id": "4703115",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": 23.0,
+      "y": 2.0,
+      "made": 0,
+      "three": 1,
+      "distance": 23.0,
+      "type": "jumper",
+      "period": 2,
+      "clock": "9:52",
+      "description": "Jaron Pierre Jr. misses 23-foot three point jumper"
+    },
+    {
+      "player_id": "4703115",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": 3.0,
+      "y": 4.0,
+      "made": 0,
+      "three": 0,
+      "distance": 3.9,
+      "type": "layup",
+      "period": 2,
+      "clock": "9:28",
+      "description": "Jaron Pierre Jr. misses driving layup"
+    },
+    {
+      "player_id": "4703115",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": -1.0,
+      "y": 1.0,
+      "made": 1,
+      "three": 0,
+      "distance": 1.1,
+      "type": "layup",
+      "period": 4,
+      "clock": "9:09",
+      "description": "Jaron Pierre Jr. makes running layup"
+    },
+    {
+      "player_id": "4703115",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": -17.0,
+      "y": 23.0,
+      "made": 0,
+      "three": 1,
+      "distance": 27.4,
+      "type": "jumper",
+      "period": 4,
+      "clock": "8:28",
+      "description": "Jaron Pierre Jr. misses 28-foot three point jumper"
+    },
+    {
+      "player_id": "4703115",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": 6.0,
+      "y": 26.0,
+      "made": 1,
+      "three": 1,
+      "distance": 25.1,
+      "type": "jumper",
+      "period": 4,
+      "clock": "8:03",
+      "description": "Jaron Pierre Jr. makes 26-foot three point jumper (Jordan Poole assists)"
+    },
+    {
+      "player_id": "4703115",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": -1.0,
+      "y": 1.0,
+      "made": 1,
+      "three": 0,
+      "distance": 1.1,
+      "type": "layup",
+      "period": 4,
+      "clock": "7:41",
+      "description": "Jaron Pierre Jr. makes 1-foot layup"
+    },
+    {
+      "player_id": "4703115",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": -22.0,
+      "y": 16.0,
+      "made": 1,
+      "three": 1,
+      "distance": 26.3,
+      "type": "jumper",
+      "period": 4,
+      "clock": "3:25",
+      "description": "Jaron Pierre Jr. makes 27-foot three point jumper (Malik Dia assists)"
+    },
+    {
+      "player_id": "4703115",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": 24.0,
+      "y": 11.0,
+      "made": 0,
+      "three": 1,
+      "distance": 25.8,
+      "type": "jump shot",
+      "period": 4,
+      "clock": "2:02",
+      "description": "Jaron Pierre Jr. misses 26-foot three point pullup jump shot"
+    },
+    {
+      "player_id": "4703115",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": -2.0,
+      "y": 33.0,
+      "made": 0,
+      "three": 1,
+      "distance": 31.5,
+      "type": "jump shot",
+      "period": 4,
+      "clock": "0.0",
+      "description": "Jaron Pierre Jr. misses 32-foot three point pullup jump shot"
+    },
+    {
+      "player_id": "4712862",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": -20.0,
+      "y": 20.0,
+      "made": 0,
+      "three": 1,
+      "distance": 27.2,
+      "type": "jumper",
+      "period": 4,
+      "clock": "4:26",
+      "description": "Malik Dia misses 28-foot three point jumper"
+    },
+    {
+      "player_id": "4712862",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": -9.0,
+      "y": 14.0,
+      "made": 1,
+      "three": 0,
+      "distance": 15.3,
+      "type": "jump shot",
+      "period": 4,
+      "clock": "2:58",
+      "description": "Malik Dia makes 16-foot turnaround jump shot"
+    },
+    {
+      "player_id": "4712862",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": 11.0,
+      "y": 0.0,
+      "made": 0,
+      "three": 0,
+      "distance": 11.1,
+      "type": "jumper",
+      "period": 4,
+      "clock": "1:19",
+      "description": "Malik Dia misses 11-foot jumper"
+    },
+    {
+      "player_id": "5175737",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": 15.0,
+      "y": 21.0,
+      "made": 0,
+      "three": 1,
+      "distance": 24.5,
+      "type": "jump shot",
+      "period": 1,
+      "clock": "8:20",
+      "description": "Yaxel Lendeborg misses 25-foot three point pullup jump shot"
+    },
+    {
+      "player_id": "5175737",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": 2.0,
+      "y": 0.0,
+      "made": 1,
+      "three": 0,
+      "distance": 2.5,
+      "type": "layup",
+      "period": 1,
+      "clock": "1:15",
+      "description": "Yaxel Lendeborg makes driving layup (Brandin Podziemski assists)"
+    },
+    {
+      "player_id": "5175737",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": -1.0,
+      "y": 1.0,
+      "made": 1,
+      "three": 0,
+      "distance": 1.1,
+      "type": "layup",
+      "period": 2,
+      "clock": "9:46",
+      "description": "Yaxel Lendeborg makes running layup (De'Anthony Melton assists)"
+    },
+    {
+      "player_id": "5175737",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": 0.0,
+      "y": 9.0,
+      "made": 0,
+      "three": 0,
+      "distance": 7.4,
+      "type": "floater",
+      "period": 2,
+      "clock": "4:15",
+      "description": "Yaxel Lendeborg misses driving floating jump shot"
+    },
+    {
+      "player_id": "5175737",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": 2.0,
+      "y": 2.0,
+      "made": 0,
+      "three": 0,
+      "distance": 2.0,
+      "type": "shot",
+      "period": 2,
+      "clock": "2:26",
+      "description": "Yaxel Lendeborg misses 3-foot two point shot"
+    },
+    {
+      "player_id": "5175737",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": 0.0,
+      "y": 27.0,
+      "made": 0,
+      "three": 1,
+      "distance": 25.4,
+      "type": "jump shot",
+      "period": 2,
+      "clock": "2:02",
+      "description": "Yaxel Lendeborg misses 26-foot three point pullup jump shot"
+    },
+    {
+      "player_id": "5175737",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": 5.0,
+      "y": 5.0,
+      "made": 0,
+      "three": 0,
+      "distance": 6.1,
+      "type": "layup",
+      "period": 2,
+      "clock": "50.4",
+      "description": "Yves Missi blocks Yaxel Lendeborg 's 7-foot running layup"
+    },
+    {
+      "player_id": "5175737",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": 14.0,
+      "y": 6.0,
+      "made": 0,
+      "three": 0,
+      "distance": 14.7,
+      "type": "jump shot",
+      "period": 2,
+      "clock": "3.6",
+      "description": "Saddiq Bey blocks Yaxel Lendeborg 's 16-foot pullup jump shot"
+    },
+    {
+      "player_id": "5175737",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": -16.0,
+      "y": 23.0,
+      "made": 0,
+      "three": 1,
+      "distance": 26.7,
+      "type": "jumper",
+      "period": 2,
+      "clock": "0.0",
+      "description": "Yaxel Lendeborg misses 28-foot three point jumper"
+    },
+    {
+      "player_id": "5175737",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": -21.0,
+      "y": 15.0,
+      "made": 0,
+      "three": 1,
+      "distance": 24.9,
+      "type": "jumper",
+      "period": 3,
+      "clock": "10:49",
+      "description": "Yaxel Lendeborg misses 25-foot three point jumper"
+    },
+    {
+      "player_id": "5175737",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": 3.0,
+      "y": 1.0,
+      "made": 1,
+      "three": 0,
+      "distance": 3.0,
+      "type": "shot",
+      "period": 3,
+      "clock": "10:21",
+      "description": "Yaxel Lendeborg makes two point shot"
+    },
+    {
+      "player_id": "5175737",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": 6.0,
+      "y": 27.0,
+      "made": 1,
+      "three": 1,
+      "distance": 26.1,
+      "type": "shot",
+      "period": 3,
+      "clock": "9:55",
+      "description": "Yaxel Lendeborg makes 27-foot three pointer"
+    },
+    {
+      "player_id": "5175737",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": -1.0,
+      "y": 26.0,
+      "made": 1,
+      "three": 1,
+      "distance": 24.4,
+      "type": "jumper",
+      "period": 3,
+      "clock": "8:41",
+      "description": "Yaxel Lendeborg makes 26-foot three point jumper (Draymond Green assists)"
+    },
+    {
+      "player_id": "5175737",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": -1.0,
+      "y": 2.0,
+      "made": 1,
+      "three": 0,
+      "distance": 1.1,
+      "type": "layup",
+      "period": 3,
+      "clock": "7:10",
+      "description": "Yaxel Lendeborg makes alley oop layup (Draymond Green assists)"
+    },
+    {
+      "player_id": "5175737",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": -12.0,
+      "y": 13.0,
+      "made": 0,
+      "three": 0,
+      "distance": 16.6,
+      "type": "shot",
+      "period": 3,
+      "clock": "5:51",
+      "description": "Yaxel Lendeborg misses 16-foot step back jumpshot"
+    },
+    {
+      "player_id": "5175737",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": 4.0,
+      "y": 28.0,
+      "made": 0,
+      "three": 1,
+      "distance": 26.7,
+      "type": "jumper",
+      "period": 3,
+      "clock": "4:02",
+      "description": "Yaxel Lendeborg misses 27-foot three point jumper"
+    },
+    {
+      "player_id": "5175737",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": 5.0,
+      "y": 9.0,
+      "made": 0,
+      "three": 0,
+      "distance": 8.9,
+      "type": "layup",
+      "period": 3,
+      "clock": "3:19",
+      "description": "Yaxel Lendeborg misses driving layup"
+    },
+    {
+      "player_id": "5175737",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": 0.0,
+      "y": 0.0,
+      "made": 0,
+      "three": 0,
+      "distance": 1.6,
+      "type": "tip-in",
+      "period": 3,
+      "clock": "3:16",
+      "description": "Yaxel Lendeborg misses tip shot"
+    },
+    {
+      "player_id": "5175737",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": 2.0,
+      "y": 2.0,
+      "made": 1,
+      "three": 0,
+      "distance": 2.0,
+      "type": "layup",
+      "period": 4,
+      "clock": "11:47",
+      "description": "Yaxel Lendeborg makes driving layup (Draymond Green assists)"
+    },
+    {
+      "player_id": "5175737",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": -19.0,
+      "y": 17.0,
+      "made": 0,
+      "three": 1,
+      "distance": 24.5,
+      "type": "jumper",
+      "period": 4,
+      "clock": "10:44",
+      "description": "Yaxel Lendeborg misses 25-foot three point jumper"
+    },
+    {
+      "player_id": "5175737",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": -1.0,
+      "y": 0.0,
+      "made": 1,
+      "three": 0,
+      "distance": 1.9,
+      "type": "dunk",
+      "period": 4,
+      "clock": "8:53",
+      "description": "Yaxel Lendeborg makes driving dunk (Will Richard assists)"
+    },
+    {
+      "player_id": "5175737",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": 4.0,
+      "y": 2.0,
+      "made": 1,
+      "three": 0,
+      "distance": 4.0,
+      "type": "layup",
+      "period": 4,
+      "clock": "8:18",
+      "description": "Yaxel Lendeborg makes running layup"
+    },
+    {
+      "player_id": "5175737",
+      "game_id": "401910000",
+      "date": "2026-11-16",
+      "x": 14.0,
+      "y": 23.0,
+      "made": 0,
+      "three": 1,
+      "distance": 25.6,
+      "type": "shot",
+      "period": 4,
+      "clock": "7:52",
+      "description": "Yaxel Lendeborg misses 26-foot three point step back jumpshot"
+    },
+    {
+      "player_id": "4565698",
+      "game_id": "401910001",
+      "date": "2026-11-16",
+      "x": -5.0,
+      "y": 4.0,
+      "made": 0,
+      "three": 0,
+      "distance": 5.6,
+      "type": "layup",
+      "period": 2,
+      "clock": "5:26",
+      "description": "Bryce Hopkins misses layup"
+    },
+    {
+      "player_id": "4565698",
+      "game_id": "401910001",
+      "date": "2026-11-16",
+      "x": -4.0,
+      "y": 4.0,
+      "made": 0,
+      "three": 0,
+      "distance": 4.7,
+      "type": "shot",
+      "period": 2,
+      "clock": "5:23",
+      "description": "Miles Bridges blocks Bryce Hopkins 's 5-foot two point shot"
+    },
+    {
+      "player_id": "4698719",
+      "game_id": "401910001",
+      "date": "2026-11-16",
+      "x": 0.0,
+      "y": 0.0,
+      "made": 1,
+      "three": 0,
+      "distance": 1.6,
+      "type": "tip-in",
+      "period": 1,
+      "clock": "3:46",
+      "description": "Trevon Brazile makes tip shot"
+    },
+    {
+      "player_id": "4698719",
+      "game_id": "401910001",
+      "date": "2026-11-16",
+      "x": 0.0,
+      "y": 0.0,
+      "made": 1,
+      "three": 0,
+      "distance": 1.6,
+      "type": "dunk",
+      "period": 1,
+      "clock": "1:32",
+      "description": "Trevon Brazile makes dunk"
+    },
+    {
+      "player_id": "4698719",
+      "game_id": "401910001",
+      "date": "2026-11-16",
+      "x": 4.0,
+      "y": 3.0,
+      "made": 1,
+      "three": 0,
+      "distance": 4.2,
+      "type": "layup",
+      "period": 3,
+      "clock": "3:57",
+      "description": "Trevon Brazile makes running layup (Spencer Jones assists)"
+    },
+    {
+      "player_id": "4698719",
+      "game_id": "401910001",
+      "date": "2026-11-16",
+      "x": -18.0,
+      "y": 19.0,
+      "made": 0,
+      "three": 1,
+      "distance": 25.1,
+      "type": "jumper",
+      "period": 3,
+      "clock": "3:16",
+      "description": "Trevon Brazile misses 26-foot three point jumper"
+    },
+    {
+      "player_id": "4698719",
+      "game_id": "401910001",
+      "date": "2026-11-16",
+      "x": -23.0,
+      "y": 8.0,
+      "made": 1,
+      "three": 1,
+      "distance": 23.9,
+      "type": "jumper",
+      "period": 3,
+      "clock": "18.6",
+      "description": "Trevon Brazile makes 23-foot three point jumper (Jamal Murray assists)"
     }
   ]
 }
