@@ -82,14 +82,14 @@ python -m src.readme_leaderboard --preseason
 
 ## Live Site
 
-The pages deploy to **GitHub Pages** on every change under `site/` and after each
-daily refresh:
+The pages are generated locally — no GitHub Pages deployment.
 
-https://majoradmiral.github.io/nba-rook-trajectory/
+To view locally:
+```bash
+python -m http.server 8777 --directory site   # then open http://localhost:8777
+```
 
-One-time setup: open **Settings → Pages**, set **Source** to **GitHub Actions**,
-then run **Deploy Site** once from the Actions tab. The workflow can't enable
-Pages for you because `GITHUB_TOKEN` isn't allowed to change repository settings.
+GitHub Pages automation removed. Re-enable after playoffs if desired.
 
 ## Shot Timeline
 
@@ -126,8 +126,7 @@ inside the baseline). Only new games are re-fetched, so daily runs are quick.
 and writes `site/data/timeline.json` (plus a `timeline.js` wrapper so the page
 also works when opened straight from disk). The **Daily NBA Timeline Refresh** workflow
 runs the ingestion and both page builders every day, caches the season database
-between runs so only new days are fetched, commits the refreshed page data, and
-deploys `site/` to GitHub Pages.
+between runs so only new days are fetched, and commits the refreshed page data.
 
 ## All Rookie Shots
 
@@ -153,16 +152,14 @@ python -m http.server 8777 --directory site   # then open http://localhost:8777/
 
 `src.shot_map` reuses the season database written by `src.season_tracker`,
 filters the shots down to rookies (`is_rookie = 1`), and ships a player index,
-a game index and one row per attempt. It runs automatically alongside
-`src.timeline` in the weekly workflow.
+a game index and one row per attempt.
 
 ## Project Structure
 
 ```
 .github/
 └── workflows/
-    ├── weekly_timeline.yml   # Monday refresh, cache, commit and deploy
-    └── deploy_pages.yml      # Deploy site/ when it changes
+    └── weekly_timeline.yml   # Daily refresh, cache, commit
 src/
 ├── config.py                 # Paths, SL schedule constants
 ├── pipeline.py               # Rookie stats + inference builder
