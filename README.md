@@ -16,20 +16,20 @@ shot charts spotlight the same rookie class.
 Auto-refreshed on every `python -m src.timeline` run — no manual editing.
 
 <!-- TOP_PERFORMERS:START -->
-_Updated 2026-11-18 · unofficial ROTY candidate ranking · 2026-27 regular season through 2026-11-17 · ranked by impact score · min 10 MPG_
+_Updated 2026-11-19 · unofficial ROTY candidate ranking · 2026-27 regular season through 2026-11-18 · ranked by impact score · min 10 MPG_
 
 | Rank | Rookie | Team | GP | MPG | PPG | RPG | APG | SPG | BPG | EFF | FG% | 3P% | Impact |
 |------|--------|------|----|-----|-----|-----|-----|-----|-----|-----|-----|-----|--------|
-| 1 | Darius Acuff Jr. | SAC | 13 | 36.8 | 25.5 | 3.5 | 7.1 | 1.0 | 0.1 | 19.0 | 41.0% | 32.5% | 38.4 |
-| 2 | Cameron Boozer | MEM | 14 | 31.2 | 16.5 | 9.5 | 5.4 | 0.6 | 0.7 | 20.5 | 39.3% | 32.2% | 35.4 |
-| 3 | Yaxel Lendeborg | GS | 14 | 31.6 | 20.8 | 7.4 | 3.4 | 1.0 | 0.8 | 21.0 | 47.6% | 39.2% | 35.1 |
+| 1 | Darius Acuff Jr. | SAC | 14 | 36.6 | 26.2 | 3.6 | 7.0 | 0.9 | 0.2 | 20.0 | 41.6% | 34.3% | 39.4 |
+| 2 | Cameron Boozer | MEM | 15 | 31.0 | 16.6 | 9.4 | 5.3 | 0.9 | 0.7 | 21.2 | 40.0% | 32.2% | 36.0 |
+| 3 | Yaxel Lendeborg | GS | 15 | 31.5 | 20.3 | 7.3 | 3.5 | 1.1 | 0.7 | 20.3 | 46.4% | 37.8% | 34.7 |
 | 4 | Caleb Wilson | CHI | 10 | 30.7 | 18.9 | 6.2 | 1.9 | 1.8 | 0.9 | 16.5 | 42.0% | 32.4% | 31.9 |
-| 5 | Darryn Peterson | UTAH | 15 | 31.3 | 16.9 | 4.3 | 3.7 | 1.2 | 0.7 | 15.7 | 40.0% | 36.2% | 29.7 |
-| 6 | AJ Dybantsa | WSH | 11 | 33.3 | 15.6 | 6.1 | 2.3 | 1.3 | 0.4 | 13.6 | 40.4% | 22.7% | 27.4 |
-| 7 | Keaton Wagler | LAC | 13 | 22.8 | 12.5 | 3.3 | 3.1 | 0.8 | 0.2 | 12.0 | 37.0% | 36.7% | 21.1 |
-| 8 | Aday Mara | OKC | 14 | 21.6 | 9.1 | 6.5 | 1.4 | 0.1 | 1.7 | 14.1 | 63.3% | 100.0% | 20.9 |
-| 9 | Brayden Burries | MIL | 14 | 21.9 | 9.4 | 5.4 | 2.4 | 0.6 | 0.1 | 11.6 | 41.1% | 26.5% | 19.9 |
-| 10 | Mikel Brown Jr. | BKN | 9 | 22.3 | 11.0 | 1.9 | 3.8 | 0.8 | 0.1 | 8.2 | 33.3% | 33.3% | 18.8 |
+| 5 | Darryn Peterson | UTAH | 16 | 30.6 | 16.5 | 4.1 | 3.7 | 1.1 | 0.7 | 15.3 | 40.4% | 36.1% | 28.7 |
+| 6 | AJ Dybantsa | WSH | 12 | 33.7 | 16.2 | 6.6 | 2.2 | 1.2 | 0.3 | 14.7 | 41.6% | 21.3% | 28.4 |
+| 7 | Aday Mara | OKC | 15 | 22.0 | 9.2 | 6.5 | 1.9 | 0.1 | 1.7 | 14.5 | 63.5% | 100.0% | 21.5 |
+| 8 | Keaton Wagler | LAC | 13 | 22.8 | 12.5 | 3.3 | 3.1 | 0.8 | 0.2 | 12.0 | 37.0% | 36.7% | 21.1 |
+| 9 | Brayden Burries | MIL | 15 | 22.1 | 10.1 | 5.5 | 2.3 | 0.7 | 0.1 | 12.3 | 43.1% | 29.6% | 20.6 |
+| 10 | Mikel Brown Jr. | BKN | 10 | 22.8 | 11.4 | 1.8 | 3.8 | 0.7 | 0.1 | 8.2 | 34.0% | 33.3% | 18.7 |
 <!-- TOP_PERFORMERS:END -->
 
 ## Limited Sample
@@ -40,20 +40,20 @@ deep-bench minutes the main ranking can't judge yet. Players already shown
 above are skipped, and the table refreshes with the same command.
 
 <!-- LIMITED_SAMPLE:START -->
-_Updated 2026-11-18 · 2026-27 regular season through 2026-11-17 · small sample · under 3 GP or under 10 MPG_
+_Updated 2026-11-19 · 2026-27 regular season through 2026-11-18 · small sample · under 3 GP or under 10 MPG_
 
 | Rank | Rookie | Team | GP | MPG | PPG | RPG | APG | SPG | BPG | EFF | FG% | 3P% | Impact |
 |------|--------|------|----|-----|-----|-----|-----|-----|-----|-----|-----|-----|--------|
-| 1 | Graham Ike | GS | 12 | 8.7 | 4.2 | 2.4 | 1.0 | 0.3 | 0.2 | 6.1 | 48.7% | 55.6% | 9.5 |
-| 2 | Norchad Omier | CLE | 7 | 7.9 | 2.4 | 2.7 | 1.0 | 0.3 | 0.1 | 6.0 | 70.0% | 33.3% | 7.9 |
+| 1 | Graham Ike | GS | 13 | 9.2 | 4.1 | 2.4 | 1.1 | 0.4 | 0.5 | 5.8 | 44.2% | 45.5% | 9.7 |
+| 2 | Norchad Omier | CLE | 8 | 8.9 | 2.4 | 3.2 | 0.9 | 0.4 | 0.2 | 6.5 | 66.7% | 25.0% | 8.7 |
 | 3 | Baba Miller | LAC | 13 | 7.8 | 3.5 | 1.8 | 0.7 | 0.4 | 0.5 | 5.1 | 55.6% | 37.5% | 7.9 |
-| 4 | Zuby Ejiofor | ATL | 13 | 6.9 | 2.9 | 1.8 | 0.7 | 0.3 | 0.2 | 4.4 | 55.6% | 50.0% | 6.7 |
+| 4 | Zuby Ejiofor | ATL | 14 | 7.3 | 2.9 | 1.9 | 0.6 | 0.3 | 0.1 | 4.3 | 53.3% | 50.0% | 6.6 |
 | 5 | Tobe Awaka | CHI | 7 | 5.7 | 1.1 | 3.0 | 0.4 | 0.1 | 0.4 | 4.1 | 75.0% | — | 6.2 |
 | 6 | Jaylin Sellers | CHI | 9 | 5.2 | 2.9 | 0.4 | 0.9 | 0.2 | 0.1 | 2.4 | 36.4% | 41.2% | 5.0 |
-| 7 | Bryce Hopkins | DEN | 12 | 8.7 | 3.2 | 1.2 | 0.2 | 0.2 | 0.0 | 3.3 | 58.3% | 40.0% | 5.0 |
+| 7 | Bryce Hopkins | DEN | 13 | 8.0 | 2.9 | 1.2 | 0.2 | 0.2 | 0.0 | 3.1 | 58.3% | 40.0% | 4.6 |
 | 8 | Hannes Steinbach | CHA | 11 | 5.7 | 1.3 | 1.9 | 0.2 | 0.0 | 0.3 | 2.4 | 43.8% | — | 4.0 |
 | 9 | Tarris Reed Jr. | SA | 15 | 3.6 | 1.2 | 1.7 | 0.2 | 0.1 | 0.1 | 2.4 | 57.1% | — | 3.6 |
-| 10 | Malik Dia | NO | 3 | 3.0 | 1.3 | 0.3 | 0.7 | 0.0 | 0.3 | 1.3 | 33.3% | 0.0% | 3.4 |
+| 10 | Chris Cenac Jr. | BOS | 13 | 3.5 | 1.8 | 1.1 | 0.1 | 0.0 | 0.1 | 2.2 | 66.7% | 33.3% | 3.1 |
 <!-- LIMITED_SAMPLE:END -->
 
 ## Quick Start
