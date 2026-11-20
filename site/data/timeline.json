@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T20:52:53+00:00",
+  "generated_at": "2026-11-20T20:37:10+00:00",
   "season_year": 2027,
   "season_label": "2026-27",
   "featured_per_week": 3,
@@ -8,7 +8,7 @@
   "ranking_note": "unofficial ROTY candidate ranking \u00b7 impact score",
   "ranking_formula": "PTS + 1.2\u00d7REB + 1.5\u00d7AST + 2\u00d7STL + 2\u00d7BLK \u2212 TOV",
   "efficiency_formula": "PTS + REB + AST + STL + BLK \u2212 missed FG \u2212 missed FT \u2212 TOV",
-  "data_through": "2026-11-18",
+  "data_through": "2026-11-19",
   "leaderboard": [
     {
       "rank": 1,
@@ -37,18 +37,18 @@
       "team": "MEM",
       "position": "F",
       "is_rookie": 1,
-      "games": 15,
-      "minutes": 31.0,
-      "points": 16.6,
-      "rebounds": 9.4,
-      "assists": 5.33,
-      "steals": 0.87,
-      "blocks": 0.73,
-      "plus_minus": 3.87,
-      "efficiency": 21.2,
-      "fg_pct": 0.4,
+      "games": 16,
+      "minutes": 30.75,
+      "points": 16.56,
+      "rebounds": 9.19,
+      "assists": 5.31,
+      "steals": 0.81,
+      "blocks": 0.75,
+      "plus_minus": 4.62,
+      "efficiency": 21.44,
+      "fg_pct": 0.4171,
       "three_pct": 0.3222,
-      "score": 36.01
+      "score": 35.61
     },
     {
       "rank": 3,
@@ -57,18 +57,18 @@
       "team": "GS",
       "position": "F",
       "is_rookie": 1,
-      "games": 15,
-      "minutes": 31.47,
-      "points": 20.27,
-      "rebounds": 7.27,
-      "assists": 3.47,
-      "steals": 1.07,
-      "blocks": 0.73,
-      "plus_minus": -6.13,
-      "efficiency": 20.33,
-      "fg_pct": 0.4643,
-      "three_pct": 0.378,
-      "score": 34.73
+      "games": 16,
+      "minutes": 31.56,
+      "points": 19.69,
+      "rebounds": 7.31,
+      "assists": 3.69,
+      "steals": 1.06,
+      "blocks": 0.81,
+      "plus_minus": -7.69,
+      "efficiency": 20.19,
+      "fg_pct": 0.4553,
+      "three_pct": 0.3721,
+      "score": 34.68
     },
     {
       "rank": 4,
@@ -152,42 +152,42 @@
     },
     {
       "rank": 8,
-      "player_id": "5254165",
-      "name": "Keaton Wagler",
-      "team": "LAC",
-      "position": "G",
-      "is_rookie": 1,
-      "games": 13,
-      "minutes": 22.77,
-      "points": 12.54,
-      "rebounds": 3.31,
-      "assists": 3.08,
-      "steals": 0.77,
-      "blocks": 0.15,
-      "plus_minus": -1.23,
-      "efficiency": 12.0,
-      "fg_pct": 0.3704,
-      "three_pct": 0.3667,
-      "score": 21.12
-    },
-    {
-      "rank": 9,
       "player_id": "5082206",
       "name": "Brayden Burries",
       "team": "MIL",
       "position": "G",
       "is_rookie": 1,
-      "games": 15,
-      "minutes": 22.13,
-      "points": 10.13,
-      "rebounds": 5.47,
-      "assists": 2.27,
-      "steals": 0.73,
-      "blocks": 0.13,
-      "plus_minus": -8.33,
-      "efficiency": 12.33,
-      "fg_pct": 0.431,
-      "three_pct": 0.2963,
+      "games": 16,
+      "minutes": 22.5,
+      "points": 10.38,
+      "rebounds": 5.31,
+      "assists": 2.31,
+      "steals": 0.81,
+      "blocks": 0.12,
+      "plus_minus": -8.5,
+      "efficiency": 12.19,
+      "fg_pct": 0.4264,
+      "three_pct": 0.3051,
+      "score": 20.77
+    },
+    {
+      "rank": 9,
+      "player_id": "5254165",
+      "name": "Keaton Wagler",
+      "team": "LAC",
+      "position": "G",
+      "is_rookie": 1,
+      "games": 14,
+      "minutes": 22.36,
+      "points": 12.14,
+      "rebounds": 3.43,
+      "assists": 3.0,
+      "steals": 0.79,
+      "blocks": 0.14,
+      "plus_minus": -2.5,
+      "efficiency": 11.43,
+      "fg_pct": 0.3644,
+      "three_pct": 0.3594,
       "score": 20.62
     },
     {
@@ -219,18 +219,18 @@
       "team": "GS",
       "position": "F",
       "is_rookie": 1,
-      "games": 13,
-      "minutes": 9.15,
-      "points": 4.08,
-      "rebounds": 2.38,
-      "assists": 1.08,
-      "steals": 0.38,
-      "blocks": 0.46,
-      "plus_minus": 1.08,
-      "efficiency": 5.85,
-      "fg_pct": 0.4419,
+      "games": 14,
+      "minutes": 8.79,
+      "points": 4.14,
+      "rebounds": 2.21,
+      "assists": 1.0,
+      "steals": 0.36,
+      "blocks": 0.43,
+      "plus_minus": 1.07,
+      "efficiency": 5.64,
+      "fg_pct": 0.4545,
       "three_pct": 0.4545,
-      "score": 9.7
+      "score": 9.3
     },
     {
       "rank": 2,
@@ -259,18 +259,18 @@
       "team": "LAC",
       "position": "F",
       "is_rookie": 1,
-      "games": 13,
-      "minutes": 7.85,
-      "points": 3.54,
-      "rebounds": 1.85,
-      "assists": 0.69,
-      "steals": 0.38,
-      "blocks": 0.54,
-      "plus_minus": 0.15,
-      "efficiency": 5.08,
+      "games": 14,
+      "minutes": 7.36,
+      "points": 3.29,
+      "rebounds": 1.71,
+      "assists": 0.64,
+      "steals": 0.36,
+      "blocks": 0.5,
+      "plus_minus": 0.14,
+      "efficiency": 4.71,
       "fg_pct": 0.5556,
       "three_pct": 0.375,
-      "score": 7.86
+      "score": 7.31
     },
     {
       "rank": 4,
@@ -379,18 +379,18 @@
       "team": "SA",
       "position": "C",
       "is_rookie": 1,
-      "games": 15,
-      "minutes": 3.6,
-      "points": 1.2,
-      "rebounds": 1.73,
-      "assists": 0.2,
-      "steals": 0.13,
-      "blocks": 0.13,
-      "plus_minus": -2.0,
-      "efficiency": 2.4,
+      "games": 16,
+      "minutes": 3.38,
+      "points": 1.12,
+      "rebounds": 1.62,
+      "assists": 0.19,
+      "steals": 0.12,
+      "blocks": 0.12,
+      "plus_minus": -1.88,
+      "efficiency": 2.25,
       "fg_pct": 0.5714,
       "three_pct": 0.0,
-      "score": 3.63
+      "score": 3.39
     },
     {
       "rank": 10,
@@ -9727,7 +9727,7 @@
       "season_types": [
         "regular"
       ],
-      "games": 25,
+      "games": 29,
       "featured": [
         {
           "rank": 1,
@@ -10024,47 +10024,47 @@
           "is_rookie": 1,
           "played": true,
           "week": {
-            "games": 2,
-            "minutes": 28.5,
-            "points": 23.5,
-            "rebounds": 7.5,
-            "assists": 6.0,
-            "steals": 2.0,
+            "games": 3,
+            "minutes": 28.0,
+            "points": 21.0,
+            "rebounds": 7.0,
+            "assists": 5.67,
+            "steals": 1.33,
             "blocks": 1.0,
             "turnovers": 3.0,
-            "fg_pct": 0.5,
+            "fg_pct": 0.5833,
             "three_pct": 0.5,
             "ft_pct": 1.0,
-            "plus_minus": 7.5,
-            "efficiency": 29.5,
-            "score": 44.5
+            "plus_minus": 10.33,
+            "efficiency": 28.0,
+            "score": 39.56
           },
           "season": {
-            "games": 15,
-            "minutes": 31.0,
-            "points": 16.6,
-            "rebounds": 9.4,
-            "assists": 5.33,
-            "steals": 0.87,
-            "blocks": 0.73,
-            "turnovers": 3.07,
-            "fg_pct": 0.4,
+            "games": 16,
+            "minutes": 30.75,
+            "points": 16.56,
+            "rebounds": 9.19,
+            "assists": 5.31,
+            "steals": 0.81,
+            "blocks": 0.75,
+            "turnovers": 3.06,
+            "fg_pct": 0.4171,
             "three_pct": 0.3222,
-            "ft_pct": 0.8889,
-            "plus_minus": 3.87,
-            "efficiency": 21.2,
-            "score": 36.01
+            "ft_pct": 0.8955,
+            "plus_minus": 4.62,
+            "efficiency": 21.44,
+            "score": 35.61
           },
           "zones": {
             "rim": {
-              "made": 7,
-              "attempts": 13,
-              "pct": 0.5385
+              "made": 11,
+              "attempts": 17,
+              "pct": 0.6471
             },
             "mid": {
-              "made": 0,
-              "attempts": 1,
-              "pct": 0.0
+              "made": 2,
+              "attempts": 3,
+              "pct": 0.6667
             },
             "three": {
               "made": 8,
@@ -10372,11 +10372,71 @@
               "type": "jumper",
               "game_id": "401910007",
               "date": "2026-11-18"
+            },
+            {
+              "x": 5.0,
+              "y": 11.0,
+              "made": 1,
+              "three": 0,
+              "distance": 10.7,
+              "type": "shot",
+              "game_id": "401910019",
+              "date": "2026-11-19"
+            },
+            {
+              "x": -6.0,
+              "y": 4.0,
+              "made": 1,
+              "three": 0,
+              "distance": 6.5,
+              "type": "shot",
+              "game_id": "401910019",
+              "date": "2026-11-19"
+            },
+            {
+              "x": -1.0,
+              "y": 1.0,
+              "made": 1,
+              "three": 0,
+              "distance": 1.1,
+              "type": "shot",
+              "game_id": "401910019",
+              "date": "2026-11-19"
+            },
+            {
+              "x": 5.0,
+              "y": 15.0,
+              "made": 1,
+              "three": 0,
+              "distance": 14.3,
+              "type": "shot",
+              "game_id": "401910019",
+              "date": "2026-11-19"
+            },
+            {
+              "x": 0.0,
+              "y": 1.0,
+              "made": 1,
+              "three": 0,
+              "distance": 0.6,
+              "type": "dunk",
+              "game_id": "401910019",
+              "date": "2026-11-19"
+            },
+            {
+              "x": -1.0,
+              "y": 1.0,
+              "made": 1,
+              "three": 0,
+              "distance": 1.1,
+              "type": "shot",
+              "game_id": "401910019",
+              "date": "2026-11-19"
             }
           ],
           "shot_totals": {
-            "made": 15,
-            "attempts": 30
+            "made": 21,
+            "attempts": 36
           }
         },
         {
@@ -10389,52 +10449,52 @@
           "is_rookie": 1,
           "played": true,
           "week": {
-            "games": 2,
-            "minutes": 31.5,
-            "points": 20.5,
-            "rebounds": 6.5,
-            "assists": 3.5,
-            "steals": 1.5,
-            "blocks": 1.0,
-            "turnovers": 2.0,
-            "fg_pct": 0.3659,
-            "three_pct": 0.1667,
-            "ft_pct": 0.9,
-            "plus_minus": -27.5,
-            "efficiency": 17.5,
-            "score": 36.55
+            "games": 3,
+            "minutes": 32.0,
+            "points": 17.33,
+            "rebounds": 7.0,
+            "assists": 4.67,
+            "steals": 1.33,
+            "blocks": 1.33,
+            "turnovers": 2.33,
+            "fg_pct": 0.3462,
+            "three_pct": 0.1875,
+            "ft_pct": 0.9286,
+            "plus_minus": -28.67,
+            "efficiency": 17.67,
+            "score": 35.72
           },
           "season": {
-            "games": 15,
-            "minutes": 31.47,
-            "points": 20.27,
-            "rebounds": 7.27,
-            "assists": 3.47,
-            "steals": 1.07,
-            "blocks": 0.73,
-            "turnovers": 3.07,
-            "fg_pct": 0.4643,
-            "three_pct": 0.378,
-            "ft_pct": 0.7558,
-            "plus_minus": -6.13,
-            "efficiency": 20.33,
-            "score": 34.73
+            "games": 16,
+            "minutes": 31.56,
+            "points": 19.69,
+            "rebounds": 7.31,
+            "assists": 3.69,
+            "steals": 1.06,
+            "blocks": 0.81,
+            "turnovers": 3.06,
+            "fg_pct": 0.4553,
+            "three_pct": 0.3721,
+            "ft_pct": 0.7667,
+            "plus_minus": -7.69,
+            "efficiency": 20.19,
+            "score": 34.68
           },
           "zones": {
             "rim": {
-              "made": 13,
-              "attempts": 24,
-              "pct": 0.5417
+              "made": 14,
+              "attempts": 26,
+              "pct": 0.5385
             },
             "mid": {
-              "made": 0,
-              "attempts": 5,
-              "pct": 0.0
+              "made": 1,
+              "attempts": 10,
+              "pct": 0.1
             },
             "three": {
-              "made": 2,
-              "attempts": 12,
-              "pct": 0.1667
+              "made": 3,
+              "attempts": 16,
+              "pct": 0.1875
             }
           },
           "shots": [
@@ -10847,11 +10907,121 @@
               "type": "layup",
               "game_id": "401910016",
               "date": "2026-11-18"
+            },
+            {
+              "x": -5.0,
+              "y": 25.0,
+              "made": 0,
+              "three": 1,
+              "distance": 23.9,
+              "type": "jumper",
+              "game_id": "401910019",
+              "date": "2026-11-19"
+            },
+            {
+              "x": -23.0,
+              "y": 7.0,
+              "made": 0,
+              "three": 1,
+              "distance": 23.6,
+              "type": "jumper",
+              "game_id": "401910019",
+              "date": "2026-11-19"
+            },
+            {
+              "x": 3.0,
+              "y": 25.0,
+              "made": 0,
+              "three": 1,
+              "distance": 23.6,
+              "type": "shot",
+              "game_id": "401910019",
+              "date": "2026-11-19"
+            },
+            {
+              "x": -5.0,
+              "y": 4.0,
+              "made": 0,
+              "three": 0,
+              "distance": 5.6,
+              "type": "floater",
+              "game_id": "401910019",
+              "date": "2026-11-19"
+            },
+            {
+              "x": -5.0,
+              "y": 8.0,
+              "made": 1,
+              "three": 0,
+              "distance": 8.1,
+              "type": "floater",
+              "game_id": "401910019",
+              "date": "2026-11-19"
+            },
+            {
+              "x": 11.0,
+              "y": 20.0,
+              "made": 0,
+              "three": 0,
+              "distance": 21.5,
+              "type": "jump shot",
+              "game_id": "401910019",
+              "date": "2026-11-19"
+            },
+            {
+              "x": 2.0,
+              "y": 10.0,
+              "made": 0,
+              "three": 0,
+              "distance": 8.7,
+              "type": "jump shot",
+              "game_id": "401910019",
+              "date": "2026-11-19"
+            },
+            {
+              "x": 10.0,
+              "y": 23.0,
+              "made": 1,
+              "three": 1,
+              "distance": 23.6,
+              "type": "jumper",
+              "game_id": "401910019",
+              "date": "2026-11-19"
+            },
+            {
+              "x": 2.0,
+              "y": 11.0,
+              "made": 0,
+              "three": 0,
+              "distance": 9.6,
+              "type": "floater",
+              "game_id": "401910019",
+              "date": "2026-11-19"
+            },
+            {
+              "x": 0.0,
+              "y": 0.0,
+              "made": 1,
+              "three": 0,
+              "distance": 1.6,
+              "type": "shot",
+              "game_id": "401910019",
+              "date": "2026-11-19"
+            },
+            {
+              "x": 17.0,
+              "y": 7.0,
+              "made": 0,
+              "three": 0,
+              "distance": 17.8,
+              "type": "jumper",
+              "game_id": "401910019",
+              "date": "2026-11-19"
             }
           ],
           "shot_totals": {
-            "made": 15,
-            "attempts": 41
+            "made": 18,
+            "attempts": 52
           }
         }
       ],
@@ -10864,80 +11034,131 @@
   ],
   "recent_games": [
     {
-      "game_id": "401910018",
-      "date": "2026-11-18",
+      "game_id": "401910022",
+      "date": "2026-11-19",
       "season_type": "regular",
       "away": {
-        "abbr": "PHX",
-        "score": 128
+        "abbr": "LAC",
+        "score": 112
       },
       "home": {
-        "abbr": "SAC",
-        "score": 107
+        "abbr": "SA",
+        "score": 124
       },
       "lines": [
         {
-          "player_id": "5142620",
-          "name": "Darius Acuff Jr.",
-          "team": "SAC",
-          "minutes": 35.0,
-          "points": 36,
-          "rebounds": 4,
-          "assists": 6,
+          "player_id": "5254165",
+          "name": "Keaton Wagler",
+          "team": "LAC",
+          "minutes": 17.0,
+          "points": 7,
+          "rebounds": 5,
+          "assists": 2,
           "plus_minus": -19,
-          "efficiency": 33
+          "efficiency": 4
         }
       ]
     },
     {
-      "game_id": "401910011",
-      "date": "2026-11-18",
+      "game_id": "401910020",
+      "date": "2026-11-19",
       "season_type": "regular",
       "away": {
-        "abbr": "CHI",
-        "score": 137
+        "abbr": "POR",
+        "score": 124
       },
       "home": {
-        "abbr": "BKN",
-        "score": 107
+        "abbr": "MIL",
+        "score": 114
       },
       "lines": [
         {
-          "player_id": "5101761",
-          "name": "Mikel Brown Jr.",
-          "team": "BKN",
-          "minutes": 27.0,
-          "points": 15,
-          "rebounds": 1,
-          "assists": 4,
-          "plus_minus": -17,
-          "efficiency": 8
-        }
-      ]
-    },
-    {
-      "game_id": "401910017",
-      "date": "2026-11-18",
-      "season_type": "regular",
-      "away": {
-        "abbr": "UTAH",
-        "score": 109
-      },
-      "home": {
-        "abbr": "LAL",
-        "score": 97
-      },
-      "lines": [
-        {
-          "player_id": "5041955",
-          "name": "Darryn Peterson",
-          "team": "UTAH",
-          "minutes": 19.0,
-          "points": 11,
-          "rebounds": 1,
+          "player_id": "5082206",
+          "name": "Brayden Burries",
+          "team": "MIL",
+          "minutes": 28.0,
+          "points": 14,
+          "rebounds": 3,
           "assists": 3,
-          "plus_minus": 3,
-          "efficiency": 9
+          "plus_minus": -11,
+          "efficiency": 10
+        }
+      ]
+    },
+    {
+      "game_id": "401910019",
+      "date": "2026-11-19",
+      "season_type": "regular",
+      "away": {
+        "abbr": "GS",
+        "score": 98
+      },
+      "home": {
+        "abbr": "MEM",
+        "score": 126
+      },
+      "lines": [
+        {
+          "player_id": "5041935",
+          "name": "Cameron Boozer",
+          "team": "MEM",
+          "minutes": 27.0,
+          "points": 16,
+          "rebounds": 6,
+          "assists": 5,
+          "plus_minus": 16,
+          "efficiency": 25
+        },
+        {
+          "player_id": "5175737",
+          "name": "Yaxel Lendeborg",
+          "team": "GS",
+          "minutes": 33.0,
+          "points": 11,
+          "rebounds": 8,
+          "assists": 7,
+          "plus_minus": -31,
+          "efficiency": 18
+        }
+      ]
+    },
+    {
+      "game_id": "401910021",
+      "date": "2026-11-19",
+      "season_type": "regular",
+      "away": {
+        "abbr": "NY",
+        "score": 102
+      },
+      "home": {
+        "abbr": "MIN",
+        "score": 99
+      },
+      "lines": []
+    },
+    {
+      "game_id": "401910012",
+      "date": "2026-11-18",
+      "season_type": "regular",
+      "away": {
+        "abbr": "WSH",
+        "score": 103
+      },
+      "home": {
+        "abbr": "TOR",
+        "score": 99
+      },
+      "lines": [
+        {
+          "player_id": "5142718",
+          "name": "AJ Dybantsa",
+          "team": "WSH",
+          "minutes": 38.0,
+          "points": 23,
+          "rebounds": 12,
+          "assists": 2,
+          "plus_minus": -1,
+          "efficiency": 27
         }
       ]
     },
@@ -10966,6 +11187,20 @@
           "efficiency": 31
         }
       ]
+    },
+    {
+      "game_id": "401910008",
+      "date": "2026-11-18",
+      "season_type": "regular",
+      "away": {
+        "abbr": "HOU",
+        "score": 119
+      },
+      "home": {
+        "abbr": "IND",
+        "score": 104
+      },
+      "lines": []
     },
     {
       "game_id": "401910009",
@@ -11008,42 +11243,28 @@
       "lines": []
     },
     {
-      "game_id": "401910008",
+      "game_id": "401910011",
       "date": "2026-11-18",
       "season_type": "regular",
       "away": {
-        "abbr": "HOU",
-        "score": 119
+        "abbr": "CHI",
+        "score": 137
       },
       "home": {
-        "abbr": "IND",
-        "score": 104
-      },
-      "lines": []
-    },
-    {
-      "game_id": "401910012",
-      "date": "2026-11-18",
-      "season_type": "regular",
-      "away": {
-        "abbr": "WSH",
-        "score": 103
-      },
-      "home": {
-        "abbr": "TOR",
-        "score": 99
+        "abbr": "BKN",
+        "score": 107
       },
       "lines": [
         {
-          "player_id": "5142718",
-          "name": "AJ Dybantsa",
-          "team": "WSH",
-          "minutes": 38.0,
-          "points": 23,
-          "rebounds": 12,
-          "assists": 2,
-          "plus_minus": -1,
-          "efficiency": 27
+          "player_id": "5101761",
+          "name": "Mikel Brown Jr.",
+          "team": "BKN",
+          "minutes": 27.0,
+          "points": 15,
+          "rebounds": 1,
+          "assists": 4,
+          "plus_minus": -17,
+          "efficiency": 8
         }
       ]
     },
@@ -11086,56 +11307,16 @@
           "efficiency": 20
         }
       ]
-    },
-    {
-      "game_id": "401910015",
-      "date": "2026-11-18",
-      "season_type": "regular",
-      "away": {
-        "abbr": "BOS",
-        "score": 101
-      },
-      "home": {
-        "abbr": "DEN",
-        "score": 105
-      },
-      "lines": []
-    },
-    {
-      "game_id": "401910016",
-      "date": "2026-11-18",
-      "season_type": "regular",
-      "away": {
-        "abbr": "GS",
-        "score": 94
-      },
-      "home": {
-        "abbr": "DAL",
-        "score": 116
-      },
-      "lines": [
-        {
-          "player_id": "5175737",
-          "name": "Yaxel Lendeborg",
-          "team": "GS",
-          "minutes": 30.0,
-          "points": 13,
-          "rebounds": 5,
-          "assists": 4,
-          "plus_minus": -25,
-          "efficiency": 11
-        }
-      ]
     }
   ],
   "totals": {
-    "games": 289,
+    "games": 293,
     "games_by_type": {
-      "regular": 222,
+      "regular": 226,
       "preseason": 67
     },
     "players": 660,
-    "shots": 51007,
+    "shots": 51681,
     "weeks": 8
   }
 }
