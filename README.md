@@ -131,11 +131,14 @@ between runs so only new days are fetched, and commits the refreshed page data.
 ## All Rookie Shots
 
 `site/shots.html` is the companion view: instead of spotlighting three players a
-week, it plots **every shot every rookie has taken** on one half court and lets
-you work out whose shot is whose.
+week, it plots **every shot every rookie has taken** and lets you work out whose
+shot is whose. By default the court is split into two lanes — **Scored** and
+**Missed** — so made-shot locations stay readable instead of being buried under
+X marks. The `Separate misses` toggle restores the single overlaid court.
 
 - Each rookie owns a colour (assigned in the sidebar) — made = filled dot,
-  missed = hollow X in the shooter's colour.
+  missed = hollow X in the shooter's colour. Locations are preserved in both
+  lanes, and the toggle state is stored in the URL (`?split=0` for the overlay).
 - Hover a shot for the shooter, shot type, distance, result, date and clock;
   click it to pin a detail card with the player's season line and zone splits.
 - Click a rookie in the rail to isolate their attempts (everything else dims);

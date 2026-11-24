@@ -20,12 +20,16 @@
     data: null,
     scope: { kind: "season" },
     view: "court",          // court | players | focus
+    splitMisses: true,      // give makes and misses their own lane by default
     player: null,
     search: "",
     pinned: null,
     lastSeen: null,
     rendered: false,
   };
+
+  let courtChart = null;
+  let courtSplit = null;
 
   const el = {
     seasonTitle: document.getElementById("season-title"),
@@ -35,6 +39,7 @@
     scopeTitle: document.getElementById("scope-title"),
     scopeMeta: document.getElementById("scope-meta"),
     courtWrap: document.getElementById("court-wrap"),
+    splitMisses: document.getElementById("split-misses-btn"),
     playersList: document.getElementById("players-list"),
     search: document.getElementById("player-search"),
     clearPlayer: document.getElementById("clear-player"),
@@ -178,11 +183,8 @@
     return { zones, made };
   }
 
-  function renderCourt(list) {
-    if (!list.length) {
-      el.courtWrap.innerHTML = '<div class="chart-empty">No rookie shot attempts in this scope.</div>';
-      return;
-    }
+    function renderCourt(list) {
+    el.tooltip.classList.remove("is-visible");
 
     // Only dim the others when the selected rookie actually shot in this
     // scope; otherwise the court would go fully faint and look broken.
@@ -190,45 +192,60 @@
       ? state.player
       : null;
 
-    const byPlayer = new Map();
-    list.forEach((shot) => {
-      if (!byPlayer.has(shot.player_id)) byPlayer.set(shot.player_id, []);
-      byPlayer.get(shot.player_id).push(shot);
-    });
+    if (state.pinned && !list.some((shot) => shot.id === state.pinned.id)) state.pinned = null;
 
-    const groups = [];
-    byPlayer.forEach((playerShots, playerId) => {
-      const dim = isolate && isolate !== playerId ? " is-dimmed" : "";
-      const active = isolate === playerId ? " is-active" : "";
-      const owner = playersById.get(playerId);
-      const ownerLabel = owner ? owner.name + (owner.team ? " (" + owner.team + ")" : "") : playerId;
-      const marks = playerShots.map((shot) =>
-        Court.shotMarkup(shot, {
-          attrs: {
-            player: playerId,
-            game: shot.game_id,
-            period: shot.period,
-            clock: shot.clock,
-          },
-          style: "--c:" + colorFor(playerId),
-          tip: ownerLabel + " · " + shot.date,
-        })
-      );
-      groups.push(
-        '<g class="player-shots' + dim + active + '" data-player="' + escapeHtml(playerId) + '">' +
-        marks.join("") +
-        "</g>"
-      );
-    });
+    if (!list.length) {
+      if (courtChart) {
+        courtChart.destroy();
+        courtChart = null;
+        courtSplit = null;
+      }
+      el.courtWrap.innerHTML = '<div class="chart-empty">No rookie shot attempts in this scope.</div>';
+      return;
+    }
 
-    el.courtWrap.innerHTML =
-      '<svg class="court shotmap-court" viewBox="' + Court.COURT.viewBox +
-      '" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Rookie shot chart">' +
-      Court.courtMarkup() +
-      groups.join("") +
-      "</svg>";
+    // The lane layout is decided when the renderer is created, so rebuild it
+    // when the toggle flips rather than trying to reshape a live court.
+    if (courtChart && courtSplit !== state.splitMisses) {
+      courtChart.destroy();
+      courtChart = null;
+    }
+
+    if (!courtChart) {
+      courtChart = Court.create(el.courtWrap, {
+        variant: "full",
+        splitMisses: state.splitMisses,
+        dotScale: state.splitMisses ? 1.35 : 1,
+        onHover: (shot, info) => {
+          el.tooltip.innerHTML = shotTipHtml(shot);
+          el.tooltip.style.left = info.x + "px";
+          el.tooltip.style.top = (info.y - 10) + "px";
+          el.tooltip.classList.add("is-visible");
+        },
+        onLeave: () => el.tooltip.classList.remove("is-visible"),
+        onSelect: (shot) => {
+          state.pinned = shot;
+          courtChart.pinShot(shot);
+          renderDetail();
+        },
+      });
+      courtSplit = state.splitMisses;
+    }
+
+    const mapped = list.map((shot) => ({
+      ...shot,
+      x: shot.x + 25,
+      y: shot.y,
+      made: !!shot.made,
+      player: shot.player_id,
+      color: colorFor(shot.player_id),
+    }));
+
+    courtChart
+      .setShots(mapped)
+      .focusPlayer(isolate)
+      .pinShot(state.pinned);
   }
-
   function renderPlayers() {
     const needle = state.search.trim().toLowerCase();
     const list = players()
@@ -471,6 +488,7 @@
     el.scopeMeta.textContent = meta;
 
     renderViewMode();
+    renderSplitToggle();
     renderRail();
     renderCourt(list);
     renderPlayers();
@@ -488,6 +506,12 @@
       btn.classList.toggle("is-active", btn.dataset.view === state.view);
       btn.setAttribute("aria-pressed", String(btn.dataset.view === state.view));
     });
+  }
+
+  function renderSplitToggle() {
+    if (!el.splitMisses) return;
+    el.splitMisses.setAttribute("aria-pressed", String(state.splitMisses));
+    el.splitMisses.textContent = "Separate misses: " + (state.splitMisses ? "on" : "off");
   }
 
   /* ── State changes ─────────────────────────────────────────────────────── */
@@ -518,6 +542,7 @@
       week: Number.isFinite(week) && week > 0 ? week : null,
       game: game || null,
       player: player || null,
+      split: params.get("split") !== "0",
     };
   }
 
@@ -527,6 +552,7 @@
     if (state.scope.kind === "week") params.set("week", String(state.scope.index));
     if (state.scope.kind === "game") params.set("game", state.scope.gameId);
     if (state.player) params.set("player", state.player);
+    params.set("split", state.splitMisses ? "1" : "0");
     const query = params.toString();
     window.history.replaceState(
       {},
@@ -548,28 +574,6 @@
       '<div class="' + (shot.made ? "tt-made" : "tt-missed") + '">' +
       (shot.made ? "✓ made" : "✕ missed") + "</div>"
     );
-  }
-
-  function findShot(node) {
-    const group = node.closest ? node.closest(".shot") : null;
-    if (!group) return null;
-    const playerId = group.getAttribute("data-player");
-    const gameId = group.getAttribute("data-game");
-    const distance = Number(group.getAttribute("data-distance"));
-    const made = group.getAttribute("data-made") === "1";
-    const type = group.getAttribute("data-type");
-    const date = group.getAttribute("data-date");
-    const period = Number(group.getAttribute("data-period")) || 0;
-    const clock = group.getAttribute("data-clock") || "";
-    const candidates = scopeShots().filter((shot) =>
-      shot.player_id === playerId &&
-      shot.game_id === gameId &&
-      shot.made === (made ? 1 : 0) &&
-      shot.type === type &&
-      shot.date === date &&
-      Math.abs(Number(shot.distance) - distance) < 0.05
-    );
-    return candidates[0] || null;
   }
 
   /* ── Events ────────────────────────────────────────────────────────────── */
@@ -612,35 +616,16 @@
     writeUrlState();
   });
 
-  el.courtWrap.addEventListener("mouseover", (event) => {
-    const shot = findShot(event.target);
-    if (!shot) return;
-    el.tooltip.innerHTML = shotTipHtml(shot);
-    el.tooltip.classList.add("is-visible");
-  });
-
-  el.courtWrap.addEventListener("mousemove", (event) => {
-    if (!el.tooltip.classList.contains("is-visible")) return;
-    el.tooltip.style.left = event.clientX + "px";
-    el.tooltip.style.top = event.clientY - 10 + "px";
-  });
-
-  el.courtWrap.addEventListener("mouseout", (event) => {
-    if (event.target.closest && event.target.closest(".shot")) {
-      el.tooltip.classList.remove("is-visible");
-    }
-  });
-
-  el.courtWrap.addEventListener("click", (event) => {
-    const shot = findShot(event.target);
-    if (!shot) return;
-    state.pinned = shot;
-    renderDetail();
-    el.detailNote.textContent = shot.date + (shot.period ? " · Q" + shot.period : "") +
-      (shot.clock ? " · " + shot.clock : "");
-  });
-
   el.refresh.addEventListener("click", () => loadData(false));
+
+  if (el.splitMisses) {
+    el.splitMisses.addEventListener("click", () => {
+      state.splitMisses = !state.splitMisses;
+      renderSplitToggle();
+      renderCourt(scopeShots());
+      writeUrlState();
+    });
+  }
 
   el.copyShot.addEventListener("click", () => {
     const shot = state.pinned;
@@ -710,6 +695,12 @@
     const changed = state.lastSeen !== (data.generated_at || null);
     state.data = data;
     state.lastSeen = data.generated_at || null;
+    if (changed) {
+      state.pinned = null;
+      (data.shots || []).forEach((shot, index) => {
+        if (!shot.id) shot.id = "s" + index;
+      });
+    }
     if (changed || !state.rendered) {
       render();
       state.rendered = true;
@@ -748,6 +739,7 @@
   loadData(false).then((ok) => {
     if (!ok) return;
     const requested = readUrlState();
+    state.splitMisses = requested.split;
     if (requested.game && games().some((game) => game.game_id === requested.game)) {
       state.scope = { kind: "game", gameId: requested.game };
     } else if (requested.week && weeks().some((week) => week.index === requested.week)) {

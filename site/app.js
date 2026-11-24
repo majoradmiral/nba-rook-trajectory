@@ -136,10 +136,7 @@
     const pmTone = Number(week.plus_minus) > 0 ? "pos" : Number(week.plus_minus) < 0 ? "neg" : "";
 
     const chart = shots.length
-      ? '<svg class="court" viewBox="' + Court.COURT.viewBox + '" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Shot chart">' +
-        Court.courtMarkup() +
-        shots.map((shot) => Court.shotMarkup(shot)).join("") +
-        "</svg>"
+      ? '<div class="featured-court" data-player="' + escapeHtml(player.player_id) + '"></div>'
       : '<div class="chart-empty">' +
         (player.played === false
           ? "Did not play this week — ranked on season-to-date impact."
@@ -180,6 +177,33 @@
     );
   }
 
+  function bindFeaturedCharts() {
+    el.grid.querySelectorAll(".featured-court").forEach((container) => {
+      const playerId = container.getAttribute("data-player");
+      const week = state.weeks[state.index] || {};
+      const featured = (week.featured || []).find((p) => p.player_id === playerId);
+      const shots = (featured && featured.shots || []).map((shot) => ({
+        ...shot,
+        x: shot.x + 25,
+        y: shot.y,
+        made: !!shot.made,
+        player: playerId,
+        color: colorFor(playerId),
+      }));
+
+      Court.create(container, {
+        variant: "mini",
+        onHover: (shot, info) => {
+          el.tooltip.innerHTML = shotTipHtml(shot);
+          el.tooltip.style.left = info.x + "px";
+          el.tooltip.style.top = (info.y - 10) + "px";
+          el.tooltip.classList.add("is-visible");
+        },
+        onLeave: () => el.tooltip.classList.remove("is-visible"),
+      }).setShots(shots);
+    });
+  }
+
   function renderFeatured() {
     const week = state.weeks[state.index];
     if (!week) {
@@ -192,6 +216,7 @@
       phaseLabel(week) + " · " + week.games + " game" + (week.games === 1 ? "" : "s") +
       " · " + phases + " · " + (week.featured || []).length + " featured";
     el.grid.innerHTML = (week.featured || []).map(renderCard).join("");
+    bindFeaturedCharts();
   }
 
   function leaderRow(row, featuredIds) {
@@ -462,6 +487,7 @@
   });
 
   document.addEventListener("mouseover", (event) => {
+    if (event.target.closest(".nbc")) return;
     const shot = event.target.closest(".shot");
     if (!shot) return;
     const made = shot.dataset.made === "1";
@@ -483,6 +509,7 @@
   });
 
   document.addEventListener("mouseout", (event) => {
+    if (event.target.closest(".nbc")) return;
     if (event.target.closest(".shot")) el.tooltip.classList.remove("is-visible");
   });
 
