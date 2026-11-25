@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-11-24T22:39:48+00:00",
+  "generated_at": "2026-11-25T21:52:45+00:00",
   "season_year": 2027,
   "season_label": "2026-27",
   "scope": "rookies",
   "totals": {
-    "games": 325,
-    "games_with_shots": 293,
+    "games": 328,
+    "games_with_shots": 295,
     "players": 73,
     "players_with_shots": 66,
-    "shots": 5019,
-    "made": 2192,
+    "shots": 5046,
+    "made": 2204,
     "weeks": 9
   },
   "weeks": [
@@ -117,9 +117,9 @@
       "season_types": [
         "regular"
       ],
-      "games": 10,
-      "shots": 126,
-      "players": 21
+      "games": 13,
+      "shots": 153,
+      "players": 25
     }
   ],
   "games": [
@@ -4997,6 +4997,51 @@
       },
       "shots": 22,
       "players": 4
+    },
+    {
+      "game_id": "401909314",
+      "date": "2026-11-24",
+      "season_type": "regular",
+      "away": {
+        "abbr": "DET",
+        "score": 104
+      },
+      "home": {
+        "abbr": "ORL",
+        "score": 86
+      },
+      "shots": 0,
+      "players": 0
+    },
+    {
+      "game_id": "401909315",
+      "date": "2026-11-24",
+      "season_type": "regular",
+      "away": {
+        "abbr": "BOS",
+        "score": 131
+      },
+      "home": {
+        "abbr": "WSH",
+        "score": 116
+      },
+      "shots": 19,
+      "players": 2
+    },
+    {
+      "game_id": "401909316",
+      "date": "2026-11-24",
+      "season_type": "regular",
+      "away": {
+        "abbr": "DAL",
+        "score": 120
+      },
+      "home": {
+        "abbr": "DEN",
+        "score": 101
+      },
+      "shots": 8,
+      "players": 2
     }
   ],
   "players": [
@@ -5139,29 +5184,29 @@
       "position": "F",
       "is_rookie": 1,
       "rank": 5,
-      "games": 18,
-      "minutes": 31.11,
-      "points": 15.67,
-      "rebounds": 6.22,
-      "assists": 2.56,
-      "plus_minus": -2.28,
-      "shots": 242,
-      "made": 103,
+      "games": 19,
+      "minutes": 31.63,
+      "points": 15.89,
+      "rebounds": 6.47,
+      "assists": 2.79,
+      "plus_minus": -3.0,
+      "shots": 260,
+      "made": 110,
       "zones": {
         "rim": {
-          "made": 69,
-          "attempts": 124,
-          "pct": 0.5565
+          "made": 72,
+          "attempts": 131,
+          "pct": 0.5496
         },
         "mid": {
-          "made": 20,
-          "attempts": 56,
-          "pct": 0.3571
+          "made": 22,
+          "attempts": 61,
+          "pct": 0.3607
         },
         "three": {
-          "made": 14,
-          "attempts": 62,
-          "pct": 0.2258
+          "made": 16,
+          "attempts": 68,
+          "pct": 0.2353
         }
       }
     },
@@ -5463,45 +5508,12 @@
       }
     },
     {
-      "player_id": "4698719",
-      "name": "Trevon Brazile",
-      "team": "DEN",
-      "position": "F",
-      "is_rookie": 1,
-      "rank": 15,
-      "games": 20,
-      "minutes": 18.5,
-      "points": 7.25,
-      "rebounds": 4.65,
-      "assists": 0.35,
-      "plus_minus": -0.85,
-      "shots": 93,
-      "made": 58,
-      "zones": {
-        "rim": {
-          "made": 41,
-          "attempts": 49,
-          "pct": 0.8367
-        },
-        "mid": {
-          "made": 0,
-          "attempts": 4,
-          "pct": 0.0
-        },
-        "three": {
-          "made": 17,
-          "attempts": 40,
-          "pct": 0.425
-        }
-      }
-    },
-    {
       "player_id": "5149077",
       "name": "Kingston Flemings",
       "team": "ATL",
       "position": "G",
       "is_rookie": 1,
-      "rank": 16,
+      "rank": 15,
       "games": 22,
       "minutes": 18.05,
       "points": 7.0,
@@ -5525,6 +5537,39 @@
           "made": 16,
           "attempts": 44,
           "pct": 0.3636
+        }
+      }
+    },
+    {
+      "player_id": "4698719",
+      "name": "Trevon Brazile",
+      "team": "DEN",
+      "position": "F",
+      "is_rookie": 1,
+      "rank": 16,
+      "games": 21,
+      "minutes": 18.19,
+      "points": 6.9,
+      "rebounds": 4.57,
+      "assists": 0.33,
+      "plus_minus": -1.0,
+      "shots": 93,
+      "made": 58,
+      "zones": {
+        "rim": {
+          "made": 41,
+          "attempts": 49,
+          "pct": 0.8367
+        },
+        "mid": {
+          "made": 0,
+          "attempts": 4,
+          "pct": 0.0
+        },
+        "three": {
+          "made": 17,
+          "attempts": 40,
+          "pct": 0.425
         }
       }
     },
@@ -5562,12 +5607,45 @@
       }
     },
     {
+      "player_id": "4873153",
+      "name": "Morez Johnson Jr.",
+      "team": "DAL",
+      "position": "F",
+      "is_rookie": 1,
+      "rank": 18,
+      "games": 20,
+      "minutes": 16.1,
+      "points": 5.9,
+      "rebounds": 4.7,
+      "assists": 1.3,
+      "plus_minus": -1.05,
+      "shots": 105,
+      "made": 45,
+      "zones": {
+        "rim": {
+          "made": 33,
+          "attempts": 62,
+          "pct": 0.5323
+        },
+        "mid": {
+          "made": 6,
+          "attempts": 18,
+          "pct": 0.3333
+        },
+        "three": {
+          "made": 6,
+          "attempts": 25,
+          "pct": 0.24
+        }
+      }
+    },
+    {
       "player_id": "5107968",
       "name": "Ja'Kobi Gillespie",
       "team": "SA",
       "position": "G",
       "is_rookie": 1,
-      "rank": 18,
+      "rank": 19,
       "games": 8,
       "minutes": 11.12,
       "points": 8.5,
@@ -5591,39 +5669,6 @@
           "made": 14,
           "attempts": 30,
           "pct": 0.4667
-        }
-      }
-    },
-    {
-      "player_id": "4873153",
-      "name": "Morez Johnson Jr.",
-      "team": "DAL",
-      "position": "F",
-      "is_rookie": 1,
-      "rank": 19,
-      "games": 19,
-      "minutes": 15.95,
-      "points": 5.74,
-      "rebounds": 4.42,
-      "assists": 1.32,
-      "plus_minus": -2.26,
-      "shots": 98,
-      "made": 41,
-      "zones": {
-        "rim": {
-          "made": 30,
-          "attempts": 59,
-          "pct": 0.5085
-        },
-        "mid": {
-          "made": 6,
-          "attempts": 18,
-          "pct": 0.3333
-        },
-        "three": {
-          "made": 5,
-          "attempts": 21,
-          "pct": 0.2381
         }
       }
     },
@@ -6162,19 +6207,19 @@
       "position": "F",
       "is_rookie": 1,
       "rank": 36,
-      "games": 19,
-      "minutes": 6.16,
-      "points": 2.74,
-      "rebounds": 2.21,
-      "assists": 0.16,
-      "plus_minus": -2.21,
-      "shots": 52,
+      "games": 20,
+      "minutes": 6.15,
+      "points": 2.6,
+      "rebounds": 2.2,
+      "assists": 0.2,
+      "plus_minus": -2.6,
+      "shots": 53,
       "made": 23,
       "zones": {
         "rim": {
           "made": 20,
-          "attempts": 28,
-          "pct": 0.7143
+          "attempts": 29,
+          "pct": 0.6897
         },
         "mid": {
           "made": 1,
@@ -6723,19 +6768,19 @@
       "position": "F",
       "is_rookie": 1,
       "rank": 53,
-      "games": 16,
-      "minutes": 7.25,
-      "points": 1.56,
+      "games": 17,
+      "minutes": 7.0,
+      "points": 1.59,
       "rebounds": 1.12,
-      "assists": 0.5,
-      "plus_minus": 0.31,
-      "shots": 24,
-      "made": 8,
+      "assists": 0.53,
+      "plus_minus": 0.12,
+      "shots": 25,
+      "made": 9,
       "zones": {
         "rim": {
-          "made": 5,
-          "attempts": 10,
-          "pct": 0.5
+          "made": 6,
+          "attempts": 11,
+          "pct": 0.5455
         },
         "mid": {
           "made": 0,
@@ -77676,6 +77721,384 @@
       "period": 4,
       "clock": "23.0",
       "description": "Tarris Reed Jr. makes 9-foot floating jump shot (Ja'Kobi Gillespie assists)"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909315",
+      "date": "2026-11-24",
+      "x": 6.0,
+      "y": 15.0,
+      "made": 1,
+      "three": 0,
+      "distance": 14.7,
+      "type": "jump shot",
+      "period": 1,
+      "clock": "11:44",
+      "description": "AJ Dybantsa makes 16-foot pullup jump shot"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909315",
+      "date": "2026-11-24",
+      "x": -4.0,
+      "y": 29.0,
+      "made": 0,
+      "three": 1,
+      "distance": 27.7,
+      "type": "jumper",
+      "period": 1,
+      "clock": "11:05",
+      "description": "AJ Dybantsa misses 28-foot three point jumper"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909315",
+      "date": "2026-11-24",
+      "x": -1.0,
+      "y": 15.0,
+      "made": 1,
+      "three": 0,
+      "distance": 13.5,
+      "type": "jump shot",
+      "period": 1,
+      "clock": "9:45",
+      "description": "AJ Dybantsa makes 14-foot pullup jump shot"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909315",
+      "date": "2026-11-24",
+      "x": 0.0,
+      "y": 0.0,
+      "made": 0,
+      "three": 0,
+      "distance": 1.6,
+      "type": "tip-in",
+      "period": 1,
+      "clock": "8:07",
+      "description": "AJ Dybantsa misses tip shot"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909315",
+      "date": "2026-11-24",
+      "x": -8.0,
+      "y": 3.0,
+      "made": 0,
+      "three": 0,
+      "distance": 8.1,
+      "type": "layup",
+      "period": 1,
+      "clock": "3:25",
+      "description": "AJ Dybantsa misses running layup"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909315",
+      "date": "2026-11-24",
+      "x": 12.0,
+      "y": 3.0,
+      "made": 0,
+      "three": 0,
+      "distance": 12.1,
+      "type": "shot",
+      "period": 1,
+      "clock": "2:44",
+      "description": "AJ Dybantsa misses 12-foot two point shot"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909315",
+      "date": "2026-11-24",
+      "x": -3.0,
+      "y": 8.0,
+      "made": 0,
+      "three": 0,
+      "distance": 7.1,
+      "type": "jump shot",
+      "period": 2,
+      "clock": "8:32",
+      "description": "AJ Dybantsa misses running pullup jump shot"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909315",
+      "date": "2026-11-24",
+      "x": -25.0,
+      "y": 1.0,
+      "made": 0,
+      "three": 1,
+      "distance": 25.0,
+      "type": "jumper",
+      "period": 2,
+      "clock": "5:53",
+      "description": "AJ Dybantsa misses 24-foot three point jumper"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909315",
+      "date": "2026-11-24",
+      "x": -3.0,
+      "y": 1.0,
+      "made": 1,
+      "three": 0,
+      "distance": 3.0,
+      "type": "dunk",
+      "period": 2,
+      "clock": "2:07",
+      "description": "AJ Dybantsa makes 2-foot driving dunk"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909315",
+      "date": "2026-11-24",
+      "x": -17.0,
+      "y": 21.0,
+      "made": 1,
+      "three": 1,
+      "distance": 25.8,
+      "type": "shot",
+      "period": 2,
+      "clock": "1:38",
+      "description": "AJ Dybantsa makes 27-foot three point step back jumpshot (Trae Young assists)"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909315",
+      "date": "2026-11-24",
+      "x": -5.0,
+      "y": 2.0,
+      "made": 1,
+      "three": 0,
+      "distance": 5.0,
+      "type": "dunk",
+      "period": 3,
+      "clock": "7:52",
+      "description": "AJ Dybantsa makes 5-foot driving dunk"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909315",
+      "date": "2026-11-24",
+      "x": 13.0,
+      "y": 21.0,
+      "made": 0,
+      "three": 1,
+      "distance": 23.4,
+      "type": "shot",
+      "period": 3,
+      "clock": "3:47",
+      "description": "AJ Dybantsa misses 24-foot three point step back jumpshot"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909315",
+      "date": "2026-11-24",
+      "x": 8.0,
+      "y": 14.0,
+      "made": 0,
+      "three": 0,
+      "distance": 14.8,
+      "type": "jump shot",
+      "period": 3,
+      "clock": "2:10",
+      "description": "Hugo Gonzalez blocks AJ Dybantsa 's 16-foot pullup jump shot"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909315",
+      "date": "2026-11-24",
+      "x": 19.0,
+      "y": 23.0,
+      "made": 1,
+      "three": 1,
+      "distance": 28.6,
+      "type": "jumper",
+      "period": 4,
+      "clock": "10:34",
+      "description": "AJ Dybantsa makes 29-foot three point jumper (Bilal Coulibaly assists)"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909315",
+      "date": "2026-11-24",
+      "x": 6.0,
+      "y": 6.0,
+      "made": 0,
+      "three": 0,
+      "distance": 7.5,
+      "type": "layup",
+      "period": 4,
+      "clock": "5:43",
+      "description": "Sam Hauser blocks AJ Dybantsa 's 8-foot driving layup"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909315",
+      "date": "2026-11-24",
+      "x": 7.0,
+      "y": 3.0,
+      "made": 0,
+      "three": 0,
+      "distance": 7.1,
+      "type": "layup",
+      "period": 4,
+      "clock": "4:34",
+      "description": "Neemias Queta blocks AJ Dybantsa 's 8-foot driving layup"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909315",
+      "date": "2026-11-24",
+      "x": 6.0,
+      "y": 3.0,
+      "made": 1,
+      "three": 0,
+      "distance": 6.2,
+      "type": "shot",
+      "period": 4,
+      "clock": "3:19",
+      "description": "AJ Dybantsa makes 6-foot two point shot"
+    },
+    {
+      "player_id": "5142718",
+      "game_id": "401909315",
+      "date": "2026-11-24",
+      "x": 25.0,
+      "y": 13.0,
+      "made": 0,
+      "three": 1,
+      "distance": 27.5,
+      "type": "jumper",
+      "period": 4,
+      "clock": "58.0",
+      "description": "AJ Dybantsa misses 28-foot three point jumper"
+    },
+    {
+      "player_id": "5142621",
+      "game_id": "401909315",
+      "date": "2026-11-24",
+      "x": -2.0,
+      "y": 2.0,
+      "made": 0,
+      "three": 0,
+      "distance": 2.0,
+      "type": "layup",
+      "period": 1,
+      "clock": "2:37",
+      "description": "Chris Cenac Jr. misses running layup"
+    },
+    {
+      "player_id": "4065813",
+      "game_id": "401909316",
+      "date": "2026-11-24",
+      "x": -2.0,
+      "y": 2.0,
+      "made": 1,
+      "three": 0,
+      "distance": 2.0,
+      "type": "shot",
+      "period": 4,
+      "clock": "14.4",
+      "description": "Alpha Diallo makes 2-foot two point shot"
+    },
+    {
+      "player_id": "4873153",
+      "game_id": "401909316",
+      "date": "2026-11-24",
+      "x": 0.0,
+      "y": 0.0,
+      "made": 1,
+      "three": 0,
+      "distance": 1.6,
+      "type": "tip-in",
+      "period": 1,
+      "clock": "6:48",
+      "description": "Morez Johnson Jr. makes tip shot"
+    },
+    {
+      "player_id": "4873153",
+      "game_id": "401909316",
+      "date": "2026-11-24",
+      "x": -13.0,
+      "y": 22.0,
+      "made": 0,
+      "three": 1,
+      "distance": 24.2,
+      "type": "jumper",
+      "period": 1,
+      "clock": "2:08",
+      "description": "Morez Johnson Jr. misses 25-foot three point jumper"
+    },
+    {
+      "player_id": "4873153",
+      "game_id": "401909316",
+      "date": "2026-11-24",
+      "x": -14.0,
+      "y": 20.0,
+      "made": 0,
+      "three": 1,
+      "distance": 23.1,
+      "type": "jumper",
+      "period": 1,
+      "clock": "1:49",
+      "description": "Morez Johnson Jr. misses 24-foot three point jumper"
+    },
+    {
+      "player_id": "4873153",
+      "game_id": "401909316",
+      "date": "2026-11-24",
+      "x": 0.0,
+      "y": 0.0,
+      "made": 1,
+      "three": 0,
+      "distance": 1.6,
+      "type": "shot",
+      "period": 2,
+      "clock": "1:48",
+      "description": "Morez Johnson Jr. makes two point shot"
+    },
+    {
+      "player_id": "4873153",
+      "game_id": "401909316",
+      "date": "2026-11-24",
+      "x": -11.0,
+      "y": 24.0,
+      "made": 1,
+      "three": 0,
+      "distance": 25.0,
+      "type": "bank shot",
+      "period": 3,
+      "clock": "2:43",
+      "description": "Morez Johnson Jr. makes 26-foot jump bank shot (Cooper Flagg assists)"
+    },
+    {
+      "player_id": "4873153",
+      "game_id": "401909316",
+      "date": "2026-11-24",
+      "x": 0.0,
+      "y": 1.0,
+      "made": 1,
+      "three": 0,
+      "distance": 0.6,
+      "type": "dunk",
+      "period": 3,
+      "clock": "17.5",
+      "description": "Morez Johnson Jr. makes running dunk (Walter Clayton Jr. assists)"
+    },
+    {
+      "player_id": "4873153",
+      "game_id": "401909316",
+      "date": "2026-11-24",
+      "x": -25.0,
+      "y": 7.0,
+      "made": 0,
+      "three": 1,
+      "distance": 25.6,
+      "type": "jumper",
+      "period": 4,
+      "clock": "57.0",
+      "description": "Morez Johnson Jr. misses 25-foot three point jumper"
     }
   ]
 }

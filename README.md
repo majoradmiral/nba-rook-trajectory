@@ -16,7 +16,7 @@ shot charts spotlight the same rookie class.
 Auto-refreshed on every `python -m src.timeline` run — no manual editing.
 
 <!-- TOP_PERFORMERS:START -->
-_Updated 2026-11-24 · unofficial ROTY candidate ranking · 2026-27 regular season through 2026-11-23 · ranked by impact score · min 10 MPG_
+_Updated 2026-11-25 · unofficial ROTY candidate ranking · 2026-27 regular season through 2026-11-24 · ranked by impact score · min 10 MPG_
 
 | Rank | Rookie | Team | GP | MPG | PPG | RPG | APG | SPG | BPG | EFF | FG% | 3P% | Impact |
 |------|--------|------|----|-----|-----|-----|-----|-----|-----|-----|-----|-----|--------|
@@ -24,7 +24,7 @@ _Updated 2026-11-24 · unofficial ROTY candidate ranking · 2026-27 regular seas
 | 2 | Cameron Boozer | MEM | 16 | 30.8 | 16.6 | 9.2 | 5.3 | 0.8 | 0.8 | 21.4 | 41.7% | 32.2% | 35.6 |
 | 3 | Yaxel Lendeborg | GS | 17 | 31.7 | 19.2 | 7.4 | 3.6 | 1.0 | 0.8 | 19.6 | 45.2% | 36.7% | 34.0 |
 | 4 | Caleb Wilson | CHI | 10 | 30.7 | 18.9 | 6.2 | 1.9 | 1.8 | 0.9 | 16.5 | 42.0% | 32.4% | 31.9 |
-| 5 | AJ Dybantsa | WSH | 14 | 33.9 | 16.5 | 6.9 | 2.8 | 1.3 | 0.4 | 15.9 | 42.3% | 23.5% | 30.0 |
+| 5 | AJ Dybantsa | WSH | 15 | 34.3 | 16.7 | 7.2 | 3.1 | 1.2 | 0.3 | 16.4 | 42.0% | 24.6% | 30.7 |
 | 6 | Darryn Peterson | UTAH | 19 | 30.3 | 15.9 | 4.5 | 4.1 | 1.1 | 0.6 | 15.2 | 40.1% | 31.0% | 28.9 |
 | 7 | Brayden Burries | MIL | 18 | 23.1 | 11.4 | 5.7 | 2.5 | 0.9 | 0.2 | 13.8 | 45.5% | 31.3% | 22.8 |
 | 8 | Aday Mara | OKC | 18 | 19.9 | 8.9 | 6.3 | 1.7 | 0.1 | 1.5 | 14.1 | 64.9% | 100.0% | 20.5 |
@@ -40,7 +40,7 @@ deep-bench minutes the main ranking can't judge yet. Players already shown
 above are skipped, and the table refreshes with the same command.
 
 <!-- LIMITED_SAMPLE:START -->
-_Updated 2026-11-24 · 2026-27 regular season through 2026-11-23 · small sample · under 3 GP or under 10 MPG_
+_Updated 2026-11-25 · 2026-27 regular season through 2026-11-24 · small sample · under 3 GP or under 10 MPG_
 
 | Rank | Rookie | Team | GP | MPG | PPG | RPG | APG | SPG | BPG | EFF | FG% | 3P% | Impact |
 |------|--------|------|----|-----|-----|-----|-----|-----|-----|-----|-----|-----|--------|
