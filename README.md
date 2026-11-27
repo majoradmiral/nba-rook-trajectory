@@ -16,7 +16,7 @@ shot charts spotlight the same rookie class.
 Auto-refreshed on every `python -m src.timeline` run — no manual editing.
 
 <!-- TOP_PERFORMERS:START -->
-_Updated 2026-11-26 · unofficial ROTY candidate ranking · 2026-27 regular season through 2026-11-25 · ranked by impact score · min 10 MPG_
+_Updated 2026-11-27 · unofficial ROTY candidate ranking · 2026-27 regular season through 2026-11-25 · ranked by impact score · min 10 MPG_
 
 | Rank | Rookie | Team | GP | MPG | PPG | RPG | APG | SPG | BPG | EFF | FG% | 3P% | Impact |
 |------|--------|------|----|-----|-----|-----|-----|-----|-----|-----|-----|-----|--------|
@@ -40,7 +40,7 @@ deep-bench minutes the main ranking can't judge yet. Players already shown
 above are skipped, and the table refreshes with the same command.
 
 <!-- LIMITED_SAMPLE:START -->
-_Updated 2026-11-26 · 2026-27 regular season through 2026-11-25 · small sample · under 3 GP or under 10 MPG_
+_Updated 2026-11-27 · 2026-27 regular season through 2026-11-25 · small sample · under 3 GP or under 10 MPG_
 
 | Rank | Rookie | Team | GP | MPG | PPG | RPG | APG | SPG | BPG | EFF | FG% | 3P% | Impact |
 |------|--------|------|----|-----|-----|-----|-----|-----|-----|-----|-----|-----|--------|
